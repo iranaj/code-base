@@ -40,7 +40,7 @@ const vazirmatn = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main
-      className={`${roboto.variable} ${vazirmatn.variable} ${playFairDisplay.variable}`}
+      className={`${roboto.variable} ${vazirmatn.variable} ${playFairDisplay.variable} scroll-auto`}
     >
       <Component {...pageProps} />
     </main>

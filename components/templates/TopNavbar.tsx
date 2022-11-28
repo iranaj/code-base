@@ -1,15 +1,37 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function TopNavbar() {
   const router = useRouter();
   const { locale } = router;
 
+  // calculate screen height
+  const [showSecondaryTopNav, setShowSecondaryTopNav] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > window.innerHeight) {
+      setShowSecondaryTopNav(true);
+    } else {
+      setShowSecondaryTopNav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed flex w-full top-24 z-50 ">
-      <nav className="flex justify-between w-full max-w-7xl mx-auto gap-36 text-projectGray-300 font-body font-regular text-xs backdrop-blur px-2 ">
-        <div className="hidden">
+    <header
+      className={`fixed flex w-full transition-all ease-in-out duration-500 ${
+        showSecondaryTopNav ? "top-2 bg-gray-100" : "top-24 backdrop-blur"
+      } z-50`}
+    >
+      <nav className="flex justify-between w-full h-20 max-w-7xl mx-auto gap-36 text-projectGray-300 font-body font-regular text-xs">
+        <div className={`${showSecondaryTopNav ? "" : "hidden"}`}>
           <Image
             src={`/logo_horizontal.svg`}
             alt="NAJ logo"

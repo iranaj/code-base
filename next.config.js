@@ -19,7 +19,7 @@ const nextConfig = {
   },
   env: {
     MAPBOX_TOKEN:
-      "pk.eyJ1IjoiZm5lbCIsImEiOiJjazdzMHI4bTMwMnNvM2VwOHA2dDRyamsxIn0.nhgvCZm2cCUqJNzqLyRHzA",
+      "pk.eyJ1IjoiZm5lbCIsImEiOiJjbGIwZGp1bTUxMTBnM3VxbGJsZWtuOThyIn0.AFwOO6nZLfTWVwx5v4HKeg",
   },
 };
 
