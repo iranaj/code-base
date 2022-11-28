@@ -46,26 +46,34 @@ function ContactComponent() {
 
           <p className="col-span-2">find us on social media:</p>
           <div className="col-span-2 flex justify-center gap-x-24">
-            <Twitter
-              size={24}
-              strokeWidth={1}
-              className="stroke-secondary-500"
-            />
-            <Instagram
-              size={24}
-              strokeWidth={1}
-              className="stroke-secondary-500"
-            />
-            <Youtube
-              size={24}
-              strokeWidth={1}
-              className="stroke-secondary-500"
-            />
-            <Facebook
-              size={24}
-              strokeWidth={1}
-              className="stroke-secondary-500"
-            />
+            <Link href={""}>
+              <Twitter
+                size={24}
+                strokeWidth={1}
+                className="stroke-secondary-500  hover:stroke-2"
+              />
+            </Link>
+            <Link href={""}>
+              <Instagram
+                size={24}
+                strokeWidth={1}
+                className="stroke-secondary-500  hover:stroke-2"
+              />
+            </Link>
+            <Link href={""}>
+              <Youtube
+                size={24}
+                strokeWidth={1}
+                className="stroke-secondary-500  hover:stroke-2 "
+              />
+            </Link>
+            <Link href={""}>
+              <Facebook
+                size={24}
+                strokeWidth={1}
+                className="stroke-secondary-500  hover:stroke-2"
+              />
+            </Link>
           </div>
           <p className="col-span-2 text-gray-300">
             you can also get latest updates and news as we announce them by
