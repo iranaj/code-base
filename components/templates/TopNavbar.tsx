@@ -17,40 +17,38 @@ export default function TopNavbar() {
             height={54}
           />
         </div>
-        <div className="hidden md:flex items-center w-full justify-end gap-24">
+        <div className="hidden md:flex items-center w-full justify-end gap-24 uppercase">
           <Link
             href="/#"
-            className="inline-block rounded-lg py-1 px-2  hover:bg-slate-100 hover:text-slate-900"
+            className="inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer"
           >
             home
           </Link>
           <Link
             href="/#"
-            className="inline-block rounded-lg py-1 px-2  hover:bg-slate-100 hover:text-slate-900"
+            className="inline-block rounded-lg py-1 px-2   hover:text-secondary-500 cursor-pointer"
           >
             about
           </Link>
           <Link
             href="/#"
-            className="inline-block rounded-lg py-1 px-2  hover:bg-slate-100 hover:text-slate-900"
+            className="inline-block rounded-lg py-1 px-2   hover:text-secondary-500 cursor-pointer"
           >
             contact
           </Link>
         </div>
         <div className="flex items-center w-28 ">
           <div className="hidden md:block">
-            <span className="inline-block rounded-lg py-1 px-2  hover:bg-slate-100 hover:text-slate-900">
+            <span className="inline-block rounded-lg py-1 px-2   hover:text-secondary-500 cursor-pointer">
               english
             </span>
           </div>
           <div className="hidden md:block">
-            <span className="inline-block rounded-lg py-1 px-2  hover:bg-slate-100 hover:text-slate-900">
-              |
-            </span>
+            <span className="inline-block rounded-lg py-1 px-2 ">|</span>
           </div>
 
           <div className="hidden md:block">
-            <span className="inline-block rounded-lg py-1 px-2  hover:bg-slate-100 hover:text-slate-900 font-bodyFa font-normal">
+            <span className="inline-block rounded-lg py-1 px-2   hover:text-secondary-500 font-bodyFa font-normal cursor-pointer">
               فارسی
             </span>
           </div>
