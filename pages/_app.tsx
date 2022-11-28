@@ -4,7 +4,7 @@ import { Roboto, Playfair_Display } from "@next/font/google";
 import localFont from "@next/font/local";
 
 const roboto = Roboto({
-  weight: ["400", "700"],
+  weight: ["300", "400", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-roboto",

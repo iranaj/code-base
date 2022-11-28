@@ -16,9 +16,7 @@ const Home: React.FC = () => {
       <LandingComponent />
       <ContactComponent />
 
-      <div className="w-full h-96 bg-primary-500"></div>
-
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
