@@ -24,7 +24,11 @@ const MapView: React.FC<MapViewProps> = ({
         bearing: 0,
         pitch: 0,
       }}
-      style={{ width: "490px", height: "450px", borderRadius: "18px" }}
+      style={{
+        width: "490px",
+        height: "450px",
+        borderRadius: "18px",
+      }}
       mapboxAccessToken={process.env.MAPBOX_TOKEN}
       mapStyle="mapbox://styles/fnel/ckjq7gxh44ikk19qvoly77bfb"
     >

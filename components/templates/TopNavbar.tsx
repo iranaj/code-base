@@ -7,9 +7,9 @@ export default function TopNavbar() {
   const { locale } = router;
 
   return (
-    <header className="flex fixed w-full h-32 top-0">
-      <nav className="relative z-50 flex justify-between w-full max-w-7xl mx-auto gap-36 text-projectGray-300 font-body font-regular text-xs mt-24">
-        <div className="hidden">
+    <header className="fixed flex w-full h-32 top-0 z-50">
+      <nav className="flex justify-between w-full max-w-7xl mx-auto gap-36 text-projectGray-300 font-body font-regular text-xs mt-24">
+        <div className="">
           <Image
             src={`/logo_horizontal.svg`}
             alt="NAJ logo"
