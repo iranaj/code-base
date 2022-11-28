@@ -3,6 +3,7 @@ import TopNavbar from "components/templates/TopNavbar";
 import Footer from "components/templates/Footer";
 import React from "react";
 import ContactComponent from "components/contactUs/ContactComponent";
+import LandingComponent from "components/landing/LandingComponent";
 
 const Home: React.FC = () => {
   const router = useRouter();
@@ -12,12 +13,7 @@ const Home: React.FC = () => {
     <div className="w-full relative flex-col">
       <TopNavbar />
 
-      <main
-        className="bg-primary-500 w-full h-screen bg-center bg-no-repeat bg-cover"
-        style={{
-          backgroundImage: `url(/background-mono.png)`,
-        }}
-      ></main>
+      <LandingComponent />
       <ContactComponent />
 
       <div className="w-full h-96 bg-primary-500"></div>

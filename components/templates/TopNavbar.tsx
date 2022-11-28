@@ -7,14 +7,15 @@ export default function TopNavbar() {
   const { locale } = router;
 
   return (
-    <header className="fixed flex w-full h-32 top-0 z-50">
-      <nav className="flex justify-between w-full max-w-7xl mx-auto gap-36 text-projectGray-300 font-body font-regular text-xs mt-24">
-        <div className="">
+    <header className="fixed flex w-full top-24 z-50 ">
+      <nav className="flex justify-between w-full max-w-7xl mx-auto gap-36 text-projectGray-300 font-body font-regular text-xs backdrop-blur px-2 ">
+        <div className="hidden">
           <Image
             src={`/logo_horizontal.svg`}
             alt="NAJ logo"
             width={107}
             height={54}
+            className="max-w-none mb-4"
           />
         </div>
         <div className="hidden md:flex items-center w-full justify-end gap-24 uppercase">

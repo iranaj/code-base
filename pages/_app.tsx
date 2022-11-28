@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Roboto } from "@next/font/google";
+import { Roboto, Playfair_Display } from "@next/font/google";
 import localFont from "@next/font/local";
 
 const roboto = Roboto({
@@ -8,6 +8,12 @@ const roboto = Roboto({
   style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-roboto",
+});
+const playFairDisplay = Playfair_Display({
+  weight: ["500", "400"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-playFairDisplay",
 });
 
 const vazirmatn = localFont({
@@ -33,7 +39,9 @@ const vazirmatn = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${roboto.variable} ${vazirmatn.variable}`}>
+    <main
+      className={`${roboto.variable} ${vazirmatn.variable} ${playFairDisplay.variable}`}
+    >
       <Component {...pageProps} />
     </main>
   );
