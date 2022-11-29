@@ -1,7 +1,8 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { en, persian } from "utils/translations";
 
 export default function TopNavbar() {
   const router = useRouter();
@@ -24,13 +25,17 @@ export default function TopNavbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const t = locale === "en-US" ? en : persian;
+
   return (
     <header
       className={`fixed flex w-full transition-all ease-in-out duration-500 ${
-        showSecondaryTopNav ? "top-2 bg-gray-100" : "top-24 backdrop-blur"
+        showSecondaryTopNav
+          ? "top-2 bg-gray-100"
+          : "top-5 xxl:top-24 backdrop-blur"
       } z-50`}
     >
-      <nav className="flex justify-between w-full h-20 max-w-7xl mx-auto gap-36 text-projectGray-300 font-body font-regular text-xs">
+      <nav className="flex justify-between w-full h-20 max-w-5xl xxl:max-w-7xl mx-auto gap-36 text-projectGray-300 font-body font-regular text-xs">
         <div className={`${showSecondaryTopNav ? "" : "hidden"}`}>
           <Image
             src={`/logo_horizontal.svg`}
@@ -42,27 +47,42 @@ export default function TopNavbar() {
         </div>
         <div className="hidden md:flex items-center w-full justify-end gap-24 uppercase">
           <Link
-            href="/#"
-            className="inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer"
+            href="/#home"
+            className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
+              locale === "persian" ? "font-bodyFa font-normal" : null
+            }`}
           >
-            home
+            {t.home}
           </Link>
           <Link
-            href="/#"
-            className="inline-block rounded-lg py-1 px-2   hover:text-secondary-500 cursor-pointer"
+            href="/about"
+            className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
+              locale === "persian" ? "font-bodyFa font-normal" : null
+            }`}
           >
-            about
+            {t.about}
           </Link>
           <Link
-            href="/#"
-            className="inline-block rounded-lg py-1 px-2   hover:text-secondary-500 cursor-pointer"
+            href="/#contact"
+            className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
+              locale === "persian" ? "font-bodyFa font-normal" : null
+            }`}
           >
-            contact
+            {t.contact}
           </Link>
         </div>
         <div className="flex items-center w-28 ">
           <div className="hidden md:block">
-            <span className="inline-block rounded-lg py-1 px-2   hover:text-secondary-500 cursor-pointer">
+            <span
+              className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
+                locale === "en-US" ? "text-secondary-500 " : null
+              }`}
+              onClick={() =>
+                router.push(router.pathname, router.pathname, {
+                  locale: "en-US",
+                })
+              }
+            >
               english
             </span>
           </div>
@@ -71,7 +91,16 @@ export default function TopNavbar() {
           </div>
 
           <div className="hidden md:block">
-            <span className="inline-block rounded-lg py-1 px-2   hover:text-secondary-500 font-bodyFa font-normal cursor-pointer">
+            <span
+              className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 font-bodyFa font-normal cursor-pointer ${
+                locale !== "en-US" ? "text-secondary-500 " : null
+              }`}
+              onClick={() =>
+                router.push(router.pathname, router.pathname, {
+                  locale: "persian",
+                })
+              }
+            >
               فارسی
             </span>
           </div>

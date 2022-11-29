@@ -1,6 +1,7 @@
 export const en = {
-    'hello': 'Hello',
-    'world': 'World'
+    'home': 'Home',
+    'about': 'About',
+    'contact': 'Contact',
 };
 
 export const fr = {
@@ -9,6 +10,7 @@ export const fr = {
 };
 
 export const persian = {
-    'hello': 'سلام',
-    'world': 'دنیا'
+    'home': 'خانه',
+    'about': 'درباره',
+    'contact': 'تماس',
 };

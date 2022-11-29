@@ -11,7 +11,7 @@ const LandingComponent = () => {
         backgroundImage: `url(/background-mono.png)`,
       }}
     >
-      <section className="max-w-7xl mx-auto flex justify-between items-center h-full">
+      <section className="max-w-6xl xxl:max-w-7xl mx-auto flex justify-between items-center h-full">
         <LogoVerticalFull className="w-60 fill-secondary-500" />
         <div className="max-w-3xl">
           <SliderText />

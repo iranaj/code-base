@@ -1,12 +1,11 @@
 import LogoHorizeotalFull from "components/UI/identity/LogoHorizontalFull";
-import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Twitter, Youtube } from "react-feather";
 
 const Footer: React.FC = () => {
   return (
     <footer className="w-full h-48 bg-primary-500">
-      <div className="flex justify-between w-full max-w-7xl pt-14 mx-auto gap-36 text-projectGray-300 font-body text-xs ">
+      <div className="flex justify-between w-full max-w-6xl xxl:max-w-7xl pt-14 mx-auto gap-36 text-projectGray-300 font-body text-xs ">
         <div className="footer__logo">
           <LogoHorizeotalFull className="w-36 fill-gray-300 -mt-2" />
         </div>

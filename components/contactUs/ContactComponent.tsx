@@ -10,11 +10,12 @@ import {
 } from "react-feather";
 import ButtonTextTypeA from "components/UI/buttons/ButtonTextTypeA";
 import Link from "next/link";
+import EmailSubscriptionForm from "./EmailSubscriptionForm";
 
 function ContactComponent() {
   return (
     <section className="w-full flex bg-gray-100 py-52 font-body">
-      <div className="w-full max-w-7xl mx-auto grid grid-cols-2 gap-x-36 gap-y-3">
+      <div className="w-full max-w-6xl xxl:max-w-7xl mx-auto grid grid-cols-2 gap-x-36 gap-y-3">
         <h2 className="col-span-2 font-header text-4xl text-secondary-500 uppercase">
           contact us
         </h2>
@@ -79,25 +80,7 @@ function ContactComponent() {
             you can also get latest updates and news as we announce them by
             sharing your email address with us.
           </p>
-          <form className="col-span-2 relative">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="youremail@emialhost.com"
-              className="w-full h-14 border-2 border-gray-300 rounded-lg bg-gray-200 px-4 accent-1 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent placeholder:text-gray-300"
-            />
-            <button
-              type="submit"
-              className="absolute right-4 top-1 h-12 hover:text-secondary-500"
-            >
-              join our newsletter list
-              <span className="hidden sm:inline text-secondary-500">
-                {" "}
-                &rarr;
-              </span>
-            </button>
-          </form>
+          <EmailSubscriptionForm />
         </div>
         <div className="w-full h-full flex flex-col items-end">
           <MapView
