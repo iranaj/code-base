@@ -32,8 +32,8 @@ function SliderText() {
   return (
     <div>
       <h1
-        className={`text-4xl font-header text-gray-200 font-medium h-20 ${
-          locale === "persian" ? "font-bodyFa text-right" : null
+        className={`text-4xl  text-gray-200 font-medium h-20 ${
+          locale === "persian" ? "font-bodyFa text-right" : "font-header"
         }`}
       >
         {sliderText[sliderTextIndex]}

@@ -9,7 +9,7 @@ const LandingComponent = () => {
   const router: NextRouter = useRouter();
   const { locale } = router;
 
-  const text = locale === "en-US" ? en : persian;
+  const text = locale !== "persian" ? en : persian;
   return (
     <div
       className="bg-primary-500 w-full h-screen bg-center bg-no-repeat bg-cover "
@@ -23,24 +23,23 @@ const LandingComponent = () => {
         <div className="max-w-3xl">
           <SliderText />
           <h2
-            className={`text-5xl text-secondary-500 font-header mt-24 ${
-              locale === "persian" ? "font-bodyFa text-right" : null
+            className={`text-5xl text-secondary-500  mt-24 ${
+              locale === "persian" ? "text-farsi" : "font-header"
             }`}
           >
             {text.home.slogan.title}
           </h2>
           <p
-            className={`ml-32 font-body text-base text-gray-200 mt-5 ${
-              locale === "persian" ? "font-bodyFa text-right" : null
+            className={`ml-32  text-base text-gray-200 mt-5 ${
+              locale === "persian" ? "text-farsi" : "font-body"
             }`}
-            dir={locale === "persian" ? "rtl" : "ltr"}
           >
             {text.home.slogan.p1}
           </p>
 
           <ButtonTextTypeA
             wrapperClassName="text-end mt-5"
-            className="text-xs font-body text-gray-300 "
+            className="text-xs !text-gray-300"
             href="/about"
             text={text.general.read_more}
             hasIcon

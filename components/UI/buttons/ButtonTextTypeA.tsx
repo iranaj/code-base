@@ -34,8 +34,8 @@ const ButtonTextTypeA: React.FC<Props> = ({
         <span
           className={[
             "font-medium text-primary-500 hover:text-secondary-500",
+            locale === "persian" ? "text-farsi" : "font-body",
             className,
-            locale === "persian" ? "font-bodyFa font-normal" : null,
           ].join(" ")}
         >
           {text}
