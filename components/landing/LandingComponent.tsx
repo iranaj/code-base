@@ -33,13 +33,14 @@ const LandingComponent = () => {
             className={`ml-32 font-body text-base text-gray-200 mt-5 ${
               locale === "persian" ? "font-bodyFa text-right" : null
             }`}
+            dir={locale === "persian" ? "rtl" : "ltr"}
           >
             {text.home.slogan.p1}
           </p>
 
           <ButtonTextTypeA
-            wrapperClassName="text-end"
-            className="text-xs font-body text-gray-300"
+            wrapperClassName="text-end mt-5"
+            className="text-xs font-body text-gray-300 "
             href="/about"
             text={text.general.read_more}
             hasIcon

@@ -33,7 +33,7 @@ const ButtonTextTypeA: React.FC<Props> = ({
       <Link href={href} target={target} passHref={passHref}>
         <span
           className={[
-            "{`font-medium text-primary-500 hover:text-secondary-500`}",
+            "font-medium text-primary-500 hover:text-secondary-500",
             className,
             locale === "persian" ? "font-bodyFa font-normal" : null,
           ].join(" ")}
