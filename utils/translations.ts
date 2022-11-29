@@ -1,5 +1,6 @@
 export const en = {
   general: {
+    name: "National Assembly of Jurists",
     read_more: "Read More",
   },
   home: {
@@ -70,6 +71,7 @@ export const en = {
 
 export const persian = {
   general: {
+    name: "شورای ملی حقوقدانان",
     read_more: "ادامه مطلب",
   },
   home: {

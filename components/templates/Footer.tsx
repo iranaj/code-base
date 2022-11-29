@@ -1,23 +1,50 @@
 import LogoHorizeotalFull from "components/UI/identity/LogoHorizontalFull";
 import Link from "next/link";
 import { Facebook, Instagram, Twitter, Youtube } from "react-feather";
+import { NextRouter, useRouter } from "next/router";
+import { en, persian } from "utils/translations";
 
 const Footer: React.FC = () => {
+  const router: NextRouter = useRouter();
+  const { locale } = router;
+
+  const text = locale === "en-US" ? en : persian;
   return (
     <footer className="w-full h-48 bg-primary-500">
-      <div className="flex justify-between w-full max-w-6xl xxl:max-w-7xl pt-14 mx-auto gap-36 text-projectGray-300 font-body text-xs ">
+      <div className="flex justify-between w-full max-w-6xl xxl:max-w-7xl pt-14 mx-auto gap-32 text-projectGray-300 font-body text-xs ">
         <div className="footer__logo">
           <LogoHorizeotalFull className="w-36 fill-gray-300 -mt-2" />
         </div>
         <ul className="uppercase flex flex-col">
           <li className="mt-2">
-            <Link href="/">Home</Link>
+            <Link
+              className={`hover:text-secondary-500 cursor-pointer ${
+                locale === "persian" ? "font-bodyFa font-normal" : null
+              }`}
+              href="/#home"
+            >
+              {text.home.title}
+            </Link>
           </li>
           <li className="mt-2">
-            <Link href="/about">About</Link>
+            <Link
+              className={`hover:text-secondary-500 cursor-pointer ${
+                locale === "persian" ? "font-bodyFa font-normal" : null
+              }`}
+              href="/about"
+            >
+              {text.about.title}
+            </Link>
           </li>
           <li className="mt-2">
-            <Link href="/#contact">Contact</Link>
+            <Link
+              className={`hover:text-secondary-500 cursor-pointer ${
+                locale === "persian" ? "font-bodyFa font-normal" : null
+              }`}
+              href="/#contact"
+            >
+              {text.contact.title}
+            </Link>
           </li>
           {/* <li>
               <Link href="https://diosf.com/privacy">Privacy</Link>
@@ -27,7 +54,13 @@ const Footer: React.FC = () => {
             </li> */}
         </ul>
         <div className=" text-sm text-gray-300">
-          <span>National Assembly of Jurists</span>
+          <span
+            className={`${
+              locale === "persian" ? "font-bodyFa font-normal" : null
+            }`}
+          >
+            {text.general.name}
+          </span>
           <p className="text-xxs font-light">
             1802 Vernon St NW PMB 514 <br />
             Washington, DC 20009
@@ -64,8 +97,14 @@ const Footer: React.FC = () => {
               />
             </Link>
           </div>
-          <span className="text-xxs font-light tracking-[0.25rem] mt-8">
-            © National Assembly of Iranian Juritst 2022
+          <span
+            className={`text-xxs font-light tracking-[0.25rem] mt-8 ${
+              locale === "persian"
+                ? "font-bodyFa font-normal tracking-normal"
+                : null
+            }`}
+          >
+            © {text.general.name} 2022
           </span>
         </div>
       </div>
