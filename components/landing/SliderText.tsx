@@ -1,12 +1,15 @@
 import React from "react";
+import { NextRouter, useRouter } from "next/router";
+import { en, persian } from "utils/translations";
 
 function SliderText() {
+  const router: NextRouter = useRouter();
+  const { locale } = router;
+
+  const text = locale === "en-US" ? en : persian;
+
   // slider text
-  const sliderText = [
-    "A National Assembly of Legal Experts.",
-    "Working to Provide for a Lasting Transition.",
-    "Dedicated to a Free, Democratic, and Secular Iran.",
-  ];
+  const sliderText = text.home.soundbites;
 
   // slider text index
   const [sliderTextIndex, setSliderTextIndex] = React.useState(0);
@@ -28,7 +31,11 @@ function SliderText() {
 
   return (
     <div>
-      <h1 className="text-4xl font-header text-gray-200 font-medium h-20 ">
+      <h1
+        className={`text-4xl font-header text-gray-200 font-medium h-20 ${
+          locale === "persian" ? "font-bodyFa text-right" : null
+        }`}
+      >
         {sliderText[sliderTextIndex]}
       </h1>
       <div className="flex gap-x-4 justify-end mt-9">

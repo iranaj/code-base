@@ -4,7 +4,7 @@ import { Roboto, Playfair_Display } from "@next/font/google";
 import localFont from "@next/font/local";
 
 const roboto = Roboto({
-  weight: ["300", "400", "700"],
+  weight: ["300", "400", "500", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-roboto",
@@ -41,6 +41,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <main
       className={`${roboto.variable} ${vazirmatn.variable} ${playFairDisplay.variable} scroll-auto`}
+      dir="ltr"
     >
       <Component {...pageProps} />
     </main>

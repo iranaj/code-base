@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NextRouter, useRouter } from "next/router";
 
 interface Props {
   text: string;
@@ -19,6 +20,9 @@ const ButtonTextTypeA: React.FC<Props> = ({
   target,
   passHref,
 }) => {
+  const router: NextRouter = useRouter();
+  const { locale } = router;
+
   return (
     <div
       className={[
@@ -29,8 +33,9 @@ const ButtonTextTypeA: React.FC<Props> = ({
       <Link href={href} target={target} passHref={passHref}>
         <span
           className={[
-            "font-medium text-primary-500 hover:text-secondary-500",
+            "{`font-medium text-primary-500 hover:text-secondary-500`}",
             className,
+            locale === "persian" ? "font-bodyFa font-normal" : null,
           ].join(" ")}
         >
           {text}

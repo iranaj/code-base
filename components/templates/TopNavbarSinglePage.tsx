@@ -4,39 +4,18 @@ import Image from "next/image";
 import { NextRouter, useRouter } from "next/router";
 import { en, persian } from "utils/translations";
 
-export default function TopNavbar() {
+export default function TopNavbarSinglePage() {
   const router: NextRouter = useRouter();
   const { locale } = router;
 
   const text = locale === "en-US" ? en : persian;
 
-  // calculate screen height
-  const [showSecondaryTopNav, setShowSecondaryTopNav] = useState(false);
-
-  const handleScroll = () => {
-    if (window.scrollY > window.innerHeight) {
-      setShowSecondaryTopNav(true);
-    } else {
-      setShowSecondaryTopNav(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <header
-      className={`fixed flex w-full transition-all ease-in-out duration-500 ${
-        showSecondaryTopNav
-          ? "top-2 bg-gray-100"
-          : "top-5 xxl:top-24 backdrop-blur"
-      } z-50`}
+      className={`fixed flex w-full transition-all ease-in-out duration-500 top-0 bg-gray-100 z-50 pt-2`}
     >
       <nav className="flex justify-between w-full h-20 max-w-5xl xxl:max-w-7xl mx-auto gap-36 text-projectGray-300 font-body font-regular text-xs">
-        <div className={`${showSecondaryTopNav ? "" : "hidden"}`}>
+        <div className="">
           <Image
             src={`/logo_horizontal.svg`}
             alt="NAJ logo"
