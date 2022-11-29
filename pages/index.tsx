@@ -4,20 +4,24 @@ import Footer from "components/templates/Footer";
 import React from "react";
 import ContactComponent from "components/contactUs/ContactComponent";
 import LandingComponent from "components/landing/LandingComponent";
+import IndexHead from "components/heads/IndexHead";
 
 const Home: React.FC = () => {
   const router = useRouter();
   const { locale } = router;
 
   return (
-    <div className="w-full relative flex-col">
-      <TopNavbar />
+    <>
+      <IndexHead />
+      <div className="w-full relative flex-col">
+        <TopNavbar />
 
-      <LandingComponent />
-      <ContactComponent />
+        <LandingComponent />
+        <ContactComponent />
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 export default Home;

@@ -6,7 +6,7 @@ function SliderText() {
   const router: NextRouter = useRouter();
   const { locale } = router;
 
-  const text = locale === "en-US" ? en : persian;
+  const text = locale !== "persian" ? en : persian;
 
   // slider text
   const sliderText = text.home.soundbites;

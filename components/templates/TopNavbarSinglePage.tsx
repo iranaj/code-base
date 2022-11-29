@@ -8,7 +8,7 @@ export default function TopNavbarSinglePage() {
   const router: NextRouter = useRouter();
   const { locale } = router;
 
-  const text = locale === "en-US" ? en : persian;
+  const text = locale !== "persian" ? en : persian;
 
   return (
     <header
@@ -54,7 +54,7 @@ export default function TopNavbarSinglePage() {
           <div className="hidden md:block">
             <span
               className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
-                locale === "en-US" ? "text-secondary-500 " : null
+                locale !== "persian" ? "text-secondary-500 " : null
               }`}
               onClick={() =>
                 router.push(router.pathname, router.pathname, {

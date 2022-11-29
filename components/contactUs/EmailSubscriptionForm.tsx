@@ -5,7 +5,7 @@ import { en, persian } from "utils/translations";
 function EmailSubscriptionForm() {
   const router: NextRouter = useRouter();
   const { locale } = router;
-  const text = locale === "en-US" ? en : persian;
+  const text = locale !== "persian" ? en : persian;
   return (
     <form className="col-span-2 relative">
       <input

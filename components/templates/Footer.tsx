@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
   const router: NextRouter = useRouter();
   const { locale } = router;
 
-  const text = locale === "en-US" ? en : persian;
+  const text = locale !== "persian" ? en : persian;
   return (
     <footer className="w-full h-48 bg-primary-500">
       <div className="flex justify-between w-full max-w-6xl xxl:max-w-7xl pt-14 mx-auto gap-32 text-projectGray-300 font-body text-xs ">

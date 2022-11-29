@@ -2,6 +2,18 @@ export const en = {
   general: {
     name: "National Assembly of Jurists",
     read_more: "Read More",
+    headers: {
+      description:
+        "Inspired by the strength, breadth, and determination of women-led protests in Iran, we, a core roup of Iranian jurists with expertise in comparative law and policy, transitional justice, Iranian law, and human rights decided to accelerate and consolidate our activities to support the people of Iran by incorporating National Assembly of Iranian Jurists (شورای ملی حقوقدانان).",
+      content:
+        "The landing page of our organization where you can find our mission, vision, and values. You can also find our contact information and social media links.",
+    },
+    social_media_usernames: {
+      twitter: "@IranianJurists",
+      instagram: "@iranianjurists",
+      facebook: "@IranianJurists",
+      youtube: "@IranianJurists",
+    },
   },
   home: {
     title: "Home",
@@ -73,6 +85,18 @@ export const persian = {
   general: {
     name: "شورای ملی حقوقدانان",
     read_more: "ادامه مطلب",
+    headers: {
+      description:
+        "ایران ما امروز شاهد تحولاتی عمیق و سریع میباشد. جوانان ما فریاد زن، زندگی، آزادی را در گوشاگوشه ی کشور به قیمت جان طنین انداز کردهاند",
+      content:
+        "صفحه اصلی سایت شورای ملی حقوقدانان که شامل ماموریت، رویکرد و ارزش‌های ماست. شما می‌توانید اطلاعات تماس و لینک‌های شبکه‌های اجتماعی را در اینجا پیدا کنید.",
+    },
+    social_media_usernames: {
+      twitter: "@IranianJurists",
+      instagram: "@iranianjurists",
+      facebook: "@IranianJurists",
+      youtube: "@IranianJurists",
+    },
   },
   home: {
     title: "خانه",

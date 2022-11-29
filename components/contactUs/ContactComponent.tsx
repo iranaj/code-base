@@ -17,11 +17,11 @@ import { en, persian } from "utils/translations";
 function ContactComponent() {
   const router: NextRouter = useRouter();
   const { locale } = router;
-  const text = locale === "en-US" ? en : persian;
+  const text = locale !== "persian" ? en : persian;
   return (
     <section
       className="w-full flex bg-gray-100 py-52 font-body "
-      dir={locale === "en-US" ? "ltr" : "rtl"}
+      dir={locale !== "persian" ? "ltr" : "rtl"}
       id="contact"
     >
       <div className="w-full max-w-6xl xxl:max-w-7xl mx-auto grid grid-cols-2 gap-x-36 gap-y-3">
