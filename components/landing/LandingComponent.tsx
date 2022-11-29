@@ -14,7 +14,7 @@ const LandingComponent = () => {
     <div
       className="bg-primary-500 w-full h-screen bg-center bg-no-repeat bg-cover "
       style={{
-        backgroundImage: `url(/background-mono.png)`,
+        backgroundImage: `url(/background-mono.jpg)`,
       }}
       id="home"
     >
