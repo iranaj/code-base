@@ -64,7 +64,7 @@ function ContactComponent() {
             {text.contact.social_media.p1}
           </p>
           {/* social media links */}
-          <div className="col-span-2 flex justify-between md:justify-center md:gap-x-24 my-8 ">
+          <div className="col-span-2 flex justify-center gap-x-24 my-8 ">
             <Link
               href={`https://twitter.com/${text.general.social_media_usernames.twitter}`}
             >
