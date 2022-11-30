@@ -10,7 +10,7 @@ export const en = {
     },
     social_media_usernames: {
       twitter: "@iranianassembly",
-      instagram: "@iranianassembly",
+      instagram: "iranianassembly?igshid=YmMyMTA2M2Y=",
       facebook: "@IranianJurists",
       youtube: "@IranianJurists",
     },
@@ -99,7 +99,7 @@ export const persian = {
     },
     social_media_usernames: {
       twitter: "@iranianassembly",
-      instagram: "@iranianassembly",
+      instagram: "iranianassembly?igshid=YmMyMTA2M2Y=",
       facebook: "@IranianJurists",
       youtube: "@IranianJurists",
     },
