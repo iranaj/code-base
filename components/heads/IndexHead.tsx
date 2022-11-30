@@ -27,7 +27,7 @@ const IndexHead: React.FC = () => {
         property="og:description"
         content={text.general.headers.description}
       />
-      <meta property="og:image" content={`${url}/logo_horizontal.svg`} />
+      <meta property="og:image" content={`${url}logo_horizontal.svg`} />
       <meta property="og:url" content={url} />
       {/* additional facebook */}
       <meta property="og:image:alt" content={text.general.headers.content} />
@@ -43,7 +43,7 @@ const IndexHead: React.FC = () => {
         name="twitter:description"
         content={text.general.headers.description}
       />
-      <meta name="twitter:image" content={`${url}/logo_horizontal.svg`} />
+      <meta name="twitter:image" content={`${url}logo_horizontal.svg`} />
       <meta name="twitter:image:alt" content={`${text.general.name} home`} />
 
       {/* html */}

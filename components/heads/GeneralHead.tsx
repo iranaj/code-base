@@ -37,7 +37,7 @@ const GeneralHead: React.FC<Props> = ({
       <meta property="og:site_name" content={text.general.name} />
       <meta property="og:title" content={`${text.general.name} home`} />
       <meta property="og:description" content={description} />
-      <meta name="twitter:image" content={`${url}/logo_horizontal.svg`} />
+      <meta name="twitter:image" content={`${url}logo_horizontal.svg`} />
       <meta property="og:url" content={url} />
       {/* additional facebook */}
       <meta property="og:image:alt" content={content} />
@@ -50,7 +50,7 @@ const GeneralHead: React.FC<Props> = ({
       />
       <meta name="twitter:title" content={`${text.general.name} home`} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`${url}/logo_horizontal.svg`} />
+      <meta name="twitter:image" content={`${url}logo_horizontal.svg`} />
       <meta name="twitter:image:alt" content={`${text.general.name} home`} />
 
       {/* html */}
