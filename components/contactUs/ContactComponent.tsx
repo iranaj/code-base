@@ -62,7 +62,7 @@ function ContactComponent() {
             {text.contact.social_media.p1}
           </p>
           {/* social media links */}
-          <div className="col-span-2 flex justify-between md:justify-center md:gap-x-24 my-8 md:my-0">
+          <div className="col-span-2 flex justify-between md:justify-center md:gap-x-24 my-8 ">
             <Link
               href={`https://twitter.com/${text.general.social_media_usernames.twitter}`}
             >
@@ -100,7 +100,7 @@ function ContactComponent() {
               />
             </Link>
           </div>
-          <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60 mb-5 md:mb-0">
+          <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60 mb-5 md:mb-2">
             {text.contact.newsletter.p1}
           </p>
           <EmailSubscriptionForm />
