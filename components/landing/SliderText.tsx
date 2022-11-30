@@ -51,18 +51,18 @@ function SliderText() {
         dir={locale !== "persian" ? "ltr" : "rtl"}
       >
         <span
-          className={`w-20 h-1 bg-${
-            sliderTextIndex === 0 ? "gray-200" : "primary-500"
+          className={`w-20 h-1 ${
+            sliderTextIndex === 0 ? "bg-gray-200" : "bg-primary-500"
           }`}
         />
         <span
-          className={`w-20 h-1 bg-${
-            sliderTextIndex === 1 ? "gray-200" : "primary-500"
+          className={`w-20 h-1 ${
+            sliderTextIndex === 1 ? "bg-gray-200" : "bg-primary-500"
           }`}
         />
         <span
-          className={`w-20 h-1 bg-${
-            sliderTextIndex === 2 ? "gray-200" : "primary-500"
+          className={`w-20 h-1 ${
+            sliderTextIndex === 2 ? "bg-gray-200" : "bg-primary-500"
           }`}
         />
       </div>
