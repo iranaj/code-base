@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <div className="flex w-full md:w-auto flex-col md:pt-4 ">
-          <div className="flex  items-center justify-between md:gap-x-24 max-w-44 ">
+          <div className="flex  items-center justify-around md:gap-x-24 max-w-44 ">
             <Link
               href={`https://twitter.com/${text.general.social_media_usernames.twitter}`}
             >
