@@ -38,7 +38,10 @@ function SliderText() {
       >
         {sliderText[sliderTextIndex]}
       </h1>
-      <div className="flex gap-x-4 justify-end mt-9">
+      <div
+        className="flex gap-x-4 justify-end mt-9"
+        dir={locale !== "persian" ? "ltr" : "rtl"}
+      >
         <span
           className={`w-20 h-1 bg-${
             sliderTextIndex === 0 ? "gray-200" : "primary-500"

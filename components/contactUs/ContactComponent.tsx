@@ -29,14 +29,14 @@ function ContactComponent() {
           {text.contact.title}
         </h2>
         <div className="grid grid-cols-2 text-primary-500 text-xs">
-          <p className="col-span-2 rtl:font-bodyFa">
+          <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60">
             {text.contact.media_inquiries.p1}
           </p>
           <div className="col-start-2 text-sm">
             <Mail size={24} strokeWidth={1} className="stroke-gray-300 mb-2" />
-            <a href="mailto:media@iranjurists.org">media@iranjurists.org</a>
+            <a href="mailto:media@iranaj.org">media@iranaj.org</a>
           </div>
-          <p className="col-span-2 rtl:font-bodyFa">
+          <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60">
             {text.contact.general_inquiries.p1}
           </p>
           <div className="">
@@ -46,44 +46,51 @@ function ContactComponent() {
               className="stroke-gray-300 mb-2"
             />
             <p className="text-sm">
-              National Assembly of Jurists <br /> 1802 Vernon St NW PMB 514{" "}
-              <br />
+              {text.general.name} <br /> 1802 Vernon St NW PMB 514 <br />
               Washington, DC 20009
             </p>
           </div>
           <div className=" text-sm">
             <Phone size={24} strokeWidth={1} className="stroke-gray-300 mb-2" />
-            <a href="call:media@iranjurists.org">+1 (202) 495-0880</a>
+            <a href="tel:+1(202)495-0880">+1 (202) 495-0880</a>
             <Mail size={24} strokeWidth={1} className="stroke-gray-300 my-2" />
-            <a href="mailto:info@iranianjurist.org">info@iranianjurist.org</a>
+            <a href="mailto:info@iranaj.org">info@iranaj.org</a>
           </div>
 
-          <p className="col-span-2 rtl:font-bodyFa">
+          <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60">
             {text.contact.social_media.p1}
           </p>
           <div className="col-span-2 flex justify-center gap-x-24">
-            <Link href={""}>
+            <Link
+              href={`https://twitter.com/${text.general.social_media_usernames.twitter}`}
+            >
               <Twitter
                 size={24}
                 strokeWidth={1}
                 className="stroke-secondary-500  hover:stroke-2"
               />
             </Link>
-            <Link href={""}>
+            <Link
+              href={`https://www.instagram.com/${text.general.social_media_usernames.instagram}`}
+            >
               <Instagram
                 size={24}
                 strokeWidth={1}
                 className="stroke-secondary-500  hover:stroke-2"
               />
             </Link>
-            <Link href={""}>
+            <Link
+              href={`https://youtube.com/${text.general.social_media_usernames.youtube}`}
+            >
               <Youtube
                 size={24}
                 strokeWidth={1}
                 className="stroke-secondary-500  hover:stroke-2 "
               />
             </Link>
-            <Link href={""}>
+            <Link
+              href={`https://facebook.com/${text.general.social_media_usernames.facebook}`}
+            >
               <Facebook
                 size={24}
                 strokeWidth={1}
@@ -91,7 +98,7 @@ function ContactComponent() {
               />
             </Link>
           </div>
-          <p className="col-span-2 text-gray-300 rtl:font-bodyFa">
+          <p className="col-span-2 text-gray-300 rtl:font-bodyFa text-primary-500 !text-opacity-60">
             {text.contact.newsletter.p1}
           </p>
           <EmailSubscriptionForm />
@@ -106,7 +113,7 @@ function ContactComponent() {
           <ButtonTextTypeA
             text={text.contact.map.button}
             hasIcon
-            className="text-xxs"
+            className="text-xxs font-normal"
             href="https://goo.gl/maps/8DRkBxfrwC2EybY58"
             target="_blank"
             passHref={true}

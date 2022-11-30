@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import React from "react";
+import { useState } from "react";
 import Layout from "components/templates/Layout";
 import { NextRouter, useRouter } from "next/router";
 import { en, persian } from "utils/translations";
@@ -10,7 +10,7 @@ const AboutPage: NextPage = () => {
   const { locale } = router;
   const text = locale !== "persian" ? en : persian;
 
-  const [onMission, setOnMission] = React.useState(true);
+  const [onMission, setOnMission] = useState(true);
 
   const handleClick = (section?: string) => {
     if (section === "mission") {
@@ -55,23 +55,24 @@ const AboutPage: NextPage = () => {
           </ul>
           <section
             dir={`${locale !== "persian" ? "ltr" : "rtl"}`}
-            className={`col-start-4 col-span-6 text-primary-500 text-base ${
+            className={`col-start-4 col-span-6 text-primary-500 text-base text-justify ${
               locale === "persian" ? "font-bodyFa" : "font-body"
             }`}
           >
-            <p className="leading-7">{text.about.p1}</p>
-            <p className="mt-4">{text.about.p2}</p>
+            <p className="leading-7 indent-5" id="mission-statement">
+              {text.about.p1}
+            </p>
+            <p className="mt-4 indent-5">{text.about.p2}</p>
             <h1
               className={`text-4xl mt-9 mb-4 text-secondary-500 ${
                 locale === "persian" ? "font-bodyFa font-bold" : "font-header"
               }`}
-              id="mission-statement"
             >
               {text.about.mission_statement.title}
             </h1>
-            <p>{text.about.mission_statement.p1}</p>
-            <p className="mt-4">{text.about.mission_statement.p2}</p>
-            <ul className="mt-4 ltr:pl-6 rtl:pr-6 list-disc">
+            <p className="indent-5">{text.about.mission_statement.p1}</p>
+            <p className="mt-4 indent-5">{text.about.mission_statement.p2}</p>
+            <ul className="mt-4 ltr:pl-6 rtl:pr-6 list-disc ml-10 rtl:mr-10 px-4">
               <li className="mb-2">{text.about.mission_statement.bullet1}</li>
               <li className="mb-2">{text.about.mission_statement.bullet2}</li>
               <li className="mb-2">{text.about.mission_statement.bullet3}</li>
@@ -89,7 +90,7 @@ const AboutPage: NextPage = () => {
             >
               {text.about.vision_statement.title}
             </h1>
-            <p>{text.about.vision_statement.p1}</p>
+            <p className="indent-5">{text.about.vision_statement.p1}</p>
           </section>
         </section>
       </Layout>

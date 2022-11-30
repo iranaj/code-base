@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { NextRouter, useRouter } from "next/router";
 import { en, persian } from "utils/translations";
+import LogoHorizeotalFull from "components/UI/identity/LogoHorizontalFull";
 
 export default function TopNavbarSinglePage() {
   const router: NextRouter = useRouter();
@@ -16,15 +15,12 @@ export default function TopNavbarSinglePage() {
     >
       <nav className="flex justify-between w-full h-20 max-w-5xl xxl:max-w-7xl mx-auto gap-36 text-projectGray-300 font-body font-regular text-xs">
         <div className="">
-          <Image
-            src={`/logo_horizontal.svg`}
-            alt="NAJ logo"
-            width={107}
-            height={54}
-            className="max-w-none mb-4"
-          />
+          <LogoHorizeotalFull className="w-32 fill-primary-500 -mt-1" />
         </div>
-        <div className="hidden md:flex items-center w-full justify-end gap-24 uppercase">
+        <div
+          className="hidden md:flex items-center w-full justify-end gap-24 uppercase"
+          dir={locale !== "persian" ? "ltr" : "rtl"}
+        >
           <Link
             href="/#home"
             className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${

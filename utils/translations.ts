@@ -1,6 +1,6 @@
 export const en = {
   general: {
-    name: "National Assembly of Jurists",
+    name: "National Assembly of Iranian Jurists",
     read_more: "Read More",
     headers: {
       description:
@@ -18,9 +18,9 @@ export const en = {
   home: {
     title: "Home",
     soundbites: [
-      "A National Assembly of Legal Experts.",
-      "Working to Provide for a Lasting Transition.",
-      "Dedicated to a Free, Democratic, and Secular Iran,",
+      "A National Assembly of Legal Experts",
+      "Working to Provide for a Lasting Transition",
+      "Dedicated to a Free, Democratic, and Secular Iran",
     ],
     slogan: {
       title: "We envision an Iran",
@@ -114,7 +114,7 @@ export const persian = {
     title: "تماس با ما",
     media_inquiries: {
       titile: "سوالات رسانه ای",
-      p1: "برای سوالات رسانه ای، لطفا با ما تماس بگیرید: ",
+      p1: "برای سوالات رسانه ای: ",
     },
     general_inquiries: {
       title: "سوالات عمومی",
@@ -135,11 +135,11 @@ export const persian = {
     },
   },
   about: {
-    title: "درباره",
-    p1: "ایران ما امروز شاهد تحولاتی عمیق و سریع میباشد. جوانان ما فریاد زن، زندگی، آزادی را در گوشاگوشه ی کشور به قیمت جان طنین انداز کردهاند",
+    title: "درباره ما",
+    p1: "ایران ما، امروز شاهد تحولاتی عمیق و سریع به پیشگامی زنان  است . جوانان ما دلیرانه فریاد زن، زندگی، آزادی را به قیمت جان خویش در جای جای کشورو اقصی نقاط جهان طنین انداز کرده اند. این تحولات وحدت ملت ما، فارغ از هرنوع تفاوت مذهبی، قومیتی، جنسیتی ، و سیاسی را به ارمغان آورده است. عدم توجه به برنامه ریزی و لزوم استفاده از تخصص های مورد نیاز در دوران گذار تحقق خواسته های آزادی خواهانه و مردم سالارانه ما را با خطر مواجه میکند. از انرو بر آن شدیم تا راهکار هایی سازنده برآمده از تجربیات گذشته، مبتنی بر تخصص را برای حمایت از خواسته های دموکراسی خواهانه مردم ایران ارائه دهیم.",
     p2: "شورای ملی حقوقدانان یک سازمان غیرانتفاعی متمرکز بر سیاست گذاری حقوقی در جهت تحقق دموکراسی و عدالت در ایران است.",
     mission_statement: {
-      title: "ماموریت ما",
+      title: "رسالت ما",
       p1: "رسالت ما ارائه تخصص حقوقی و سیاست گذاری در جهت دستیابی و تثبیت حاکمیتی ملی، مردم سالار، و عرفی (سکولار) در ایران به انظمام تامین حقوق اساسی ایرانیان میباشد.",
       p2: "دراین راستا شورای ملی حقوقدانان اهداف خود را به شرح ذیل اعلام مینماید:",
       bullet1:

@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
               <Link href="https://diosf.com/terms">Terms</Link>
             </li> */}
         </ul>
-        <div className=" text-sm text-gray-300">
+        <div className=" text-sm text-gray-300 pt-3">
           <span
             className={`${
               locale === "persian" ? "font-bodyFa font-normal" : null
@@ -66,30 +66,38 @@ const Footer: React.FC = () => {
             Washington, DC 20009
           </p>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col pt-4">
           <div className="col-span-2 flex justify-center items-center gap-x-24 max-w-44">
-            <Link href={""}>
+            <Link
+              href={`https://twitter.com/${text.general.social_media_usernames.twitter}`}
+            >
               <Twitter
                 size={18}
                 strokeWidth={1}
                 className="stroke-gray-300 hover:stroke-secondary-500 hover:stroke-2"
               />
             </Link>
-            <Link href={""}>
+            <Link
+              href={`https://www.instagram.com/${text.general.social_media_usernames.instagram}`}
+            >
               <Instagram
                 size={18}
                 strokeWidth={1}
                 className="stroke-gray-300 hover:stroke-secondary-500 hover:stroke-2"
               />
             </Link>
-            <Link href={""}>
+            <Link
+              href={`https://youtube.com/${text.general.social_media_usernames.youtube}`}
+            >
               <Youtube
                 size={18}
                 strokeWidth={1}
                 className="stroke-gray-300 hover:stroke-secondary-500 hover:stroke-2 "
               />
             </Link>
-            <Link href={""}>
+            <Link
+              href={`https://facebook.com/${text.general.social_media_usernames.facebook}`}
+            >
               <Facebook
                 size={18}
                 strokeWidth={1}
@@ -100,11 +108,11 @@ const Footer: React.FC = () => {
           <span
             className={`text-xxs font-light tracking-[0.25rem] mt-8 ${
               locale === "persian"
-                ? "font-bodyFa font-normal tracking-normal"
+                ? "font-bodyFa font-normal text-right tracking-normal"
                 : null
             }`}
           >
-            © {text.general.name} 2022
+            © {text.general.name} {locale === "persian" ? "" : "2022"}
           </span>
         </div>
       </div>

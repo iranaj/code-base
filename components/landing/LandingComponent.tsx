@@ -23,16 +23,17 @@ const LandingComponent = () => {
         <div className="max-w-3xl">
           <SliderText />
           <h2
-            className={`text-5xl text-secondary-500  mt-24 ${
+            className={`text-4xl text-secondary-500  mt-24 ${
               locale === "persian" ? "text-farsi" : "font-header"
             }`}
           >
             {text.home.slogan.title}
           </h2>
           <p
-            className={`ml-32  text-base text-gray-200 mt-5 ${
+            className={`ml-32 text-lg text-gray-200 mt-5 ${
               locale === "persian" ? "text-farsi" : "font-body"
             }`}
+            dir={locale !== "persian" ? "ltr" : "rtl"}
           >
             {text.home.slogan.p1}
           </p>
