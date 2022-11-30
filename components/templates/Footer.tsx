@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
                 className="stroke-gray-300 hover:stroke-secondary-500 hover:stroke-2"
               />
             </Link>
-            <Link
+            {/* <Link
               href={`https://youtube.com/${text.general.social_media_usernames.youtube}`}
             >
               <Youtube
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
                 strokeWidth={1}
                 className="stroke-gray-300 hover:stroke-secondary-500 hover:stroke-2"
               />
-            </Link>
+            </Link> */}
           </div>
           <span
             className={`text-xs md:text-xxs font-light tracking-[0.25rem] mt-8 ${

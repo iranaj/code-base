@@ -53,7 +53,9 @@ function ContactComponent() {
           </div>
           <div className="justify-self-end md:w-52 text-sm">
             <Phone size={24} strokeWidth={1} className="stroke-gray-300 mb-2" />
-            <a href="tel:+1(202)495-0880">+1 (202) 495-0880</a>
+            <a href="tel:+1(202)495-0880" dir="ltr">
+              +1 (202) 495-0880
+            </a>
             <Mail size={24} strokeWidth={1} className="stroke-gray-300 my-2" />
             <a href="mailto:info@iranaj.org">info@iranaj.org</a>
           </div>
@@ -81,7 +83,7 @@ function ContactComponent() {
                 className="stroke-secondary-500  hover:stroke-2"
               />
             </Link>
-            <Link
+            {/* <Link
               href={`https://youtube.com/${text.general.social_media_usernames.youtube}`}
             >
               <Youtube
@@ -98,7 +100,7 @@ function ContactComponent() {
                 strokeWidth={1}
                 className="stroke-secondary-500  hover:stroke-2"
               />
-            </Link>
+            </Link> */}
           </div>
           <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60 mb-5 md:mb-2">
             {text.contact.newsletter.p1}
