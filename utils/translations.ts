@@ -45,6 +45,12 @@ export const en = {
       title: "Newsletter",
       p1: "you can also get latest updates and news as we announce them by sharing your email address with us.",
       button: "join our newsletter",
+      subscribe_success: "Thank you for subscribing to our newsletter!",
+      subscribe_error: {
+        general: "Something went wrong. Please try again later.",
+        email: "Please enter a valid email address.",
+        network: "Network error. Please try again later.",
+      },
     },
     map: {
       title: "Map",
@@ -128,6 +134,12 @@ export const persian = {
       title: "خبرنامه",
       p1: "شما می توانید از طریق اشتراک در خبرنامه آخرین اخبار و اطلاعیه های ما را دریافت کنید.",
       button: "عضویت در خبرنامه",
+      subscribe_success: "شما با موفقیت در خبرنامه عضو شدید.",
+      subscribe_error: {
+        general: "مشکلی در عضویت شما به وجود آمده است.",
+        email: "ایمیل شما معتبر نیست.",
+        network: "مشکلی در اتصال به شبکه به وجود آمده است.",
+      },
     },
     map: {
       title: "نقشه",
