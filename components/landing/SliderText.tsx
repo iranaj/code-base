@@ -36,7 +36,15 @@ function SliderText() {
           locale === "persian" ? "font-bodyFa text-right" : "font-header"
         }`}
       >
-        {sliderText[sliderTextIndex]}
+        <span className={`${sliderTextIndex !== 0 ? "hidden" : ""}`}>
+          {sliderText[0]}
+        </span>
+        <span className={`${sliderTextIndex !== 1 ? "hidden" : ""}`}>
+          {sliderText[1]}
+        </span>
+        <span className={`${sliderTextIndex !== 2 ? "hidden" : ""}`}>
+          {sliderText[2]}
+        </span>
       </h1>
       <div
         className="flex gap-x-4 justify-end mt-9"

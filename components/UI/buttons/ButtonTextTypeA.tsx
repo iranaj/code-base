@@ -26,7 +26,7 @@ const ButtonTextTypeA: React.FC<Props> = ({
   return (
     <div
       className={[
-        "shrink-0 self-end ml-2 cursor-pointer",
+        "shrink-0 self-end ml-2 cursor-pointer relative",
         wrapperClassName,
       ].join(" ")}
     >
