@@ -46,7 +46,8 @@ function ContactComponent() {
               className="stroke-gray-300 mb-2"
             />
             <p className="text-sm">
-              {text.general.name} <br /> 1802 Vernon St NW PMB 514 <br />
+              <span className="rtl:font-bodyFa">{text.general.name}</span>{" "}
+              <br /> 1802 Vernon St NW PMB 514 <br />
               Washington, DC 20009
             </p>
           </div>
@@ -60,6 +61,7 @@ function ContactComponent() {
           <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60">
             {text.contact.social_media.p1}
           </p>
+          {/* social media links */}
           <div className="col-span-2 flex justify-center gap-x-24">
             <Link
               href={`https://twitter.com/${text.general.social_media_usernames.twitter}`}
