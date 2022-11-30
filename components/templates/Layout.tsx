@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="w-full h-full relative flex-col bg-gray-100 pt-64">
+    <div className="w-full h-full relative flex-col bg-gray-100 pt-44 md:pt-64">
       <TopNavbarSinglePage />
       {children}
       <Footer />

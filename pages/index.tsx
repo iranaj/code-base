@@ -7,9 +7,6 @@ import LandingComponent from "components/landing/LandingComponent";
 import IndexHead from "components/heads/IndexHead";
 
 const Home: React.FC = () => {
-  const router = useRouter();
-  const { locale } = router;
-
   return (
     <>
       <IndexHead />

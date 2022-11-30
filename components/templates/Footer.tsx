@@ -10,12 +10,12 @@ const Footer: React.FC = () => {
 
   const text = locale !== "persian" ? en : persian;
   return (
-    <footer className="w-full h-48 bg-primary-500">
-      <div className="flex justify-between w-full max-w-6xl xxl:max-w-7xl pt-14 mx-auto gap-32 text-projectGray-300 font-body text-xs ">
+    <footer className="w-full md:h-48 bg-primary-500 px-10 md:px-0">
+      <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl xxl:max-w-7xl pt-7 md:pt-14 mx-auto gap-10 md:gap-32 text-projectGray-300 font-body text-xs">
         <div className="footer__logo">
           <LogoHorizeotalFull className="w-36 fill-gray-300 -mt-2" />
         </div>
-        <ul className="uppercase flex flex-col">
+        <ul className="uppercase w-full md:w-auto flex justify-between md:justify-start md:flex-col">
           <li className="mt-2">
             <Link
               className={`hover:text-secondary-500 cursor-pointer ${
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
               <Link href="https://diosf.com/terms">Terms</Link>
             </li> */}
         </ul>
-        <div className=" text-sm text-gray-300 pt-3">
+        <div className="text-lg w-full md:w-auto md:text-sm text-gray-300 md:pt-3">
           <span
             className={`${
               locale === "persian" ? "font-bodyFa font-normal" : null
@@ -61,13 +61,13 @@ const Footer: React.FC = () => {
           >
             {text.general.name}
           </span>
-          <p className="text-xxs font-light">
+          <p className="text-sm md:text-xxs font-light">
             1802 Vernon St NW PMB 514 <br />
             Washington, DC 20009
           </p>
         </div>
-        <div className="flex flex-col pt-4">
-          <div className="col-span-2 flex justify-center items-center gap-x-24 max-w-44">
+        <div className="flex w-full md:w-auto flex-col md:pt-4 ">
+          <div className="flex  items-center justify-between md:gap-x-24 max-w-44 ">
             <Link
               href={`https://twitter.com/${text.general.social_media_usernames.twitter}`}
             >
@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
             </Link>
           </div>
           <span
-            className={`text-xxs font-light tracking-[0.25rem] mt-8 ${
+            className={`text-xs md:text-xxs font-light tracking-[0.25rem] mt-8 ${
               locale === "persian"
                 ? "font-bodyFa font-normal text-right tracking-normal"
                 : null

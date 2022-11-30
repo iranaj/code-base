@@ -20,23 +20,23 @@ function ContactComponent() {
   const text = locale !== "persian" ? en : persian;
   return (
     <section
-      className="w-full flex bg-gray-100 py-52 font-body "
+      className="w-full flex bg-gray-100 py-10 px-10 md:px-0 md:py-52 font-body "
       dir={locale !== "persian" ? "ltr" : "rtl"}
       id="contact"
     >
-      <div className="w-full max-w-6xl xxl:max-w-7xl mx-auto grid grid-cols-2 gap-x-36 gap-y-3">
-        <h2 className="col-span-2 font-header text-4xl text-secondary-500 uppercase rtl:font-bodyFa rtl:font-bold">
+      <div className="w-full md:max-w-6xl xxl:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-36 gap-y-3">
+        <h2 className="md:col-span-2 font-header text-2xl md:text-4xl text-secondary-500 uppercase rtl:font-bodyFa rtl:font-bold">
           {text.contact.title}
         </h2>
         <div className="grid grid-cols-2 text-primary-500 text-xs">
-          <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60">
+          <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60 pb-5">
             {text.contact.media_inquiries.p1}
           </p>
-          <div className="col-start-2 text-sm">
+          <div className="col-start-2 text-sm justify-self-end md:w-52">
             <Mail size={24} strokeWidth={1} className="stroke-gray-300 mb-2" />
             <a href="mailto:media@iranaj.org">media@iranaj.org</a>
           </div>
-          <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60">
+          <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60 py-5">
             {text.contact.general_inquiries.p1}
           </p>
           <div className="">
@@ -51,18 +51,18 @@ function ContactComponent() {
               Washington, DC 20009
             </p>
           </div>
-          <div className=" text-sm">
+          <div className="justify-self-end md:w-52 text-sm">
             <Phone size={24} strokeWidth={1} className="stroke-gray-300 mb-2" />
             <a href="tel:+1(202)495-0880">+1 (202) 495-0880</a>
             <Mail size={24} strokeWidth={1} className="stroke-gray-300 my-2" />
             <a href="mailto:info@iranaj.org">info@iranaj.org</a>
           </div>
 
-          <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60">
+          <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60 pt-5">
             {text.contact.social_media.p1}
           </p>
           {/* social media links */}
-          <div className="col-span-2 flex justify-center gap-x-24">
+          <div className="col-span-2 flex justify-between md:justify-center md:gap-x-24 my-8 md:my-0">
             <Link
               href={`https://twitter.com/${text.general.social_media_usernames.twitter}`}
             >
@@ -100,12 +100,12 @@ function ContactComponent() {
               />
             </Link>
           </div>
-          <p className="col-span-2 text-gray-300 rtl:font-bodyFa text-primary-500 !text-opacity-60">
+          <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60 mb-5 md:mb-0">
             {text.contact.newsletter.p1}
           </p>
           <EmailSubscriptionForm />
         </div>
-        <div className="w-full h-full flex flex-col items-end">
+        <div className="w-[21rem] md:w-[28rem] h-96 md:h-[30rem] flex flex-col items-end">
           <MapView
             dragable={false}
             latitude={38.9167833174732}

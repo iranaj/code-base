@@ -25,8 +25,8 @@ const MapView: React.FC<MapViewProps> = ({
         pitch: 0,
       }}
       style={{
-        width: "490px",
-        height: "450px",
+        width: "100%",
+        height: "100%",
         borderRadius: "18px",
       }}
       mapboxAccessToken={process.env.MAPBOX_TOKEN}

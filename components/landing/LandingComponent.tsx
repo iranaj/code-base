@@ -12,25 +12,25 @@ const LandingComponent = () => {
   const text = locale !== "persian" ? en : persian;
   return (
     <div
-      className="bg-primary-500 w-full h-screen bg-center bg-no-repeat bg-cover "
+      className="bg-primary-500 w-full h-screen bg-center bg-no-repeat bg-cover px-10 md:px-0"
       style={{
         backgroundImage: `url(/background-mono.jpg)`,
       }}
       id="home"
     >
-      <section className="max-w-6xl xxl:max-w-7xl mx-auto flex justify-between items-center h-full">
-        <LogoVerticalFull className="w-60 fill-secondary-500" />
+      <section className="max-w-6xl xxl:max-w-7xl mx-auto flex flex-row justify-between items-center h-full pt-16">
+        <LogoVerticalFull className="hidden md:block w-32 md:w-40 lg:w-60 fill-secondary-500" />
         <div className="max-w-3xl">
           <SliderText />
           <h2
-            className={`text-4xl text-secondary-500  mt-24 ${
+            className={`text-3xl md:text-4xl text-secondary-500  mt-24 ${
               locale === "persian" ? "text-farsi" : "font-header"
             }`}
           >
             {text.home.slogan.title}
           </h2>
           <p
-            className={`ml-32 text-lg text-gray-200 mt-5 ${
+            className={`ml-10 md:ml-32 text-lg text-gray-200 mt-5 ${
               locale === "persian" ? "text-farsi" : "font-body"
             }`}
             dir={locale !== "persian" ? "ltr" : "rtl"}
