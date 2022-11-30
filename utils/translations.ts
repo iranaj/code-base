@@ -9,8 +9,8 @@ export const en = {
         "The landing page of our organization where you can find our mission, vision, and values. You can also find our contact information and social media links.",
     },
     social_media_usernames: {
-      twitter: "@IranianJurists",
-      instagram: "@iranianjurists",
+      twitter: "@iranianassembly",
+      instagram: "@iranianassembly",
       facebook: "@IranianJurists",
       youtube: "@IranianJurists",
     },
@@ -98,8 +98,8 @@ export const persian = {
         "صفحه اصلی سایت شورای ملی حقوقدانان که شامل ماموریت، رویکرد و ارزش‌های ماست. شما می‌توانید اطلاعات تماس و لینک‌های شبکه‌های اجتماعی را در اینجا پیدا کنید.",
     },
     social_media_usernames: {
-      twitter: "@IranianJurists",
-      instagram: "@iranianjurists",
+      twitter: "@iranianassembly",
+      instagram: "@iranianassembly",
       facebook: "@IranianJurists",
       youtube: "@IranianJurists",
     },
