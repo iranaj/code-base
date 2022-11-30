@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Roboto, Playfair_Display } from "@next/font/google";
 import localFont from "@next/font/local";
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -44,6 +45,7 @@ export default function App({ Component, pageProps }: AppProps) {
       dir="ltr"
     >
       <Component {...pageProps} />
+      <Analytics />
     </main>
   );
 }
