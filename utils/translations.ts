@@ -12,7 +12,7 @@ export const en = {
       twitter: "@iranianassembly",
       instagram: "iranianassembly?igshid=YmMyMTA2M2Y=",
       facebook: "@IranianJurists",
-      youtube: "@IranianJurists",
+      youtube: "@iranianassembly",
     },
   },
   home: {
@@ -101,7 +101,7 @@ export const persian = {
       twitter: "@iranianassembly",
       instagram: "iranianassembly?igshid=YmMyMTA2M2Y=",
       facebook: "@IranianJurists",
-      youtube: "@IranianJurists",
+      youtube: "@iranianassembly",
     },
   },
   home: {

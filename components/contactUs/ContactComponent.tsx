@@ -67,6 +67,7 @@ function ContactComponent() {
           <div className="col-span-2 flex justify-center gap-x-24 my-8 ">
             <Link
               href={`https://twitter.com/${text.general.social_media_usernames.twitter}`}
+              target="_blank"
             >
               <Twitter
                 size={24}
@@ -76,6 +77,7 @@ function ContactComponent() {
             </Link>
             <Link
               href={`https://www.instagram.com/${text.general.social_media_usernames.instagram}`}
+              target="_blank"
             >
               <Instagram
                 size={24}
@@ -83,8 +85,9 @@ function ContactComponent() {
                 className="stroke-secondary-500  hover:stroke-2"
               />
             </Link>
-            {/* <Link
+            <Link
               href={`https://youtube.com/${text.general.social_media_usernames.youtube}`}
+              target="_blank"
             >
               <Youtube
                 size={24}
@@ -92,7 +95,7 @@ function ContactComponent() {
                 className="stroke-secondary-500  hover:stroke-2 "
               />
             </Link>
-            <Link
+            {/* <Link
               href={`https://facebook.com/${text.general.social_media_usernames.facebook}`}
             >
               <Facebook

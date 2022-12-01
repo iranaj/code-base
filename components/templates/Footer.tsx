@@ -70,6 +70,7 @@ const Footer: React.FC = () => {
           <div className="flex  items-center justify-around md:gap-x-24 max-w-44 ">
             <Link
               href={`https://twitter.com/${text.general.social_media_usernames.twitter}`}
+              target="_blank"
             >
               <Twitter
                 size={18}
@@ -79,6 +80,7 @@ const Footer: React.FC = () => {
             </Link>
             <Link
               href={`https://www.instagram.com/${text.general.social_media_usernames.instagram}`}
+              target="_blank"
             >
               <Instagram
                 size={18}
@@ -86,8 +88,9 @@ const Footer: React.FC = () => {
                 className="stroke-gray-300 hover:stroke-secondary-500 hover:stroke-2"
               />
             </Link>
-            {/* <Link
+            <Link
               href={`https://youtube.com/${text.general.social_media_usernames.youtube}`}
+              target="_blank"
             >
               <Youtube
                 size={18}
@@ -95,7 +98,7 @@ const Footer: React.FC = () => {
                 className="stroke-gray-300 hover:stroke-secondary-500 hover:stroke-2 "
               />
             </Link>
-            <Link
+            {/* <Link
               href={`https://facebook.com/${text.general.social_media_usernames.facebook}`}
             >
               <Facebook
