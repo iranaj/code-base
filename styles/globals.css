@@ -8,6 +8,17 @@
   }
 }
 
+@layer utilities {
+  .text-inter-char {
+    text-align: justify;
+  }
+  .text-inter-char:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+}
+
 /* html,
 body {
   padding: 0;

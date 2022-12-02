@@ -30,7 +30,7 @@ const LandingComponent = () => {
             {text.home.slogan.title}
           </h2>
           <p
-            className={`ml-10 md:ml-32 text-lg text-gray-200 mt-5 ${
+            className={`ml-10 md:ml-32 text-lg text-projectGray-200 mt-5 ${
               locale === "persian" ? "text-farsi" : "font-body"
             }`}
             dir={locale !== "persian" ? "ltr" : "rtl"}
@@ -40,7 +40,7 @@ const LandingComponent = () => {
 
           <ButtonTextTypeA
             wrapperClassName="text-end mt-5"
-            className="text-xs !text-gray-300"
+            className="text-xs !text-projectGray-300"
             href="/about"
             text={text.general.read_more}
             hasIcon

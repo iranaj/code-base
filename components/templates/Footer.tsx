@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
     <footer className="w-full md:h-48 bg-primary-500 px-10 md:px-0">
       <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl xxl:max-w-7xl pt-7 md:pt-14 mx-auto gap-10 md:gap-32 text-projectGray-300 font-body text-xs">
         <div className="footer__logo">
-          <LogoHorizeotalFull className="w-36 fill-gray-300 -mt-2" />
+          <LogoHorizeotalFull className="w-36 fill-projectGray-300 -mt-2" />
         </div>
         <ul className="uppercase w-full md:w-auto flex justify-between md:justify-start md:flex-col">
           <li className="mt-2">
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
               <Link href="https://diosf.com/terms">Terms</Link>
             </li> */}
         </ul>
-        <div className="text-lg w-full md:w-auto md:text-sm text-gray-300 md:pt-3">
+        <div className="text-base text-center md:text-left w-full md:w-auto md:text-sm text-projectGray-300 md:pt-3 ">
           <span
             className={`${
               locale === "persian" ? "font-bodyFa font-normal" : null
@@ -61,8 +61,9 @@ const Footer: React.FC = () => {
           >
             {text.general.name}
           </span>
-          <p className="text-sm md:text-xxs font-light">
-            1802 Vernon St NW PMB 514 <br />
+          <p className="text-xs md:text-xxs font-light tracking-[0.25rem] md:tracking-normal">
+            1802 Vernon St NW PMB 514
+            <br />
             Washington, DC 20009
           </p>
         </div>
@@ -75,7 +76,7 @@ const Footer: React.FC = () => {
               <Twitter
                 size={18}
                 strokeWidth={1}
-                className="stroke-gray-300 hover:stroke-secondary-500 hover:stroke-2"
+                className="stroke-projectGray-300 hover:stroke-secondary-500 hover:stroke-2"
               />
             </Link>
             <Link
@@ -85,7 +86,7 @@ const Footer: React.FC = () => {
               <Instagram
                 size={18}
                 strokeWidth={1}
-                className="stroke-gray-300 hover:stroke-secondary-500 hover:stroke-2"
+                className="stroke-projectGray-300 hover:stroke-secondary-500 hover:stroke-2"
               />
             </Link>
             <Link
@@ -95,7 +96,7 @@ const Footer: React.FC = () => {
               <Youtube
                 size={18}
                 strokeWidth={1}
-                className="stroke-gray-300 hover:stroke-secondary-500 hover:stroke-2 "
+                className="stroke-projectGray-300 hover:stroke-secondary-500 hover:stroke-2 "
               />
             </Link>
             {/* <Link
@@ -104,14 +105,14 @@ const Footer: React.FC = () => {
               <Facebook
                 size={18}
                 strokeWidth={1}
-                className="stroke-gray-300 hover:stroke-secondary-500 hover:stroke-2"
+                className="stroke-projectGray-300 hover:stroke-secondary-500 hover:stroke-2"
               />
             </Link> */}
           </div>
           <span
-            className={`text-xs md:text-xxs font-light tracking-[0.25rem] mt-8 ${
+            className={`text-xs text-center md:text-left md:text-xxs font-light ltr:tracking-[0.08rem] rtl:tracking-normal mt-8 mb-14 md:mb-0 ${
               locale === "persian"
-                ? "font-bodyFa font-normal text-right tracking-normal"
+                ? "font-bodyFa font-normal md:text-center tracking-normal"
                 : null
             }`}
           >

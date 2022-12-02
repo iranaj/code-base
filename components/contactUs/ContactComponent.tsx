@@ -20,7 +20,7 @@ function ContactComponent() {
   const text = locale !== "persian" ? en : persian;
   return (
     <section
-      className="w-full flex bg-gray-100 py-10 px-10 md:px-0 md:py-52 font-body "
+      className="w-full flex bg-projectGray-100 py-10 px-10 md:px-0 md:py-52 font-body "
       dir={locale !== "persian" ? "ltr" : "rtl"}
       id="contact"
     >
@@ -33,7 +33,11 @@ function ContactComponent() {
             {text.contact.media_inquiries.p1}
           </p>
           <div className="col-start-2 text-sm justify-self-end md:w-52">
-            <Mail size={24} strokeWidth={1} className="stroke-gray-300 mb-2" />
+            <Mail
+              size={24}
+              strokeWidth={1}
+              className="stroke-projectGray-300 mb-2"
+            />
             <a href="mailto:media@iranaj.org">media@iranaj.org</a>
           </div>
           <p className="col-span-2 rtl:font-bodyFa text-primary-500 !text-opacity-60 py-5">
@@ -43,7 +47,7 @@ function ContactComponent() {
             <MapPin
               size={24}
               strokeWidth={1}
-              className="stroke-gray-300 mb-2"
+              className="stroke-projectGray-300 mb-2"
             />
             <p className="text-sm">
               <span className="rtl:font-bodyFa">{text.general.name}</span>{" "}
@@ -52,11 +56,19 @@ function ContactComponent() {
             </p>
           </div>
           <div className="justify-self-end md:w-52 text-sm">
-            <Phone size={24} strokeWidth={1} className="stroke-gray-300 mb-2" />
+            <Phone
+              size={24}
+              strokeWidth={1}
+              className="stroke-projectGray-300 mb-2"
+            />
             <a href="tel:+1(202)495-0880" dir="ltr">
               +1 (202) 495-0880
             </a>
-            <Mail size={24} strokeWidth={1} className="stroke-gray-300 my-2" />
+            <Mail
+              size={24}
+              strokeWidth={1}
+              className="stroke-projectGray-300 my-2"
+            />
             <a href="mailto:info@iranaj.org">info@iranaj.org</a>
           </div>
 
@@ -110,7 +122,7 @@ function ContactComponent() {
           </p>
           <EmailSubscriptionForm />
         </div>
-        <div className="w-[21rem] md:w-[28rem] h-96 md:h-[30rem] flex flex-col items-end">
+        <div className="w-[19rem] md:w-[28rem] h-96 md:h-[30rem] flex flex-col items-end">
           <MapView
             dragable={false}
             latitude={38.9167833174732}

@@ -12,14 +12,14 @@ export default function TopNavbarSinglePage() {
 
   return (
     <header
-      className={`fixed flex w-full transition-all ease-in-out duration-500 top-0 bg-gray-100 z-50 pt-2`}
+      className={`fixed flex w-full transition-all ease-in-out duration-500 top-0 bg-projectGray-100 z-50 pt-2`}
     >
-      <nav className="flex justify-between w-full md:h-20 p-2 md:p-0 h-20 max-w-5xl xxl:max-w-7xl mx-auto gap-36 text-projectGray-300 font-body font-regular text-xs">
-        <div className="pl-5 pt-4 md:pt-0 md:pl-0">
+      <nav className="flex justify-between w-full md:h-20 p-2 md:p-0 h-22 max-w-5xl xxl:max-w-7xl mx-auto gap-36 text-projectGray-300 font-body font-regular text-xs">
+        <div className="pl-5 pt-1 md:pl-0">
           <LogoHorizeotalFull className="w-32 fill-primary-500 md:-mt-1" />
         </div>
         <div
-          className="hidden md:flex items-center w-full justify-end gap-24 uppercase"
+          className="hidden md:flex items-center w-full justify-end gap-24 uppercase pt-1"
           dir={locale !== "persian" ? "ltr" : "rtl"}
         >
           <Link

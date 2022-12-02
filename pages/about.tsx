@@ -32,7 +32,7 @@ const AboutPage: NextPage = () => {
       <Layout>
         <section className="relative w-full max-w-6xl xxl:max-w-7xl mx-auto grid grid-cols-10 gap-y-3 pb-32">
           <ul
-            className={`hidden md:block fixed uppercase left-40 text-gray-300 ${
+            className={`hidden md:block fixed uppercase left-40 text-projectGray-300 ${
               locale === "persian" ? "font-bodyFa" : null
             }`}
           >

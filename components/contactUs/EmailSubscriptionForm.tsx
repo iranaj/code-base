@@ -73,7 +73,7 @@ function EmailSubscriptionForm() {
         placeholder="youremail@emialhost.com"
         value={email}
         onChange={handleEmailChange}
-        className="w-full h-14 border-2 border-gray-300 rounded-lg bg-gray-100 px-4 accent-1 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent placeholder:text-gray-300 placeholder:text-left rtl:text-left "
+        className="w-full h-14 border-2 border-projectGray-300 rounded-lg bg-projectGray-100 px-4 accent-1 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent placeholder:text-projectGray-300 placeholder:text-left rtl:text-left "
         required
         disabled={isLoading}
       />

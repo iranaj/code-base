@@ -32,7 +32,7 @@ export default function TopNavbar() {
     <header
       className={`fixed flex w-full transition-all ease-in-out duration-500 ${
         showSecondaryTopNav
-          ? "top-0 md:top-2 bg-gray-100"
+          ? "top-0 md:pt-2 bg-projectGray-100"
           : "top-0 md:top-5 xxl:top-24 backdrop-blur"
       } z-50`}
     >

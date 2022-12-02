@@ -32,7 +32,7 @@ function SliderText() {
   return (
     <div>
       <h1
-        className={`text-xl md:text-4xl  text-gray-200 font-medium h-10 md:h-20 ${
+        className={`text-xl md:text-4xl  text-projectGray-200 font-medium h-10 md:h-20 ${
           locale === "persian" ? "font-bodyFa text-right" : "font-header"
         }`}
       >
@@ -52,17 +52,17 @@ function SliderText() {
       >
         <span
           className={`w-20 h-1 ${
-            sliderTextIndex === 0 ? "bg-gray-200" : "bg-primary-500"
+            sliderTextIndex === 0 ? "bg-projectGray-200" : "bg-primary-500"
           }`}
         />
         <span
           className={`w-20 h-1 ${
-            sliderTextIndex === 1 ? "bg-gray-200" : "bg-primary-500"
+            sliderTextIndex === 1 ? "bg-projectGray-200" : "bg-primary-500"
           }`}
         />
         <span
           className={`w-20 h-1 ${
-            sliderTextIndex === 2 ? "bg-gray-200" : "bg-primary-500"
+            sliderTextIndex === 2 ? "bg-projectGray-200" : "bg-primary-500"
           }`}
         />
       </div>
