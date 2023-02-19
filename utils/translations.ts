@@ -14,6 +14,10 @@ export const en = {
       facebook: "@IranianJurists",
       youtube: "@iranianassembly",
     },
+    combobox: {
+      select: "Select",
+      nothing_found: "Nothing found",
+    },
   },
   home: {
     title: "Home",
@@ -85,6 +89,75 @@ export const en = {
       p1: "We envision a democratic and secular Iran within which the Rule of Law and separation of powers guarantees the fundamental rights of its people; an Iran that is once again a bridge between the East and the West, bringing stability and prosperity to its people, neighbors, and the world.",
     },
   },
+  membership: {
+    title: "Membership",
+    membership_types: {
+      title: "Membership Types",
+      types: {
+        lawyers: "Lawyers",
+        volunteers: "Volunteers",
+      },
+      subtitle:
+        "We are a non-profit organization and we are always looking for new members to join our team. If you are interested in joining us, please fill out the form below and we will get back to you as soon as possible.",
+      p1: "We are currently accepting applications for the following membership types. Please select your membership type below to continue.",
+    },
+    form: {
+      general: {
+        submit: "Submit",
+      },
+      personal_info: {
+        title: "Personal Information",
+        sub: "Please fill out the following information. All fields are required.",
+        first_name: "First Name",
+        last_name: "Last Name",
+        email: "Email",
+        phone: "Phone",
+        country: "Country",
+        street_address: "Street Address",
+        city: "City",
+        state: "State",
+        zip_code: "Zip/Postal Code",
+      },
+      lawyer: {
+        professional_info: {
+          title: "Professional Information",
+          sub: "Please fill out the following information. All fields are required.",
+          law_school: "Law School",
+          graduation_year: "Graduation Year",
+          years_of_practice: "Years of Practice",
+          bar_admission: "Member of bar in good standing",
+          bar_admission_country: "Bar Admission Country",
+          bar_number: "Bar Number",
+          linkedin: "LinkedIn",
+        },
+        additional_info: {
+          title: "Additional Information",
+          sub: "Please fill out the following information. Fields are optional.",
+          why_join:
+            "Why do you want to join the National Assembly of Iranian Jurists?",
+          note: "Note",
+          note_placeholder:
+            "anything else you would like to tell us about yourself",
+        },
+      },
+      volunteer: {
+        additional_info: {
+          title: "Additional Information",
+          sub: "Please fill out the following information. All fields are not required.",
+          why_join:
+            "Why do you want to join the National Assembly of Iranian Jurists?",
+          note: "Note",
+          note_placeholder:
+            "anything else you would like to tell us about yourself",
+        },
+      },
+    },
+    success: {
+      title:
+        "Thank you for your interest in joining the National Assembly of Iranian Jurists!",
+      p1: "We will review your application and get back to you as soon as possible.",
+    },
+  },
 };
 
 export const persian = {
@@ -102,6 +175,10 @@ export const persian = {
       instagram: "iranianassembly?igshid=YmMyMTA2M2Y=",
       facebook: "@IranianJurists",
       youtube: "@iranianassembly",
+    },
+    combobox: {
+      select: "انتخاب کنید",
+      nothing_found: "چیزی پیدا نشد",
     },
   },
   home: {
@@ -170,6 +247,70 @@ export const persian = {
     vision_statement: {
       title: "چشم انداز ما",
       p1: "ما یک ایران دموکراتیک و سکولار را تصور می کنیم که در آن حاکمیت قانون و تفکیک قوا تضمین کننده حقوق اساسی مردم باشد. ایرانی که بار دیگر پلی بین شرق و غرب است و ثبات و رفاه را برای مردم، همسایگان و جهان به ارمغان می آورد.",
+    },
+  },
+  membership: {
+    title: "عضویت",
+    membership_types: {
+      title: "دسته بندی عضویت",
+      types: {
+        lawyers: "حقوقدانان",
+        volunteers: "داوطلبان",
+      },
+      subtitle:
+        "ما یک سازمان غیرانتفاعی هستیم و همیشه به دنبال اعضای جدید برای پیوستن به تیم خود می باشیم. اگر مایل به پیوستن به ما هستید، لطفا فرم زیر را پر کنید و ما در اسرع وقت با شما تماس خواهیم گرفت.",
+      p1: "ما در حال حاضر درخواست هایی را برای انواع عضویت زیر می پذیریم. لطفاً برای ادامه، نوع عضویت خود را در زیر انتخاب کنید.",
+    },
+    form: {
+      general: {
+        submit: "ارسال",
+      },
+      personal_info: {
+        title: "اطلاعات شخصی",
+        sub: "لطفا اطلاعات ذیل را تکمیل نمایید. همه فیلدها الزامی است.",
+        first_name: "نام",
+        last_name: "نام خانوادگی",
+        email: "ایمیل",
+        phone: "شماره تلفن",
+        country: "کشور",
+        street_address: "آدرس",
+        city: "شهر",
+        state: "استان",
+        zip_code: "کد پستی",
+      },
+      lawyer: {
+        professional_info: {
+          title: "اطلاعات فعالیت حقوقی",
+          sub: "لطفا اطلاعات ذیل را تکمیل نمایید. همه فیلدها الزامی است.",
+          law_school: "دانشگاه حقوق",
+          graduation_year: "سال فارغ التحصیلی",
+          years_of_practice: "سال تجربه کاری",
+          bar_admission: "آیا دارای شماره وکالت هستید؟",
+          bar_admission_country: "کشور محل وکالت",
+          bar_number: "شماره وکالت",
+          linkedin: "لینکدین",
+        },
+        additional_info: {
+          title: "سایر اطلاعات",
+          sub: "لطفا اطلاعات ذیل را تکمیل نمایید. همه فیلدها الزامی نیست.",
+          why_join: "چرا می خواهید به مجمع حقوقی ایرانیان بپیوندید؟",
+          note: "یادداشت",
+          note_placeholder: "هر چیز دیگری که می خواهید به ما بگویید",
+        },
+      },
+      volunteer: {
+        additional_info: {
+          title: "سایر اطلاعات",
+          sub: "لطفا اطلاعات ذیل را تکمیل نمایید. همه فیلدها الزامی نیست.",
+          why_join: "چرا می خواهید به مجمع حقوقی ایرانیان بپیوندید؟",
+          note: "یادداشت",
+          note_placeholder: "هر چیز دیگری که می خواهید به ما بگویید",
+        },
+      },
+    },
+    success: {
+      title: "با تشکر از شما برای پیوستن به مجمع حقوقی ایرانیان",
+      p1: "ما در اسرع وقت با شما تماس خواهیم گرفت.",
     },
   },
 };

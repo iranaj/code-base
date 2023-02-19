@@ -19,7 +19,7 @@ export default function TopNavbarSinglePage() {
           <LogoHorizeotalFull className="w-32 fill-primary-500 md:-mt-1" />
         </div>
         <div
-          className="hidden md:flex items-center w-full justify-end gap-24 uppercase pt-1"
+          className="hidden md:flex items-center w-full justify-end gap-20 uppercase pt-1"
           dir={locale !== "persian" ? "ltr" : "rtl"}
         >
           <Link
@@ -45,6 +45,14 @@ export default function TopNavbarSinglePage() {
             }`}
           >
             {text.contact.title}
+          </Link>
+          <Link
+            href="/membership"
+            className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
+              locale === "persian" ? "font-bodyFa font-normal" : null
+            }`}
+          >
+            {text.membership.title}
           </Link>
         </div>
         <div className="flex items-center w-28 ">
