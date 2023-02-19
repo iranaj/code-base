@@ -8,33 +8,6 @@ type Data = {
   ok: boolean;
 };
 
-type IVolunteerDataBody = {
-  membership: string;
-  "first-name": string;
-  "last-name": string;
-  "email-address": string;
-  phone: string;
-  country: string;
-  "street-address": string;
-  city: string;
-  region: string;
-  "postal-code": string;
-  note?: string;
-};
-
-// type LawyerDataBody
-
-// lawyer body extends volunteer body
-type ILawyerDataBody = IVolunteerDataBody & {
-  "law-school": string;
-  "graduation-year": string;
-  "years-of-practice": string;
-  "bar-admission": boolean;
-  "bar-admission-country": string;
-  "bar-number": string;
-  "linkedIn-username": string;
-};
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>

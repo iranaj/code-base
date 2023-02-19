@@ -7,7 +7,7 @@ import GeneralHead from "components/heads/GeneralHead";
 import VolunteerForm from "components/membership/VolunteerForm";
 import LawyerForm from "components/membership/LawyerForm";
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
