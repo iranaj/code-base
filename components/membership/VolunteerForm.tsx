@@ -15,6 +15,19 @@ type Props = {
   onSuccess: () => void;
 };
 
+type FormValues = {
+  "first-name": string;
+  "last-name": string;
+  "email-address": string;
+  phone: string;
+  country: { id: number; name: string };
+  "street-address": string;
+  city: string;
+  region: string;
+  "postal-code": string;
+  notes: string;
+};
+
 function VolunteerForm({ onSuccess }: Props) {
   const router: NextRouter = useRouter();
   const { locale } = router;
@@ -60,7 +73,7 @@ function VolunteerForm({ onSuccess }: Props) {
       handleAppointmentCreation(values);
     },
   });
-  const handleAppointmentCreation = async (values) => {
+  const handleAppointmentCreation = async (values: FormValues) => {
     try {
       const body = {
         ...values,
