@@ -47,7 +47,7 @@ const MembershipPage: NextPage = () => {
           <Tab.Group>
             <Tab.List
               className="col-span-10 mt-10 mb-5 flex space-x-10 uppercase"
-              dir={`${locale === "persian" ? "ltr" : "rtl"}`}
+              dir={"ltr"}
             >
               {Object.keys(text.membership.membership_types.types).map(
                 (category) => (
