@@ -68,6 +68,18 @@ export default function TopNavbarMobile() {
                   </Link>
                 )}
               </Menu.Item>
+              <Menu.Item>
+                {() => (
+                  <Link
+                    href="/membership"
+                    className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
+                      locale === "persian" ? "font-bodyFa font-normal" : null
+                    }`}
+                  >
+                    {text.membership.title}
+                  </Link>
+                )}
+              </Menu.Item>
             </div>
             <div className="flex w-full justify-between p-6">
               <Menu.Item>
