@@ -65,7 +65,7 @@ export default function FormCombobox({
           <div className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-1 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
             <Combobox.Input
               className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
-              displayValue={(item) => item?.name || ""}
+              displayValue={(item: listItem) => item?.name || ""}
               onChange={(event) => {
                 setQuery(event.target.value);
               }}
