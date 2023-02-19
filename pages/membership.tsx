@@ -38,15 +38,15 @@ const MembershipPage: NextPage = () => {
           }`}
           dir={`${locale !== "persian" ? "ltr" : "rtl"}`}
         >
-          <p className="col-span-10 mt-4 indent-3 md:indent-5 ">
+          <p className="col-span-10 mt-4 indent-3 md:indent-5 px-5 ">
             {text.membership.membership_types.subtitle}
           </p>
-          <p className="col-span-10 mt-4 indent-3 md:indent-5">
+          <p className="col-span-10 mt-4 indent-3 md:indent-5 px-5">
             {text.membership.membership_types.p1}
           </p>
           <Tab.Group>
             <Tab.List
-              className="col-span-10 mt-10 mb-5 flex space-x-10 uppercase"
+              className="col-span-10 mt-10 mb-5 flex space-x-10 uppercase px-5"
               dir={"ltr"}
             >
               {Object.keys(text.membership.membership_types.types).map(
