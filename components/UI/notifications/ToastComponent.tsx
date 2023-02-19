@@ -1,7 +1,19 @@
 import Image from "next/image";
-import toast from "react-hot-toast";
+import toast, { Toast } from "react-hot-toast";
 
-export default function ToastComponent({ toastObject, children, error = false }) {
+// react-hot-toast toast object type
+
+type Props = {
+  toastObject: Toast;
+  children: React.ReactNode;
+  error?: boolean;
+};
+
+export default function ToastComponent({
+  toastObject,
+  children,
+  error = false,
+}: Props) {
   return (
     <div
       className={`${

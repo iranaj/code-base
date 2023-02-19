@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import toast from "react-hot-toast";
+import toast, { Toast } from "react-hot-toast";
 
 import { NextRouter, useRouter } from "next/router";
 import { en, persian } from "utils/translations";
@@ -16,6 +16,26 @@ import FormInputField from "components/UI/form/FormInputField";
 import FormCombobox from "components/UI/form/FormCombobox";
 import FormCheckBoxField from "components/UI/form/FormCheckBoxField";
 import FormTextInputField from "components/UI/form/FormTextInputField";
+
+interface formBody {
+  "first-name": string;
+  "last-name": string;
+  "email-address": string;
+  phone: string;
+  country: { id: number; name: string };
+  "street-address": string;
+  city: string;
+  region: string;
+  "postal-code": string;
+  "law-school": string;
+  "graduation-year": string;
+  "years-of-practice": string;
+  "bar-admission": boolean;
+  "bar-admission-country": { id: number; name: string };
+  "bar-number": string;
+  "linkedIn-username": string;
+  note: string;
+}
 
 function LawyerForm({ onSuccess }: Props) {
   const router: NextRouter = useRouter();
@@ -83,7 +103,7 @@ function LawyerForm({ onSuccess }: Props) {
       handleAppointmentCreation(values);
     },
   });
-  const handleAppointmentCreation = async (values) => {
+  const handleAppointmentCreation = async (values: formBody) => {
     try {
       const body = {
         ...values,
@@ -94,7 +114,7 @@ function LawyerForm({ onSuccess }: Props) {
       console.log("response", response);
 
       if (response.data.ok) {
-        toast.custom((t) => (
+        toast.custom((t: Toast) => (
           <ToastComponent toastObject={t}>
             <div className="ml-3 flex-1">
               <p className="text-sm font-body text-gray-700">
