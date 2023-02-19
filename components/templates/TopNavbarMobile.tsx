@@ -68,7 +68,7 @@ export default function TopNavbarMobile() {
                   </Link>
                 )}
               </Menu.Item>
-              <Menu.Item>
+              {/* <Menu.Item>
                 {() => (
                   <Link
                     href="/membership"
@@ -79,7 +79,7 @@ export default function TopNavbarMobile() {
                     {text.membership.title}
                   </Link>
                 )}
-              </Menu.Item>
+              </Menu.Item> */}
             </div>
             <div className="flex w-full justify-between p-6">
               <Menu.Item>
