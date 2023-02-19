@@ -78,6 +78,7 @@ function VolunteerForm({ onSuccess }: Props) {
       const body = {
         ...values,
         membership: "volunteer",
+        country: values.country.name,
       };
 
       const response = await axios.post("/api/membership", body);

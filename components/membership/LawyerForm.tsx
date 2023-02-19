@@ -108,6 +108,8 @@ function LawyerForm({ onSuccess }: Props) {
       const body = {
         ...values,
         membership: "lawyer",
+        country: values.country.name,
+        "bar-admission-country": values["bar-admission-country"].name,
       };
 
       const response = await axios.post("/api/membership", body);
