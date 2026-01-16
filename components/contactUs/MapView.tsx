@@ -29,8 +29,11 @@ const MapView: React.FC<MapViewProps> = ({
         height: "100%",
         borderRadius: "18px",
       }}
-      mapboxAccessToken={process.env.MAPBOX_TOKEN}
-      mapStyle="mapbox://styles/fnel/ckjq7gxh44ikk19qvoly77bfb"
+      mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
+      mapStyle="mapbox://styles/mapbox/light-v11"
+      dragPan={dragable}
+      scrollZoom={dragable}
+      doubleClickZoom={dragable}
     >
       <Marker longitude={longitude} latitude={latitude} color="#0B1D44" />
     </Map>

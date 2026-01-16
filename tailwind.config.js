@@ -9,8 +9,9 @@ module.exports = {
     extend: {
       fontFamily: {
         header: ["var(--font-playFairDisplay)", "serif"],
-        body: ["var(--font-roboto)", "sans-serif"],
+        body: ["var(--font-inter)", "sans-serif"],
         bodyFa: ["var(--font-vazirmatn)", "sans-serif"],
+        roboto: ["var(--font-roboto)", "sans-serif"],
         sans: "Lato,Arial,sans-serif",
         sub: "Inconsolata,monospace",
         subx: "Courier New,monospace",

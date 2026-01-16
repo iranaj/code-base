@@ -56,8 +56,9 @@ function EmailSubscriptionForm() {
 
   if (emailSuccess) {
     return (
-      <div className="flex flex-col items-center justify-center col-span-2 rtl:font-bodyFa">
-        <span className="text-xl font-medium text-secondary-500">
+      <div className="flex flex-col items-start justify-center col-span-2 rtl:font-bodyFa animate-fadeIn">
+        <span className="text-lg font-medium text-green-600 flex items-center gap-2">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
           {text.contact.newsletter.subscribe_success}
         </span>
       </div>
@@ -65,33 +66,42 @@ function EmailSubscriptionForm() {
   }
 
   return (
-    <form className="col-span-2 relative" onSubmit={handleEmailSubmit}>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="youremail@emialhost.com"
-        value={email}
-        onChange={handleEmailChange}
-        className="w-full h-14 border-2 border-projectGray-300 rounded-lg bg-projectGray-100 px-4 accent-1 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent placeholder:text-projectGray-300 placeholder:text-left rtl:text-left "
-        required
-        disabled={isLoading}
-      />
-      {isLoading ? (
-        <Loading className="absolute top-4 right-7" />
-      ) : (
-        <button
-          type="submit"
-          className="absolute right-4 top-1 h-12 w-fit hover:text-secondary-500 rtl:font-bodyFa"
+    <form className="relative w-full max-w-md" onSubmit={handleEmailSubmit}>
+      <div className="relative">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="your@email.com"
+          value={email}
+          onChange={handleEmailChange}
+          className="w-full h-14 pl-6 pr-36 rounded-full border border-gray-200 bg-gray-50 text-primary-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary-500/20 focus:border-secondary-500 transition-all shadow-sm font-body text-sm rtl:text-right rtl:dir-rtl rtl:pr-6 rtl:pl-36"
+          required
           disabled={isLoading}
-        >
-          {text.contact.newsletter.button}
-          <span className="hidden sm:inline text-secondary-500"> &rarr;</span>
-        </button>
+        />
+        
+        <div className={`absolute top-1.5 bottom-1.5 ${locale === 'persian' ? 'left-1.5' : 'right-1.5'}`}>
+            {isLoading ? (
+               <div className="h-full px-6 flex items-center justify-center">
+                   <Loading className="w-5 h-5 text-secondary-500" />
+               </div>
+            ) : (
+                <button
+                type="submit"
+                className="h-full bg-secondary-500 text-white rounded-full px-6 text-sm font-bold hover:bg-secondary-600 transition-colors shadow-md hover:shadow-lg active:scale-95 rtl:font-bodyFa"
+                disabled={isLoading}
+                >
+                {text.contact.newsletter.button}
+                </button>
+            )}
+        </div>
+      </div>
+      
+      {emailError && (
+        <p className="text-red-500 text-sm mt-3 ml-2 rtl:mr-2 rtl:font-bodyFa animate-fadeIn">
+            {emailError}
+        </p>
       )}
-      <p className={`text-red-500 text-sm mt-2 h-4 rtl:font-bodyFa`}>
-        {emailError}
-      </p>
     </form>
   );
 }

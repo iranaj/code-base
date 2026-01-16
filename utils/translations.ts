@@ -158,6 +158,66 @@ export const en = {
       p1: "We will review your application and get back to you as soon as possible.",
     },
   },
+  advocacy: {
+    title: "Advocacy",
+    items: [
+      {
+        date: "22 December 2022",
+        title:
+          "Submission to Senate Inquiry in Australia: Inquiry into the human rights implications of recent violence in Iran",
+        link: "https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Foreign_Affairs_Defence_and_Trade/Iranviolence/Submissions",
+        link_label: "Submission 370: Submissions – Parliament of Australia",
+      },
+      {
+        date: "20 February 2023",
+        title:
+          "Legal Position on Listing of IRGC as a Terrorist Group by European Union",
+        link: "https://www.instagram.com/p/Co9lLdNvFa5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+        link_label: "View on Instagram",
+      },
+    ],
+  },
+  events: {
+    title: "Events",
+    items: [
+      {
+        date: "17 February 2023",
+        title: "Law and Democracy in Future Iran: Woman, Life and Freedom",
+        subtitle: "Inaugural Conference",
+        link: "https://youtu.be/FPwUyhBLq4Q?si=-_4PCOXHaenPbDwU",
+      },
+      {
+        date: "17 July 2023",
+        title:
+          "Australia's Response to the Woman-Life-Freedom Revolution in Iran",
+        link: "https://youtu.be/w4_hCgyp_MM?si=pL2X71hxsLH3hklG",
+      },
+      {
+        date: "11 December 2023",
+        title:
+          "Australia and New Zealand’s response to Iran’s Woman, Life, Freedom movement",
+        link: "https://www.youtube.com/watch?v=ED8UYBs11cE",
+      },
+      {
+        date: "4 October 2024",
+        title: "Tehran to Canberra, via Ottawa",
+        link: "https://youtu.be/FUhEhgnusBw?si=pQkJ3YTNlaJKKShs",
+      },
+      {
+        date: "24 July 2025",
+        title: "Voices from the Justice seeking families",
+        link: "https://youtu.be/Mov7ABTZiTU?si=StnizP4eh8NazTZa",
+      },
+    ],
+  },
+  programs: {
+    title: "Programs",
+    content: "Coming Soon...",
+  },
+  press: {
+    title: "Press",
+    content: "Coming Soon...",
+  },
 };
 
 export const persian = {
@@ -312,5 +372,65 @@ export const persian = {
       title: "با تشکر از شما برای پیوستن به مجمع حقوقی ایرانیان",
       p1: "ما در اسرع وقت با شما تماس خواهیم گرفت.",
     },
+  },
+  advocacy: {
+    title: "وکالت",
+    items: [
+      {
+        date: "22 December 2022",
+        title:
+          "Submission to Senate Inquiry in Australia: Inquiry into the human rights implications of recent violence in Iran",
+        link: "https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Foreign_Affairs_Defence_and_Trade/Iranviolence/Submissions",
+        link_label: "Submission 370: Submissions – Parliament of Australia",
+      },
+      {
+        date: "20 February 2023",
+        title:
+          "Legal Position on Listing of IRGC as a Terrorist Group by European Union",
+        link: "https://www.instagram.com/p/Co9lLdNvFa5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+        link_label: "View on Instagram",
+      },
+    ],
+  },
+  events: {
+    title: "رویدادها",
+    items: [
+      {
+        date: "17 February 2023",
+        title: "Law and Democracy in Future Iran: Woman, Life and Freedom",
+        subtitle: "Inaugural Conference",
+        link: "https://youtu.be/FPwUyhBLq4Q?si=-_4PCOXHaenPbDwU",
+      },
+      {
+        date: "17 July 2023",
+        title:
+          "Australia's Response to the Woman-Life-Freedom Revolution in Iran",
+        link: "https://youtu.be/w4_hCgyp_MM?si=pL2X71hxsLH3hklG",
+      },
+      {
+        date: "11 December 2023",
+        title:
+          "Australia and New Zealand’s response to Iran’s Woman, Life, Freedom movement",
+        link: "https://www.youtube.com/watch?v=ED8UYBs11cE",
+      },
+      {
+        date: "4 October 2024",
+        title: "Tehran to Canberra, via Ottawa",
+        link: "https://youtu.be/FUhEhgnusBw?si=pQkJ3YTNlaJKKShs",
+      },
+      {
+        date: "24 July 2025",
+        title: "Voices from the Justice seeking families",
+        link: "https://youtu.be/Mov7ABTZiTU?si=StnizP4eh8NazTZa",
+      },
+    ],
+  },
+  programs: {
+    title: "برنامه‌ها",
+    content: "به زودی...",
+  },
+  press: {
+    title: "مطبوعات",
+    content: "به زودی...",
   },
 };

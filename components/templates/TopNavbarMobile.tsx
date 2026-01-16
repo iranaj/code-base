@@ -59,6 +59,54 @@ export default function TopNavbarMobile() {
               <Menu.Item>
                 {() => (
                   <Link
+                    href="/advocacy"
+                    className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
+                      locale === "persian" ? "font-bodyFa font-normal" : null
+                    }`}
+                  >
+                    {text.advocacy.title}
+                  </Link>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {() => (
+                  <Link
+                    href="/events"
+                    className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
+                      locale === "persian" ? "font-bodyFa font-normal" : null
+                    }`}
+                  >
+                    {text.events.title}
+                  </Link>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {() => (
+                  <Link
+                    href="/programs"
+                    className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
+                      locale === "persian" ? "font-bodyFa font-normal" : null
+                    }`}
+                  >
+                    {text.programs.title}
+                  </Link>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {() => (
+                  <Link
+                    href="/press"
+                    className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
+                      locale === "persian" ? "font-bodyFa font-normal" : null
+                    }`}
+                  >
+                    {text.press.title}
+                  </Link>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {() => (
+                  <Link
                     href="/#contact"
                     className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
                       locale === "persian" ? "font-bodyFa font-normal" : null

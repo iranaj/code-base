@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Roboto, Playfair_Display } from "@next/font/google";
+import { Roboto, Playfair_Display, Inter } from "@next/font/google"; // Import Inter
 import localFont from "@next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "react-hot-toast";
@@ -11,8 +11,12 @@ const roboto = Roboto({
   subsets: ["latin"],
   variable: "--font-roboto",
 });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 const playFairDisplay = Playfair_Display({
-  weight: ["500", "400"],
+  weight: ["500", "400", "600", "700", "800", "900"], // Added more weights for design flexibility
   style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-playFairDisplay",
@@ -42,7 +46,7 @@ const vazirmatn = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main
-      className={`${roboto.variable} ${vazirmatn.variable} ${playFairDisplay.variable} scroll-auto`}
+      className={`${roboto.variable} ${inter.variable} ${vazirmatn.variable} ${playFairDisplay.variable} scroll-auto`}
       dir="ltr"
     >
       <Component {...pageProps} />
