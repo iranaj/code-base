@@ -1,14 +1,16 @@
+"use client";
+
 import React, { useState } from "react";
-import { NextRouter, useRouter } from "next/router";
 import { en, persian } from "utils/translations";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SLIDE_DURATION = 4; // seconds
 
-function SliderText() {
-  const router: NextRouter = useRouter();
-  const { locale } = router;
+interface SliderTextProps {
+  locale: string;
+}
 
+function SliderText({ locale }: SliderTextProps) {
   const text = locale !== "persian" ? en : persian;
   const sliderText = text.home.soundbites;
 

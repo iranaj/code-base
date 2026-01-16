@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { NextRouter, useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import { en, persian } from "utils/translations";
 import Loading from "components/UI/loading";
 
 function EmailSubscriptionForm() {
-  const router: NextRouter = useRouter();
-  const { locale } = router;
+  const params = useParams();
+  const locale = params?.locale as string || "en-US";
   const text = locale !== "persian" ? en : persian;
 
   const [email, setEmail] = useState("");

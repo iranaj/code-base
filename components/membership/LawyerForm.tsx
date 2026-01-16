@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import toast, { Toast } from "react-hot-toast";
 
-import { NextRouter, useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import { en, persian } from "utils/translations";
 
 type Props = {
@@ -38,8 +38,8 @@ interface formBody {
 }
 
 function LawyerForm({ onSuccess }: Props) {
-  const router: NextRouter = useRouter();
-  const { locale } = router;
+  const params = useParams();
+  const locale = params?.locale as string || "en-US";
   const text = locale !== "persian" ? en : persian;
 
   const [canSubmit, setCanSubmit] = useState(false);

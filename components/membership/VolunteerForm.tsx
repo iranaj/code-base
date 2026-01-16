@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NextRouter, useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import { en, persian } from "utils/translations";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -29,8 +29,8 @@ type FormValues = {
 };
 
 function VolunteerForm({ onSuccess }: Props) {
-  const router: NextRouter = useRouter();
-  const { locale } = router;
+  const params = useParams();
+  const locale = params?.locale as string || "en-US";
   const text = locale !== "persian" ? en : persian;
 
   const [canSubmit, setCanSubmit] = useState(false);

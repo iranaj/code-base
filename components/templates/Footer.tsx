@@ -1,12 +1,14 @@
+"use client";
+
 import LogoHorizeotalFull from "components/UI/identity/LogoHorizontalFull";
 import Link from "next/link";
 import { Facebook, Instagram, Twitter, Youtube } from "react-feather";
-import { NextRouter, useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import { en, persian } from "utils/translations";
 
 const Footer: React.FC = () => {
-  const router: NextRouter = useRouter();
-  const { locale } = router;
+  const params = useParams();
+  const locale = params?.locale as string || "en-US";
 
   const text = locale !== "persian" ? en : persian;
   return (
@@ -19,9 +21,9 @@ const Footer: React.FC = () => {
           <li className="mt-2">
             <Link
               className={`hover:text-secondary-500 cursor-pointer ${
-                locale === "persian" ? "font-bodyFa font-normal" : null
+                locale === "persian" ? "font-bodyFa font-normal" : ""
               }`}
-              href="/#home"
+              href={`/${locale}/#home`}
             >
               {text.home.title}
             </Link>
@@ -29,9 +31,9 @@ const Footer: React.FC = () => {
           <li className="mt-2">
             <Link
               className={`hover:text-secondary-500 cursor-pointer ${
-                locale === "persian" ? "font-bodyFa font-normal" : null
+                locale === "persian" ? "font-bodyFa font-normal" : ""
               }`}
-              href="/about"
+              href={`/${locale}/about`}
             >
               {text.about.title}
             </Link>
@@ -39,24 +41,18 @@ const Footer: React.FC = () => {
           <li className="mt-2">
             <Link
               className={`hover:text-secondary-500 cursor-pointer ${
-                locale === "persian" ? "font-bodyFa font-normal" : null
+                locale === "persian" ? "font-bodyFa font-normal" : ""
               }`}
-              href="/#contact"
+              href={`/${locale}/#contact`}
             >
               {text.contact.title}
             </Link>
           </li>
-          {/* <li>
-              <Link href="https://diosf.com/privacy">Privacy</Link>
-            </li>
-            <li>
-              <Link href="https://diosf.com/terms">Terms</Link>
-            </li> */}
         </ul>
         <div className="text-base text-center md:text-left w-full md:w-auto md:text-sm text-projectGray-300 md:pt-3 ">
           <span
             className={`${
-              locale === "persian" ? "font-bodyFa font-normal" : null
+              locale === "persian" ? "font-bodyFa font-normal" : ""
             }`}
           >
             {text.general.name}
@@ -99,21 +95,12 @@ const Footer: React.FC = () => {
                 className="stroke-projectGray-300 hover:stroke-secondary-500 hover:stroke-2 "
               />
             </Link>
-            {/* <Link
-              href={`https://facebook.com/${text.general.social_media_usernames.facebook}`}
-            >
-              <Facebook
-                size={18}
-                strokeWidth={1}
-                className="stroke-projectGray-300 hover:stroke-secondary-500 hover:stroke-2"
-              />
-            </Link> */}
           </div>
           <span
             className={`text-xs text-center md:text-left md:text-xxs font-light ltr:tracking-[0.08rem] rtl:tracking-normal mt-8 mb-14 md:mb-0 ${
               locale === "persian"
                 ? "font-bodyFa font-normal md:text-center tracking-normal"
-                : null
+                : ""
             }`}
           >
             © {text.general.name} {locale === "persian" ? "" : "2022"}

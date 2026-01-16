@@ -1,6 +1,30 @@
 import { clerkMiddleware } from '@clerk/nextjs/server'
+import { NextResponse, NextRequest } from 'next/server'
 
-export default clerkMiddleware()
+const locales = ['en-US', 'persian']
+const defaultLocale = 'en-US'
+
+export default clerkMiddleware((auth, request: NextRequest) => {
+  const { nextUrl } = request
+  const pathname = nextUrl.pathname
+
+  // Check if there is any supported locale in the pathname
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  )
+
+  if (pathnameHasLocale) return
+
+  // Redirect if there is no locale
+  if (
+    !pathname.startsWith('/_next') &&
+    !pathname.startsWith('/api') &&
+    !pathname.includes('.')
+  ) {
+    nextUrl.pathname = `/${defaultLocale}${pathname}`
+    return NextResponse.redirect(nextUrl)
+  }
+})
 
 export const config = {
   matcher: [

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NextRouter, useRouter } from "next/router";
+import { useParams } from "next/navigation";
 
 interface Props {
   text: string;
@@ -20,8 +20,8 @@ const ButtonTextTypeA: React.FC<Props> = ({
   target,
   passHref,
 }) => {
-  const router: NextRouter = useRouter();
-  const { locale } = router;
+  const params = useParams();
+  const locale = params?.locale as string || "en-US";
 
   return (
     <div

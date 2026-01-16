@@ -1,15 +1,30 @@
+"use client";
+
 import { Menu, Transition } from "@headlessui/react";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment } from "react";
 import { Menu as MenuIcon } from "react-feather";
-import { NextRouter, useRouter } from "next/router";
+import { useParams, useRouter, usePathname } from "next/navigation";
 import { en, persian } from "utils/translations";
 import Link from "next/link";
 
 export default function TopNavbarMobile({ scrolled }: { scrolled: boolean }) {
-  const router: NextRouter = useRouter();
-  const { locale } = router;
+  const params = useParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const locale = params?.locale as string || 'en-US';
+
+  const cleanPathname = pathname.replace(/\/$/, "");
 
   const text = locale !== "persian" ? en : persian;
+
+  const switchLanguage = (newLocale: string) => {
+    // pathname currently looks like /[locale]/about
+    // we want to change the [locale] part
+    const segments = pathname.split('/');
+    segments[1] = newLocale;
+    router.push(segments.join('/'));
+  };
+
   return (
     <div className="fixed top-14 right-5 w-56 text-right">
       <Menu as="div" className="relative inline-block text-left">
@@ -37,10 +52,10 @@ export default function TopNavbarMobile({ scrolled }: { scrolled: boolean }) {
               <Menu.Item>
                 {() => (
                   <Link
-                    href="/#home"
+                    href={`/${locale}/#home`}
                     className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
-                      locale === "persian" ? "font-bodyFa font-normal" : null
-                    }`}
+                      locale === "persian" ? "font-bodyFa font-normal" : ""
+                    } ${cleanPathname === `/${locale}` ? "text-secondary-500 font-bold" : ""}`}
                   >
                     {text.home.title}
                   </Link>
@@ -49,10 +64,10 @@ export default function TopNavbarMobile({ scrolled }: { scrolled: boolean }) {
               <Menu.Item>
                 {() => (
                   <Link
-                    href="/about"
+                    href={`/${locale}/about`}
                     className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
-                      locale === "persian" ? "font-bodyFa font-normal" : null
-                    }`}
+                      locale === "persian" ? "font-bodyFa font-normal" : ""
+                    } ${cleanPathname === `/${locale}/about` ? "text-secondary-500 font-bold" : ""}`}
                   >
                     {text.about.title}
                   </Link>
@@ -61,10 +76,10 @@ export default function TopNavbarMobile({ scrolled }: { scrolled: boolean }) {
               <Menu.Item>
                 {() => (
                   <Link
-                    href="/advocacy"
+                    href={`/${locale}/advocacy`}
                     className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
-                      locale === "persian" ? "font-bodyFa font-normal" : null
-                    }`}
+                      locale === "persian" ? "font-bodyFa font-normal" : ""
+                    } ${cleanPathname === `/${locale}/advocacy` ? "text-secondary-500 font-bold" : ""}`}
                   >
                     {text.advocacy.title}
                   </Link>
@@ -73,10 +88,10 @@ export default function TopNavbarMobile({ scrolled }: { scrolled: boolean }) {
               <Menu.Item>
                 {() => (
                   <Link
-                    href="/events"
+                    href={`/${locale}/events`}
                     className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
-                      locale === "persian" ? "font-bodyFa font-normal" : null
-                    }`}
+                      locale === "persian" ? "font-bodyFa font-normal" : ""
+                    } ${cleanPathname === `/${locale}/events` ? "text-secondary-500 font-bold" : ""}`}
                   >
                     {text.events.title}
                   </Link>
@@ -85,10 +100,10 @@ export default function TopNavbarMobile({ scrolled }: { scrolled: boolean }) {
               <Menu.Item>
                 {() => (
                   <Link
-                    href="/programs"
+                    href={`/${locale}/programs`}
                     className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
-                      locale === "persian" ? "font-bodyFa font-normal" : null
-                    }`}
+                      locale === "persian" ? "font-bodyFa font-normal" : ""
+                    } ${cleanPathname === `/${locale}/programs` ? "text-secondary-500 font-bold" : ""}`}
                   >
                     {text.programs.title}
                   </Link>
@@ -97,10 +112,10 @@ export default function TopNavbarMobile({ scrolled }: { scrolled: boolean }) {
               <Menu.Item>
                 {() => (
                   <Link
-                    href="/press"
+                    href={`/${locale}/press`}
                     className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
-                      locale === "persian" ? "font-bodyFa font-normal" : null
-                    }`}
+                      locale === "persian" ? "font-bodyFa font-normal" : ""
+                    } ${cleanPathname === `/${locale}/press` ? "text-secondary-500 font-bold" : ""}`}
                   >
                     {text.press.title}
                   </Link>
@@ -109,40 +124,24 @@ export default function TopNavbarMobile({ scrolled }: { scrolled: boolean }) {
               <Menu.Item>
                 {() => (
                   <Link
-                    href="/#contact"
+                    href={`/${locale}/#contact`}
                     className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
-                      locale === "persian" ? "font-bodyFa font-normal" : null
+                      locale === "persian" ? "font-bodyFa font-normal" : ""
                     }`}
                   >
                     {text.contact.title}
                   </Link>
                 )}
               </Menu.Item>
-              {/* <Menu.Item>
-                {() => (
-                  <Link
-                    href="/membership"
-                    className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
-                      locale === "persian" ? "font-bodyFa font-normal" : null
-                    }`}
-                  >
-                    {text.membership.title}
-                  </Link>
-                )}
-              </Menu.Item> */}
             </div>
             <div className="flex w-full justify-between p-6">
               <Menu.Item>
-                {({ close }) => (
+                {() => (
                   <span
                     className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 cursor-pointer ${
-                      locale !== "persian" ? "text-secondary-500 " : null
+                      locale !== "persian" ? "text-secondary-500 " : ""
                     }`}
-                    onClick={() =>
-                      router.push(router.pathname, router.pathname, {
-                        locale: "en-US",
-                      })
-                    }
+                    onClick={() => switchLanguage("en-US")}
                   >
                     english
                   </span>
@@ -151,16 +150,12 @@ export default function TopNavbarMobile({ scrolled }: { scrolled: boolean }) {
 
               <span className="inline-block rounded-lg py-1 px-2 ">|</span>
               <Menu.Item>
-                {({ close }) => (
+                {() => (
                   <span
                     className={`inline-block rounded-lg py-1 px-2 hover:text-secondary-500 font-bodyFa font-normal cursor-pointer ${
-                      locale !== "en-US" ? "text-secondary-500 " : null
+                      locale === "persian" ? "text-secondary-500 " : ""
                     }`}
-                    onClick={() =>
-                      router.push(router.pathname, router.pathname, {
-                        locale: "persian",
-                      })
-                    }
+                    onClick={() => switchLanguage("persian")}
                   >
                     فارسی
                   </span>

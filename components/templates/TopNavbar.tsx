@@ -1,15 +1,34 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { NextRouter, useRouter } from "next/router";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { en, persian } from "utils/translations";
 import LogoHorizeotalFull from "components/UI/identity/LogoHorizontalFull";
 import TopNavbarMobile from "./TopNavbarMobile";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function TopNavbar() {
-  const router: NextRouter = useRouter();
-  const { locale, pathname } = router;
-  const isHome = pathname === "/";
+  const params = useParams();
+  const locale = params?.locale as string || "en-US";
+  const pathname = usePathname();
+  const router = useRouter();
+  const [activeHash, setActiveHash] = useState("");
+
+  // Track hash changes
+  useEffect(() => {
+    // Initial hash
+    setActiveHash(window.location.hash || "#home");
+
+    const handleHashChange = () => {
+      setActiveHash(window.location.hash || "#home");
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  const isHome = pathname === "/" || pathname === `/${locale}`;
 
   const text = locale !== "persian" ? en : persian;
 
@@ -32,6 +51,27 @@ export default function TopNavbar() {
   const showBackground = !isHome || scrolled;
   const showLogoDesktop = !isHome || scrolled;
 
+  const switchLanguage = (newLocale: string) => {
+    // Basic locale switching logic: replace the first segment if it matches a locale
+    const segments = pathname.split("/");
+    if (segments[1] === locale) {
+      segments[1] = newLocale;
+    } else {
+      segments.splice(1, 0, newLocale);
+    }
+    router.push(segments.join("/") || "/");
+  };
+
+  const navLinks = [
+    { href: `/${locale}/#home`, label: text.home.title },
+    { href: `/${locale}/about`, label: text.about.title },
+    { href: `/${locale}/advocacy`, label: text.advocacy.title },
+    { href: `/${locale}/events`, label: text.events.title },
+    { href: `/${locale}/programs`, label: text.programs.title },
+    { href: `/${locale}/press`, label: text.press.title },
+    { href: `/${locale}/#contact`, label: text.contact.title },
+  ];
+
   return (
     <motion.header
       className="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out"
@@ -50,7 +90,7 @@ export default function TopNavbar() {
            animate={{ opacity: showLogoDesktop ? 1 : 0 }}
            transition={{ duration: 0.3 }}
         >
-          <Link href="/">
+          <Link href={`/${locale}`}>
             <LogoHorizeotalFull
               className={`w-36 transition-colors duration-300 ${
                 showBackground ? "fill-primary-500" : "fill-white md:fill-secondary-500"
@@ -64,19 +104,21 @@ export default function TopNavbar() {
           className="hidden md:flex items-center gap-8 lg:gap-10 uppercase text-xs tracking-wider font-medium"
           dir={locale !== "persian" ? "ltr" : "rtl"}
         >
-          {[
-            { href: "/#home", label: text.home.title },
-            { href: "/about", label: text.about.title },
-            { href: "/advocacy", label: text.advocacy.title },
-            { href: "/events", label: text.events.title },
-            { href: "/programs", label: text.programs.title },
-            { href: "/press", label: text.press.title },
-            { href: "/#contact", label: text.contact.title },
-          ].map((link) => {
-             const isActive =
-                (link.href === "/#home" && router.pathname === "/" && (!router.asPath.includes("#") || router.asPath.endsWith("#home"))) ||
-                router.asPath === link.href ||
-                (link.href !== "/#home" && router.asPath.startsWith(link.href));
+          {navLinks.map((link) => {
+             const cleanHref = link.href.split("#")[0].replace(/\/$/, "").toLowerCase();
+             const cleanPathname = pathname.replace(/\/$/, "").toLowerCase();
+             
+             // 3. Special handling for internal hash links on the home page
+             const linkHash = link.href.split("#")[1] ? "#" + link.href.split("#")[1] : "";
+             const isHashLink = link.href.includes("#");
+             
+             let isActive = false;
+             if (isHashLink && isHome) {
+               isActive = activeHash === linkHash;
+             } else {
+               isActive = cleanPathname === cleanHref || 
+                 (cleanHref !== `/${locale}`.toLowerCase() && cleanPathname.startsWith(cleanHref + "/"));
+             }
              
              // Dynamic color logic
              let textColorClass = "";
@@ -117,7 +159,7 @@ export default function TopNavbar() {
                   ? "text-secondary-500 font-bold" 
                   : (showBackground ? "font-normal hover:text-secondary-500" : "font-normal hover:text-white")
               }`}
-              onClick={() => router.push(router.pathname, router.asPath, { locale: "en-US" })}
+              onClick={() => switchLanguage("en-US")}
             >
               EN
             </span>
@@ -128,7 +170,7 @@ export default function TopNavbar() {
                   ? "text-secondary-500 font-bold" 
                   : (showBackground ? "font-normal hover:text-secondary-500" : "font-normal hover:text-white")
               }`}
-              onClick={() => router.push(router.pathname, router.asPath, { locale: "persian" })}
+              onClick={() => switchLanguage("persian")}
             >
               فا
             </span>
