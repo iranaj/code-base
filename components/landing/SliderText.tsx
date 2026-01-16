@@ -21,7 +21,7 @@ function SliderText() {
   return (
     <div className="flex flex-col h-full min-h-[140px]">
       {/* Text Area */}
-      <div className="relative h-20 md:h-24 overflow-hidden mb-4">
+      <div className="relative h-32 md:h-40 overflow-hidden mb-4">
         <AnimatePresence mode="wait">
           <motion.h1
             key={index}
@@ -30,8 +30,8 @@ function SliderText() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className={`text-xl md:text-4xl text-projectGray-200 font-medium absolute top-0 w-full leading-relaxed ${
-              locale === "persian" ? "font-bodyFa text-right" : "font-header text-left md:text-right"
-            } ${locale !== "persian" ? "ltr:text-right" : ""}`} // Ensuring LTR english text aligns right to match bars if desired, or left. Original was text-center-ish? No, original had no alignment class, just inherited. Let's assume standard alignment.
+              locale === "persian" ? "font-bodyFa text-center md:text-right" : "font-header text-center md:text-right"
+            } ${locale !== "persian" ? "ltr:text-center md:ltr:text-right" : ""}`}
           >
              {/* Note: Original code didn't force text alignment in the class, but container layout puts it on the right. 
               Let's respect locale: Farsi -> Right, English -> Left (or Right if matching layout).
@@ -48,7 +48,7 @@ function SliderText() {
 
       {/* Progress Bars */}
       <div
-        className="flex gap-x-4 mt-auto justify-end"
+        className="flex gap-x-4 mt-auto justify-center md:justify-end"
         dir={locale !== "persian" ? "ltr" : "rtl"}
       >
         {sliderText.map((_, i) => (

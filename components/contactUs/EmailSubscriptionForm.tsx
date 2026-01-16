@@ -67,7 +67,7 @@ function EmailSubscriptionForm() {
 
   return (
     <form className="relative w-full max-w-md" onSubmit={handleEmailSubmit}>
-      <div className="relative">
+      <div className="relative flex flex-col sm:block gap-2">
         <input
           type="email"
           name="email"
@@ -75,20 +75,20 @@ function EmailSubscriptionForm() {
           placeholder="your@email.com"
           value={email}
           onChange={handleEmailChange}
-          className="w-full h-14 pl-6 pr-36 rounded-full border border-gray-200 bg-gray-50 text-primary-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary-500/20 focus:border-secondary-500 transition-all shadow-sm font-body text-sm rtl:text-right rtl:dir-rtl rtl:pr-6 rtl:pl-36"
+          className="w-full h-14 pl-6 rounded-full border border-gray-200 bg-gray-50 text-primary-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary-500/20 focus:border-secondary-500 transition-all shadow-sm font-body text-sm rtl:text-right rtl:dir-rtl rtl:pr-6 sm:pr-36 rtl:sm:pl-36"
           required
           disabled={isLoading}
         />
         
-        <div className={`absolute top-1.5 bottom-1.5 ${locale === 'persian' ? 'left-1.5' : 'right-1.5'}`}>
+        <div className={`sm:absolute sm:top-1.5 sm:bottom-1.5 ${locale === 'persian' ? 'sm:left-1.5' : 'sm:right-1.5'}`}>
             {isLoading ? (
-               <div className="h-full px-6 flex items-center justify-center">
+               <div className="h-14 sm:h-full px-6 flex items-center justify-center">
                    <Loading className="w-5 h-5 text-secondary-500" />
                </div>
             ) : (
                 <button
                 type="submit"
-                className="h-full bg-secondary-500 text-white rounded-full px-6 text-sm font-bold hover:bg-secondary-600 transition-colors shadow-md hover:shadow-lg active:scale-95 rtl:font-bodyFa"
+                className="w-full sm:w-auto h-14 sm:h-full bg-secondary-500 text-white rounded-full px-6 text-sm font-bold hover:bg-secondary-600 transition-colors shadow-md hover:shadow-lg active:scale-95 rtl:font-bodyFa"
                 disabled={isLoading}
                 >
                 {text.contact.newsletter.button}

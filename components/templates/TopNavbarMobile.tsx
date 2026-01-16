@@ -5,7 +5,7 @@ import { NextRouter, useRouter } from "next/router";
 import { en, persian } from "utils/translations";
 import Link from "next/link";
 
-export default function TopNavbarMobile() {
+export default function TopNavbarMobile({ scrolled }: { scrolled: boolean }) {
   const router: NextRouter = useRouter();
   const { locale } = router;
 
@@ -16,7 +16,9 @@ export default function TopNavbarMobile() {
         <div>
           <Menu.Button className="inline-flex w-full justify-center rounded-md  bg-opacity-20 px-4 py-2 text-sm font-medium text-projectGray-300 hover:bg-opacity-30 focus:outline-none focus-visible:ring-0 ">
             <MenuIcon
-              className="ml-2 -mr-1 h-5 w-5 stroke-projectGray-500 hover:text-violet-100"
+              className={`ml-2 -mr-1 h-6 w-6 transition-colors duration-300 hover:text-secondary-500 ${
+                scrolled ? "stroke-primary-500" : "stroke-white"
+              }`}
               aria-hidden="true"
             />
           </Menu.Button>

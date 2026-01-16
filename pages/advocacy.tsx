@@ -79,10 +79,10 @@ const AdvocacyPage: NextPage = () => {
               className="mb-8"
             >
               <h1
-                className={`text-6xl md:text-7xl text-primary-500 mb-6 relative inline-block ${
-                  locale === "persian" ? "font-bodyFa font-black" : "font-header"
-                }`}
-              >
+                  className={`text-6xl md:text-7xl text-primary-500 mb-8 relative inline-block ${
+                    locale === "persian" ? "font-bodyFa font-black" : "font-header font-bold tracking-tight"
+                  }`}
+                >
                 {text.advocacy.title}
                 <motion.span 
                   initial={{ width: 0 }}

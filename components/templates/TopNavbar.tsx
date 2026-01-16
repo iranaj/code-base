@@ -134,7 +134,7 @@ export default function TopNavbar() {
             </span>
           </div>
           <div className="md:hidden">
-            <TopNavbarMobile />
+            <TopNavbarMobile scrolled={showBackground} />
           </div>
         </div>
       </nav>
