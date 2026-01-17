@@ -46,12 +46,13 @@ export default function ContactDetailsForm() {
       try {
         const response = await fetch('/api/contact-details');
         if (response.ok) {
-          const data = await response.json();
+          const data = (await response.json()) as Partial<ContactDetails>;
           if (data && Object.keys(data).length > 0) {
             const sanitized = { ...defaultDetails };
             (Object.keys(defaultDetails) as (keyof ContactDetails)[]).forEach((key) => {
-              if (data?.[key] !== undefined) {
-                sanitized[key] = data[key];
+              const value = data?.[key];
+              if (value !== undefined) {
+                (sanitized as ContactDetails)[key] = value as ContactDetails[typeof key];
               }
             });
             setFormData(sanitized);
