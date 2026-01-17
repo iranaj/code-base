@@ -7,12 +7,13 @@ import {
 	UserButton,
 	useUser,
 } from "@clerk/nextjs";
+import { useNavigationSettings } from "components/hooks/useNavigationSettings";
 import LogoHorizeotalFull from "components/UI/identity/LogoHorizontalFull";
 import { motion } from "framer-motion";
+import { buildNavLinks } from "lib/navigationConfig";
 import Link from "next/link";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { en, persian } from "utils/translations";
 import TopNavbarMobile from "./TopNavbarMobile";
 
 export default function TopNavbar() {
@@ -22,6 +23,7 @@ export default function TopNavbar() {
 	const router = useRouter();
 	const { user } = useUser();
 	const [activeHash, setActiveHash] = useState("");
+	const { settings } = useNavigationSettings();
 
 	// Track hash changes
 	useEffect(() => {
@@ -37,8 +39,6 @@ export default function TopNavbar() {
 	}, []);
 
 	const isHome = pathname === "/" || pathname === `/${locale}`;
-
-	const text = locale !== "persian" ? en : persian;
 
 	const [scrolled, setScrolled] = useState(false);
 
@@ -70,15 +70,7 @@ export default function TopNavbar() {
 		router.push(segments.join("/") || "/");
 	};
 
-	const navLinks = [
-		{ href: `/${locale}/#home`, label: text.home.title },
-		{ href: `/${locale}/about`, label: text.about.title },
-		{ href: `/${locale}/advocacy`, label: text.advocacy.title },
-		{ href: `/${locale}/events`, label: text.events.title },
-		{ href: `/${locale}/programs`, label: text.programs.title },
-		{ href: `/${locale}/press`, label: text.press.title },
-		{ href: `/${locale}/#contact`, label: text.contact.title },
-	];
+	const navLinks = buildNavLinks(settings.items, locale);
 
 	return (
 		<motion.header
@@ -133,7 +125,7 @@ export default function TopNavbar() {
 						const linkHash = link.href.split("#")[1]
 							? `#${link.href.split("#")[1]}`
 							: "";
-						const isHashLink = link.href.includes("#");
+						const isHashLink = link.isHash;
 
 						let isActive = false;
 						if (isHashLink && isHome) {
@@ -161,7 +153,7 @@ export default function TopNavbar() {
 
 						return (
 							<Link
-								key={link.href}
+								key={link.key}
 								href={link.href}
 								className={`relative py-2 transition-colors duration-300 ${textColorClass} ${locale === "persian" ? "font-bodyFa text-sm" : "font-body"}`}
 							>

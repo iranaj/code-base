@@ -1,7 +1,9 @@
 import EventsContent from "components/templates/EventsContent";
 import Layout from "components/templates/Layout";
 import connectDB from "lib/db";
+import { getNavigationSettings } from "lib/navigationSettings.server";
 import Event from "models/Event";
+import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +13,13 @@ export default async function EventsPage({
 	params: Promise<{ locale: string }>;
 }) {
 	const { locale } = await params;
+	const navigation = await getNavigationSettings();
+	const isEnabled = navigation.items.find(
+		(item) => item.key === "events",
+	)?.enabled;
+	if (isEnabled === false) {
+		notFound();
+	}
 
 	// 1. Connect to DB
 	await connectDB();

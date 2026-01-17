@@ -1,11 +1,12 @@
 "use client";
 
 import { Menu, Transition } from "@headlessui/react";
+import { useNavigationSettings } from "components/hooks/useNavigationSettings";
+import { buildNavLinks } from "lib/navigationConfig";
 import Link from "next/link";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { Fragment } from "react";
 import { Menu as MenuIcon } from "react-feather";
-import { en, persian } from "utils/translations";
 
 export default function TopNavbarMobile({ scrolled }: { scrolled: boolean }) {
 	const params = useParams();
@@ -14,8 +15,8 @@ export default function TopNavbarMobile({ scrolled }: { scrolled: boolean }) {
 	const locale = (params?.locale as string) || "en-US";
 
 	const cleanPathname = pathname.replace(/\/$/, "");
-
-	const text = locale !== "persian" ? en : persian;
+	const { settings } = useNavigationSettings();
+	const navLinks = buildNavLinks(settings.items, locale);
 
 	const switchLanguage = (newLocale: string) => {
 		// pathname currently looks like /[locale]/about
@@ -49,90 +50,27 @@ export default function TopNavbarMobile({ scrolled }: { scrolled: boolean }) {
 				>
 					<Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-project-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
 						<div className="p-5 flex flex-col gap-7">
-							<Menu.Item>
-								{({ active }) => (
-									<Link
-										href={`/${locale}/#home`}
-										className={`inline-block rounded-lg py-1 px-2 text-project-gray-500 transition-colors duration-200 cursor-pointer ${
-											locale === "persian" ? "font-bodyFa font-normal" : ""
-										} ${cleanPathname === `/${locale}` ? "text-secondary-500 font-bold" : ""} ${active ? "text-secondary-500" : ""}`}
-									>
-										{text.home.title}
-									</Link>
-								)}
-							</Menu.Item>
-							<Menu.Item>
-								{({ active }) => (
-									<Link
-										href={`/${locale}/about`}
-										className={`inline-block rounded-lg py-1 px-2 text-project-gray-500 transition-colors duration-200 cursor-pointer ${
-											locale === "persian" ? "font-bodyFa font-normal" : ""
-										} ${cleanPathname === `/${locale}/about` ? "text-secondary-500 font-bold" : ""} ${active ? "text-secondary-500" : ""}`}
-									>
-										{text.about.title}
-									</Link>
-								)}
-							</Menu.Item>
-							<Menu.Item>
-								{({ active }) => (
-									<Link
-										href={`/${locale}/advocacy`}
-										className={`inline-block rounded-lg py-1 px-2 text-project-gray-500 transition-colors duration-200 cursor-pointer ${
-											locale === "persian" ? "font-bodyFa font-normal" : ""
-										} ${cleanPathname === `/${locale}/advocacy` ? "text-secondary-500 font-bold" : ""} ${active ? "text-secondary-500" : ""}`}
-									>
-										{text.advocacy.title}
-									</Link>
-								)}
-							</Menu.Item>
-							<Menu.Item>
-								{({ active }) => (
-									<Link
-										href={`/${locale}/events`}
-										className={`inline-block rounded-lg py-1 px-2 text-project-gray-500 transition-colors duration-200 cursor-pointer ${
-											locale === "persian" ? "font-bodyFa font-normal" : ""
-										} ${cleanPathname === `/${locale}/events` ? "text-secondary-500 font-bold" : ""} ${active ? "text-secondary-500" : ""}`}
-									>
-										{text.events.title}
-									</Link>
-								)}
-							</Menu.Item>
-							<Menu.Item>
-								{({ active }) => (
-									<Link
-										href={`/${locale}/programs`}
-										className={`inline-block rounded-lg py-1 px-2 text-project-gray-500 transition-colors duration-200 cursor-pointer ${
-											locale === "persian" ? "font-bodyFa font-normal" : ""
-										} ${cleanPathname === `/${locale}/programs` ? "text-secondary-500 font-bold" : ""} ${active ? "text-secondary-500" : ""}`}
-									>
-										{text.programs.title}
-									</Link>
-								)}
-							</Menu.Item>
-							<Menu.Item>
-								{({ active }) => (
-									<Link
-										href={`/${locale}/press`}
-										className={`inline-block rounded-lg py-1 px-2 text-project-gray-500 transition-colors duration-200 cursor-pointer ${
-											locale === "persian" ? "font-bodyFa font-normal" : ""
-										} ${cleanPathname === `/${locale}/press` ? "text-secondary-500 font-bold" : ""} ${active ? "text-secondary-500" : ""}`}
-									>
-										{text.press.title}
-									</Link>
-								)}
-							</Menu.Item>
-							<Menu.Item>
-								{({ active }) => (
-									<Link
-										href={`/${locale}/#contact`}
-										className={`inline-block rounded-lg py-1 px-2 text-project-gray-500 transition-colors duration-200 cursor-pointer ${
-											locale === "persian" ? "font-bodyFa font-normal" : ""
-										} ${active ? "text-secondary-500" : ""}`}
-									>
-										{text.contact.title}
-									</Link>
-								)}
-							</Menu.Item>
+							{navLinks.map((link) => {
+								const linkPath = link.href.split("#")[0].replace(/\/$/, "");
+								const isActive = link.isHash
+									? link.key === "home" && cleanPathname === `/${locale}`
+									: cleanPathname === linkPath;
+
+								return (
+									<Menu.Item key={link.key}>
+										{({ active }) => (
+											<Link
+												href={link.href}
+												className={`inline-block rounded-lg py-1 px-2 text-project-gray-500 transition-colors duration-200 cursor-pointer ${
+													locale === "persian" ? "font-bodyFa font-normal" : ""
+												} ${isActive ? "text-secondary-500 font-bold" : ""} ${active ? "text-secondary-500" : ""}`}
+											>
+												{link.label}
+											</Link>
+										)}
+									</Menu.Item>
+								);
+							})}
 						</div>
 						<div className="flex w-full justify-between p-6">
 							<Menu.Item>

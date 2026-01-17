@@ -2,6 +2,7 @@
 
 import { UserButton } from "@clerk/nextjs";
 import {
+	AdjustmentsHorizontalIcon,
 	Bars3Icon,
 	CalendarDateRangeIcon,
 	DocumentTextIcon,
@@ -50,6 +51,11 @@ export default function AdminSidebarLayout({
 			name: "Contact Details",
 			href: `/${locale}/admin/contact-details`,
 			icon: PhoneIcon,
+		},
+		{
+			name: "Navigation",
+			href: `/${locale}/admin/navigation`,
+			icon: AdjustmentsHorizontalIcon,
 		},
 		{ name: "About", href: `/${locale}/admin/about`, icon: DocumentTextIcon },
 		{ name: "Users", href: `/${locale}/admin/users`, icon: UserGroupIcon },

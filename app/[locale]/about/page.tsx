@@ -1,7 +1,9 @@
 "use client";
 
+import { useNavigationSettings } from "components/hooks/useNavigationSettings";
 import Layout from "components/templates/Layout";
 import { motion } from "framer-motion";
+import { isNavItemEnabled } from "lib/navigationConfig";
 import { useRouter } from "next/navigation";
 import { use, useEffect, useState } from "react";
 import { en, persian } from "utils/translations";
@@ -125,10 +127,18 @@ export default function AboutPage({
 }) {
 	const { locale } = use(params);
 	const router = useRouter();
+	const { settings, loading: navLoading } = useNavigationSettings();
+	const isEnabled = isNavItemEnabled(settings.items, "about");
 	const isPersian = locale === "persian";
 	const [content, setContent] = useState<AboutContent>(defaultContent);
 
 	const [onMission, setOnMission] = useState(true);
+
+	useEffect(() => {
+		if (!navLoading && !isEnabled) {
+			router.replace(`/${locale}`);
+		}
+	}, [isEnabled, locale, navLoading, router]);
 
 	useEffect(() => {
 		let isMounted = true;
@@ -152,6 +162,18 @@ export default function AboutPage({
 			isMounted = false;
 		};
 	}, []);
+
+	if (navLoading) {
+		return (
+			<Layout>
+				<div className="text-project-gray-400 px-6">Loading...</div>
+			</Layout>
+		);
+	}
+
+	if (!isEnabled) {
+		return null;
+	}
 
 	const pick = (field?: LocalizedString) => {
 		if (!field) return "";

@@ -1,7 +1,10 @@
 "use client";
 
+import { useNavigationSettings } from "components/hooks/useNavigationSettings";
 import Layout from "components/templates/Layout";
-import { use } from "react";
+import { isNavItemEnabled } from "lib/navigationConfig";
+import { useRouter } from "next/navigation";
+import { use, useEffect } from "react";
 import { en, persian } from "utils/translations";
 
 export default function ProgramsPage({
@@ -11,6 +14,27 @@ export default function ProgramsPage({
 }) {
 	const { locale } = use(params);
 	const text = locale !== "persian" ? en : persian;
+	const router = useRouter();
+	const { settings, loading: navLoading } = useNavigationSettings();
+	const isEnabled = isNavItemEnabled(settings.items, "programs");
+
+	useEffect(() => {
+		if (!navLoading && !isEnabled) {
+			router.replace(`/${locale}`);
+		}
+	}, [isEnabled, locale, navLoading, router]);
+
+	if (navLoading) {
+		return (
+			<Layout>
+				<div className="text-project-gray-400 px-6">Loading...</div>
+			</Layout>
+		);
+	}
+
+	if (!isEnabled) {
+		return null;
+	}
 
 	return (
 		<Layout>

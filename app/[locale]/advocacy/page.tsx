@@ -1,7 +1,9 @@
 import AdvocacyContent from "components/templates/AdvocacyContent";
 import Layout from "components/templates/Layout";
 import connectDB from "lib/db";
+import { getNavigationSettings } from "lib/navigationSettings.server";
 import Advocacy from "models/Advocacy";
+import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic"; // Ensure new data is fetched on request
 
@@ -11,6 +13,13 @@ export default async function AdvocacyPage({
 	params: Promise<{ locale: string }>;
 }) {
 	const { locale } = await params;
+	const navigation = await getNavigationSettings();
+	const isEnabled = navigation.items.find(
+		(item) => item.key === "advocacy",
+	)?.enabled;
+	if (isEnabled === false) {
+		notFound();
+	}
 
 	// 1. Connect to DB
 	await connectDB();

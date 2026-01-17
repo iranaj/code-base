@@ -1,6 +1,7 @@
 "use client";
 
 import {
+	AdjustmentsHorizontalIcon,
 	CalendarDateRangeIcon,
 	DocumentTextIcon,
 	MegaphoneIcon,
@@ -44,6 +45,14 @@ export default function AdminDashboard() {
 			href: `/${locale}/admin/contact-details`,
 			icon: PhoneIcon,
 			color: "bg-amber-50 text-amber-700",
+		},
+		{
+			name: "Manage Navigation",
+			description:
+				"Toggle nav visibility and update labels for each menu item.",
+			href: `/${locale}/admin/navigation`,
+			icon: AdjustmentsHorizontalIcon,
+			color: "bg-indigo-50 text-indigo-700",
 		},
 		{
 			name: "Manage About Page",
