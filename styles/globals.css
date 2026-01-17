@@ -2,91 +2,90 @@
 @plugin "@tailwindcss/forms";
 
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-playfair-display), ui-serif, Georgia, serif;
+	--font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+	--font-serif: var(--font-playfair-display), ui-serif, Georgia, serif;
 
-  --color-primary-100: #f4b7ce;
-  --color-primary-200: #ec87ad;
-  --color-primary-300: #e4578c;
-  --color-primary-400: #e13f7b;
-  --color-primary-500: #0B1D44;
-  --color-primary-600: #980b3f;
-  --color-primary-700: #6d082d;
-  --color-primary-800: #41051b;
-  --color-primary-900: #160209;
+	--color-primary-100: #f4b7ce;
+	--color-primary-200: #ec87ad;
+	--color-primary-300: #e4578c;
+	--color-primary-400: #e13f7b;
+	--color-primary-500: #0b1d44;
+	--color-primary-600: #980b3f;
+	--color-primary-700: #6d082d;
+	--color-primary-800: #41051b;
+	--color-primary-900: #160209;
 
-  --color-secondary-100: #a32e75;
-  --color-secondary-200: #b85d94;
-  --color-secondary-300: #cc8bb3;
-  --color-secondary-400: #e0b9d1;
-  --color-secondary-500: #D2AA6D;
-  --color-secondary-600: #1f0514;
-  --color-secondary-700: #3d0929;
-  --color-secondary-800: #5c0e3d;
-  --color-secondary-900: #7a1252;
+	--color-secondary-100: #a32e75;
+	--color-secondary-200: #b85d94;
+	--color-secondary-300: #cc8bb3;
+	--color-secondary-400: #e0b9d1;
+	--color-secondary-500: #d2aa6d;
+	--color-secondary-600: #1f0514;
+	--color-secondary-700: #3d0929;
+	--color-secondary-800: #5c0e3d;
+	--color-secondary-900: #7a1252;
 
-  --color-project-gray-50: #FFFFFF;
-  --color-project-gray-100: #FEFEFE;
-  --color-project-gray-200: #F2F2F2;
-  --color-project-gray-300: #C0C0C0;
-  --color-project-gray-400: #6B7280;
-  --color-project-gray-500: #374151;
-  --color-project-gray-600: #2F3A4A;
-  --color-project-gray-700: #1F2937;
-  --color-project-gray-800: #111827;
+	--color-project-gray-50: #ffffff;
+	--color-project-gray-100: #fefefe;
+	--color-project-gray-200: #f2f2f2;
+	--color-project-gray-300: #c0c0c0;
+	--color-project-gray-400: #6b7280;
+	--color-project-gray-500: #374151;
+	--color-project-gray-600: #2f3a4a;
+	--color-project-gray-700: #1f2937;
+	--color-project-gray-800: #111827;
 }
 
 @utility font-header {
-  font-family: var(--font-playfair-display), serif !important;
+	font-family: var(--font-playfair-display), serif !important;
 }
 
 @utility font-body {
-  font-family: var(--font-inter), sans-serif !important;
+	font-family: var(--font-inter), sans-serif !important;
 }
 
 @utility font-bodyFa {
-  font-family: var(--font-vazirmatn), sans-serif !important;
+	font-family: var(--font-vazirmatn), sans-serif !important;
 }
 
 @utility text-farsi {
-  @apply font-bodyFa text-right;
+	@apply font-bodyFa text-right;
 }
 
 @layer utilities {
-  .text-inter-char {
-    text-align: justify;
-  }
+	.text-inter-char {
+		text-align: justify;
+	}
 
-  .text-inter-char:after {
-    content: "";
-    display: inline-block;
-    width: 100%;
-  }
+	.text-inter-char:after {
+		content: "";
+		display: inline-block;
+		width: 100%;
+	}
 }
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  overflow-x: hidden;
-  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 @layer base {
-
-  html,
-  body {
-    background-color: #FEFEFE;
-    color: #374151;
-    /* project-gray-500 */
-  }
+	html,
+	body {
+		background-color: #fefefe;
+		color: #374151;
+		/* project-gray-500 */
+	}
 }

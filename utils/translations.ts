@@ -1,436 +1,436 @@
 export const en = {
-  general: {
-    name: "National Assembly of Iranian Jurists",
-    read_more: "Read More",
-    headers: {
-      description:
-        "Inspired by the strength, breadth, and determination of women-led protests in Iran, we, a core roup of Iranian jurists with expertise in comparative law and policy, transitional justice, Iranian law, and human rights decided to accelerate and consolidate our activities to support the people of Iran by incorporating National Assembly of Iranian Jurists (شورای ملی حقوقدانان).",
-      content:
-        "The landing page of our organization where you can find our mission, vision, and values. You can also find our contact information and social media links.",
-    },
-    social_media_usernames: {
-      twitter: "@iranianassembly",
-      instagram: "iranianassembly?igshid=YmMyMTA2M2Y=",
-      facebook: "@IranianJurists",
-      youtube: "@iranianassembly",
-    },
-    combobox: {
-      select: "Select",
-      nothing_found: "Nothing found",
-    },
-  },
-  home: {
-    title: "Home",
-    soundbites: [
-      "A National Assembly of Legal Experts",
-      "Working to Provide for a Lasting Transition",
-      "Dedicated to a Free, Democratic, and Secular Iran",
-    ],
-    slogan: {
-      title: "We envision an Iran",
-      p1: "democratic and secular, within which the Rule of Law and separation of powers guarantees the fundamental rights of its people.",
-    },
-  },
-  contact: {
-    title: "Contact",
-    media_inquiries: {
-      titile: "Media Inquiries",
-      p1: "For media inquiries, please contact us at: ",
-    },
-    general_inquiries: {
-      title: "General Inquiries",
-      p1: "For general inquiries:",
-    },
-    social_media: {
-      title: "Social Media",
-      p1: "find us on social media:",
-    },
-    newsletter: {
-      title: "Newsletter",
-      p1: "you can also get latest updates and news as we announce them by sharing your email address with us.",
-      button: "join our newsletter",
-      subscribe_success: "Thank you for subscribing to our newsletter!",
-      subscribe_error: {
-        general: "Something went wrong. Please try again later.",
-        email: "Please enter a valid email address.",
-        network: "Network error. Please try again later.",
-      },
-    },
-    map: {
-      title: "Map",
-      button: "get directions to our office",
-    },
-  },
-  about: {
-    title: "About",
-    p1: "Inspired by the strength, breadth, and determination of women-led protests in Iran, we, a core roup of Iranian jurists with expertise in comparative law and policy, transitional justice, Iranian law, and human rights decided to accelerate and consolidate our activities to support the people of Iran by incorporating National Assembly of Iranian Jurists (شورای ملی حقوقدانان).",
-    p2: "The National Assembly of Iranian Jurists is a nonprofit public policy organization focused on democracy and justice in Iran.",
-    mission_statement: {
-      title: "Mission Statement",
-      p1: "Our mission is to provide the legal and policy expertise to support a secular and stable democracy in Iran and to secure the fundamental rights of Iranians.",
-      p2: "To achieve our mission, our objectives include:",
-      bullet1:
-        "To educate the public on issues related to transition, justice, good governance, and government accountability.",
-      bullet2:
-        "To prepare the legal framework for an enduring transition to a democratic and secular society in Iran.",
-      bullet3:
-        "To work with experts and stakeholders to produce a transitional justice blueprint, which offers access to justice, enhances the legitimacy of institutions of government, and moves the society toward reconciliation and prevention of future violations of rights.",
-      bullet4:
-        "To uphold the inalienable fundamental rights of the people as enshrined in the Universal Declaration of Human Rights.",
-      bullet5:
-        "To foster and promote a greater understanding of the democratic aspirations of Iranians.",
-      bullet6:
-        "To facilitate cooperation and coordination of legal, policy, and transition experts.",
-      bullet7:
-        "To provide a forum for provisional negotiations and agreements.",
-    },
-    vision_statement: {
-      title: "Vision Statement",
-      p1: "We envision a democratic and secular Iran within which the Rule of Law and separation of powers guarantees the fundamental rights of its people; an Iran that is once again a bridge between the East and the West, bringing stability and prosperity to its people, neighbors, and the world.",
-    },
-  },
-  membership: {
-    title: "Membership",
-    membership_types: {
-      title: "Membership Types",
-      types: {
-        lawyers: "Lawyers",
-        volunteers: "Volunteers",
-      },
-      subtitle:
-        "We are a non-profit organization and we are always looking for new members to join our team. If you are interested in joining us, please fill out the form below and we will get back to you as soon as possible.",
-      p1: "We are currently accepting applications for the following membership types. Please select your membership type below to continue.",
-    },
-    form: {
-      general: {
-        submit: "Submit",
-      },
-      personal_info: {
-        title: "Personal Information",
-        sub: "Please fill out the following information. All fields are required.",
-        first_name: "First Name",
-        last_name: "Last Name",
-        email: "Email",
-        phone: "Phone",
-        country: "Country",
-        street_address: "Street Address",
-        city: "City",
-        state: "State",
-        zip_code: "Zip/Postal Code",
-      },
-      lawyer: {
-        professional_info: {
-          title: "Professional Information",
-          sub: "Please fill out the following information. All fields are required.",
-          law_school: "Law School",
-          graduation_year: "Graduation Year",
-          years_of_practice: "Years of Practice",
-          bar_admission: "Member of bar in good standing",
-          bar_admission_country: "Bar Admission Country",
-          bar_number: "Bar Number",
-          linkedin: "LinkedIn",
-        },
-        additional_info: {
-          title: "Additional Information",
-          sub: "Please fill out the following information. Fields are optional.",
-          why_join:
-            "Why do you want to join the National Assembly of Iranian Jurists?",
-          note: "Note",
-          note_placeholder:
-            "anything else you would like to tell us about yourself",
-        },
-      },
-      volunteer: {
-        additional_info: {
-          title: "Additional Information",
-          sub: "Please fill out the following information. All fields are not required.",
-          why_join:
-            "Why do you want to join the National Assembly of Iranian Jurists?",
-          note: "Note",
-          note_placeholder:
-            "anything else you would like to tell us about yourself",
-        },
-      },
-    },
-    success: {
-      title:
-        "Thank you for your interest in joining the National Assembly of Iranian Jurists!",
-      p1: "We will review your application and get back to you as soon as possible.",
-    },
-  },
-  advocacy: {
-    title: "Advocacy",
-    items: [
-      {
-        date: "22 December 2022",
-        title:
-          "Submission to Senate Inquiry in Australia: Inquiry into the human rights implications of recent violence in Iran",
-        link: "https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Foreign_Affairs_Defence_and_Trade/Iranviolence/Submissions",
-        link_label: "Submission 370: Submissions – Parliament of Australia",
-      },
-      {
-        date: "20 February 2023",
-        title:
-          "Legal Position on Listing of IRGC as a Terrorist Group by European Union",
-        link: "https://www.instagram.com/p/Co9lLdNvFa5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-        link_label: "View on Instagram",
-      },
-    ],
-  },
-  events: {
-    title: "Events",
-    items: [
-      {
-        date: "17 February 2023",
-        title: "Law and Democracy in Future Iran: Woman, Life and Freedom",
-        subtitle: "Inaugural Conference",
-        link: "https://youtu.be/FPwUyhBLq4Q?si=-_4PCOXHaenPbDwU",
-      },
-      {
-        date: "17 July 2023",
-        title:
-          "Australia's Response to the Woman-Life-Freedom Revolution in Iran",
-        link: "https://youtu.be/w4_hCgyp_MM?si=pL2X71hxsLH3hklG",
-      },
-      {
-        date: "11 December 2023",
-        title:
-          "Australia and New Zealand’s response to Iran’s Woman, Life, Freedom movement",
-        link: "https://www.youtube.com/watch?v=ED8UYBs11cE",
-      },
-      {
-        date: "4 October 2024",
-        title: "Tehran to Canberra, via Ottawa",
-        link: "https://youtu.be/FUhEhgnusBw?si=pQkJ3YTNlaJKKShs",
-      },
-      {
-        date: "24 July 2025",
-        title: "Voices from the Justice seeking families",
-        link: "https://youtu.be/Mov7ABTZiTU?si=StnizP4eh8NazTZa",
-      },
-    ],
-  },
-  programs: {
-    title: "Programs",
-    content: "Coming Soon...",
-  },
-  press: {
-    title: "Press",
-    content: "Coming Soon...",
-  },
+	general: {
+		name: "National Assembly of Iranian Jurists",
+		read_more: "Read More",
+		headers: {
+			description:
+				"Inspired by the strength, breadth, and determination of women-led protests in Iran, we, a core roup of Iranian jurists with expertise in comparative law and policy, transitional justice, Iranian law, and human rights decided to accelerate and consolidate our activities to support the people of Iran by incorporating National Assembly of Iranian Jurists (شورای ملی حقوقدانان).",
+			content:
+				"The landing page of our organization where you can find our mission, vision, and values. You can also find our contact information and social media links.",
+		},
+		social_media_usernames: {
+			twitter: "@iranianassembly",
+			instagram: "iranianassembly?igshid=YmMyMTA2M2Y=",
+			facebook: "@IranianJurists",
+			youtube: "@iranianassembly",
+		},
+		combobox: {
+			select: "Select",
+			nothing_found: "Nothing found",
+		},
+	},
+	home: {
+		title: "Home",
+		soundbites: [
+			"A National Assembly of Legal Experts",
+			"Working to Provide for a Lasting Transition",
+			"Dedicated to a Free, Democratic, and Secular Iran",
+		],
+		slogan: {
+			title: "We envision an Iran",
+			p1: "democratic and secular, within which the Rule of Law and separation of powers guarantees the fundamental rights of its people.",
+		},
+	},
+	contact: {
+		title: "Contact",
+		media_inquiries: {
+			titile: "Media Inquiries",
+			p1: "For media inquiries, please contact us at: ",
+		},
+		general_inquiries: {
+			title: "General Inquiries",
+			p1: "For general inquiries:",
+		},
+		social_media: {
+			title: "Social Media",
+			p1: "find us on social media:",
+		},
+		newsletter: {
+			title: "Newsletter",
+			p1: "you can also get latest updates and news as we announce them by sharing your email address with us.",
+			button: "join our newsletter",
+			subscribe_success: "Thank you for subscribing to our newsletter!",
+			subscribe_error: {
+				general: "Something went wrong. Please try again later.",
+				email: "Please enter a valid email address.",
+				network: "Network error. Please try again later.",
+			},
+		},
+		map: {
+			title: "Map",
+			button: "get directions to our office",
+		},
+	},
+	about: {
+		title: "About",
+		p1: "Inspired by the strength, breadth, and determination of women-led protests in Iran, we, a core roup of Iranian jurists with expertise in comparative law and policy, transitional justice, Iranian law, and human rights decided to accelerate and consolidate our activities to support the people of Iran by incorporating National Assembly of Iranian Jurists (شورای ملی حقوقدانان).",
+		p2: "The National Assembly of Iranian Jurists is a nonprofit public policy organization focused on democracy and justice in Iran.",
+		mission_statement: {
+			title: "Mission Statement",
+			p1: "Our mission is to provide the legal and policy expertise to support a secular and stable democracy in Iran and to secure the fundamental rights of Iranians.",
+			p2: "To achieve our mission, our objectives include:",
+			bullet1:
+				"To educate the public on issues related to transition, justice, good governance, and government accountability.",
+			bullet2:
+				"To prepare the legal framework for an enduring transition to a democratic and secular society in Iran.",
+			bullet3:
+				"To work with experts and stakeholders to produce a transitional justice blueprint, which offers access to justice, enhances the legitimacy of institutions of government, and moves the society toward reconciliation and prevention of future violations of rights.",
+			bullet4:
+				"To uphold the inalienable fundamental rights of the people as enshrined in the Universal Declaration of Human Rights.",
+			bullet5:
+				"To foster and promote a greater understanding of the democratic aspirations of Iranians.",
+			bullet6:
+				"To facilitate cooperation and coordination of legal, policy, and transition experts.",
+			bullet7:
+				"To provide a forum for provisional negotiations and agreements.",
+		},
+		vision_statement: {
+			title: "Vision Statement",
+			p1: "We envision a democratic and secular Iran within which the Rule of Law and separation of powers guarantees the fundamental rights of its people; an Iran that is once again a bridge between the East and the West, bringing stability and prosperity to its people, neighbors, and the world.",
+		},
+	},
+	membership: {
+		title: "Membership",
+		membership_types: {
+			title: "Membership Types",
+			types: {
+				lawyers: "Lawyers",
+				volunteers: "Volunteers",
+			},
+			subtitle:
+				"We are a non-profit organization and we are always looking for new members to join our team. If you are interested in joining us, please fill out the form below and we will get back to you as soon as possible.",
+			p1: "We are currently accepting applications for the following membership types. Please select your membership type below to continue.",
+		},
+		form: {
+			general: {
+				submit: "Submit",
+			},
+			personal_info: {
+				title: "Personal Information",
+				sub: "Please fill out the following information. All fields are required.",
+				first_name: "First Name",
+				last_name: "Last Name",
+				email: "Email",
+				phone: "Phone",
+				country: "Country",
+				street_address: "Street Address",
+				city: "City",
+				state: "State",
+				zip_code: "Zip/Postal Code",
+			},
+			lawyer: {
+				professional_info: {
+					title: "Professional Information",
+					sub: "Please fill out the following information. All fields are required.",
+					law_school: "Law School",
+					graduation_year: "Graduation Year",
+					years_of_practice: "Years of Practice",
+					bar_admission: "Member of bar in good standing",
+					bar_admission_country: "Bar Admission Country",
+					bar_number: "Bar Number",
+					linkedin: "LinkedIn",
+				},
+				additional_info: {
+					title: "Additional Information",
+					sub: "Please fill out the following information. Fields are optional.",
+					why_join:
+						"Why do you want to join the National Assembly of Iranian Jurists?",
+					note: "Note",
+					note_placeholder:
+						"anything else you would like to tell us about yourself",
+				},
+			},
+			volunteer: {
+				additional_info: {
+					title: "Additional Information",
+					sub: "Please fill out the following information. All fields are not required.",
+					why_join:
+						"Why do you want to join the National Assembly of Iranian Jurists?",
+					note: "Note",
+					note_placeholder:
+						"anything else you would like to tell us about yourself",
+				},
+			},
+		},
+		success: {
+			title:
+				"Thank you for your interest in joining the National Assembly of Iranian Jurists!",
+			p1: "We will review your application and get back to you as soon as possible.",
+		},
+	},
+	advocacy: {
+		title: "Advocacy",
+		items: [
+			{
+				date: "22 December 2022",
+				title:
+					"Submission to Senate Inquiry in Australia: Inquiry into the human rights implications of recent violence in Iran",
+				link: "https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Foreign_Affairs_Defence_and_Trade/Iranviolence/Submissions",
+				link_label: "Submission 370: Submissions – Parliament of Australia",
+			},
+			{
+				date: "20 February 2023",
+				title:
+					"Legal Position on Listing of IRGC as a Terrorist Group by European Union",
+				link: "https://www.instagram.com/p/Co9lLdNvFa5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+				link_label: "View on Instagram",
+			},
+		],
+	},
+	events: {
+		title: "Events",
+		items: [
+			{
+				date: "17 February 2023",
+				title: "Law and Democracy in Future Iran: Woman, Life and Freedom",
+				subtitle: "Inaugural Conference",
+				link: "https://youtu.be/FPwUyhBLq4Q?si=-_4PCOXHaenPbDwU",
+			},
+			{
+				date: "17 July 2023",
+				title:
+					"Australia's Response to the Woman-Life-Freedom Revolution in Iran",
+				link: "https://youtu.be/w4_hCgyp_MM?si=pL2X71hxsLH3hklG",
+			},
+			{
+				date: "11 December 2023",
+				title:
+					"Australia and New Zealand’s response to Iran’s Woman, Life, Freedom movement",
+				link: "https://www.youtube.com/watch?v=ED8UYBs11cE",
+			},
+			{
+				date: "4 October 2024",
+				title: "Tehran to Canberra, via Ottawa",
+				link: "https://youtu.be/FUhEhgnusBw?si=pQkJ3YTNlaJKKShs",
+			},
+			{
+				date: "24 July 2025",
+				title: "Voices from the Justice seeking families",
+				link: "https://youtu.be/Mov7ABTZiTU?si=StnizP4eh8NazTZa",
+			},
+		],
+	},
+	programs: {
+		title: "Programs",
+		content: "Coming Soon...",
+	},
+	press: {
+		title: "Press",
+		content: "Coming Soon...",
+	},
 };
 
 export const persian = {
-  general: {
-    name: "شورای ملی حقوقدانان",
-    read_more: "ادامه مطلب",
-    headers: {
-      description:
-        "ایران ما امروز شاهد تحولاتی عمیق و سریع میباشد. جوانان ما فریاد زن، زندگی، آزادی را در گوشاگوشه ی کشور به قیمت جان طنین انداز کردهاند",
-      content:
-        "صفحه اصلی سایت شورای ملی حقوقدانان که شامل ماموریت، رویکرد و ارزش‌های ماست. شما می‌توانید اطلاعات تماس و لینک‌های شبکه‌های اجتماعی را در اینجا پیدا کنید.",
-    },
-    social_media_usernames: {
-      twitter: "@iranianassembly",
-      instagram: "iranianassembly?igshid=YmMyMTA2M2Y=",
-      facebook: "@IranianJurists",
-      youtube: "@iranianassembly",
-    },
-    combobox: {
-      select: "انتخاب کنید",
-      nothing_found: "چیزی پیدا نشد",
-    },
-  },
-  home: {
-    title: "خانه",
-    soundbites: [
-      "شورایی ملی  متشکل از حقوقدانان متخصص",
-      "در تلاش برای میسر ساختن یک گذار پایدار",
-      "متعهد به ایرانی آزاد، دموکراتیک و سکولار",
-    ],
-    slogan: {
-      title: "ما ایرانی را تصور میکنیم",
-      p1: "دموکراتیک و سکولار که در آن حاکمیت قانون و تفکیک قوا حقوق اساسی مردم را تضمین می کند.",
-    },
-  },
-  contact: {
-    title: "تماس با ما",
-    media_inquiries: {
-      titile: "سوالات رسانه ای",
-      p1: "برای سوالات رسانه ای: ",
-    },
-    general_inquiries: {
-      title: "سوالات عمومی",
-      p1: "برای سوالات عمومی:",
-    },
-    social_media: {
-      title: "شبکه های اجتماعی",
-      p1: "ما را در شبکه های اجتماعی دنبال کنید:",
-    },
-    newsletter: {
-      title: "خبرنامه",
-      p1: "شما می توانید از طریق اشتراک در خبرنامه آخرین اخبار و اطلاعیه های ما را دریافت کنید.",
-      button: "عضویت در خبرنامه",
-      subscribe_success: "شما با موفقیت در خبرنامه عضو شدید.",
-      subscribe_error: {
-        general: "مشکلی در عضویت شما به وجود آمده است.",
-        email: "ایمیل شما معتبر نیست.",
-        network: "مشکلی در اتصال به شبکه به وجود آمده است.",
-      },
-    },
-    map: {
-      title: "نقشه",
-      button: "دریافت مسیر",
-    },
-  },
-  about: {
-    title: "درباره ما",
-    p1: "ایران ما، امروز شاهد تحولاتی عمیق و سریع به پیشگامی زنان  است . جوانان ما دلیرانه فریاد زن، زندگی، آزادی را به قیمت جان خویش در جای جای کشورو اقصی نقاط جهان طنین انداز کرده اند. این تحولات وحدت ملت ما، فارغ از هرنوع تفاوت مذهبی، قومیتی، جنسیتی ، و سیاسی را به ارمغان آورده است. عدم توجه به برنامه ریزی و لزوم استفاده از تخصص های مورد نیاز در دوران گذار تحقق خواسته های آزادی خواهانه و مردم سالارانه ما را با خطر مواجه میکند. از انرو بر آن شدیم تا راهکار هایی سازنده برآمده از تجربیات گذشته، مبتنی بر تخصص را برای حمایت از خواسته های دموکراسی خواهانه مردم ایران ارائه دهیم.",
-    p2: "شورای ملی حقوقدانان یک سازمان غیرانتفاعی متمرکز بر سیاست گذاری حقوقی در جهت تحقق دموکراسی و عدالت در ایران است.",
-    mission_statement: {
-      title: "رسالت ما",
-      p1: "رسالت ما ارائه تخصص حقوقی و سیاست گذاری در جهت دستیابی و تثبیت حاکمیتی ملی، مردم سالار، و عرفی (سکولار) در ایران به انظمام تامین حقوق اساسی ایرانیان میباشد.",
-      p2: "دراین راستا شورای ملی حقوقدانان اهداف خود را به شرح ذیل اعلام مینماید:",
-      bullet1:
-        " آموزش عمومی مسائل حقوقی مربوط به دوران گذار، عدالت، حکومت داری مطلوب، و پاسخگو سازی دولت ها.",
-      bullet2:
-        "ارائه چارچوب حقوقی و نقشه راه قانونی در جهت گذار مطمئن و پایدار به یک جامعه دموکراتیک و سکولار در ایران.",
-      bullet3:
-        "همکاری با کارشناسان و نهادهای مردمی برای تهیه طرحی جامع و راهبردی به منظور تامین عدالت در دوران گذار، سوق دادن جامعه به سمت آشتی ملی در روند گذار، جلوگیری از نقض حقوق افراد، و افزایش مشروعیت نهادهای دولتی در آینده.",
-      bullet4:
-        "تعلیم و تحقق اعلامیه جهانی حقوق بشر در راستای تضمین حقوق اساسی افراد.",
-      bullet5: "ترویج آرمانهای دموکراسی خواهانه ایرانیان.",
-      bullet6:
-        "تسهیل همکاری و هماهنگی کارشناسان حقوقی، سیاست گذاری، و دوران گذار.",
-      bullet7: "تامین عرصه مناسب برای مذاکرات و توافقات موقت.",
-    },
-    vision_statement: {
-      title: "چشم انداز ما",
-      p1: "ما یک ایران دموکراتیک و سکولار را تصور می کنیم که در آن حاکمیت قانون و تفکیک قوا تضمین کننده حقوق اساسی مردم باشد. ایرانی که بار دیگر پلی بین شرق و غرب است و ثبات و رفاه را برای مردم، همسایگان و جهان به ارمغان می آورد.",
-    },
-  },
-  membership: {
-    title: "عضویت",
-    membership_types: {
-      title: "دسته بندی عضویت",
-      types: {
-        lawyers: "حقوقدانان",
-        volunteers: "داوطلبان",
-      },
-      subtitle:
-        "ما یک سازمان غیرانتفاعی هستیم و همیشه به دنبال اعضای جدید برای پیوستن به تیم خود می باشیم. اگر مایل به پیوستن به ما هستید، لطفا فرم زیر را پر کنید و ما در اسرع وقت با شما تماس خواهیم گرفت.",
-      p1: "ما در حال حاضر درخواست هایی را برای انواع عضویت زیر می پذیریم. لطفاً برای ادامه، نوع عضویت خود را در زیر انتخاب کنید.",
-    },
-    form: {
-      general: {
-        submit: "ارسال",
-      },
-      personal_info: {
-        title: "اطلاعات شخصی",
-        sub: "لطفا اطلاعات ذیل را تکمیل نمایید. همه فیلدها الزامی است.",
-        first_name: "نام",
-        last_name: "نام خانوادگی",
-        email: "ایمیل",
-        phone: "شماره تلفن",
-        country: "کشور",
-        street_address: "آدرس",
-        city: "شهر",
-        state: "استان",
-        zip_code: "کد پستی",
-      },
-      lawyer: {
-        professional_info: {
-          title: "اطلاعات فعالیت حقوقی",
-          sub: "لطفا اطلاعات ذیل را تکمیل نمایید. همه فیلدها الزامی است.",
-          law_school: "دانشگاه حقوق",
-          graduation_year: "سال فارغ التحصیلی",
-          years_of_practice: "سال تجربه کاری",
-          bar_admission: "آیا دارای شماره وکالت هستید؟",
-          bar_admission_country: "کشور محل وکالت",
-          bar_number: "شماره وکالت",
-          linkedin: "لینکدین",
-        },
-        additional_info: {
-          title: "سایر اطلاعات",
-          sub: "لطفا اطلاعات ذیل را تکمیل نمایید. همه فیلدها الزامی نیست.",
-          why_join: "چرا می خواهید به مجمع حقوقی ایرانیان بپیوندید؟",
-          note: "یادداشت",
-          note_placeholder: "هر چیز دیگری که می خواهید به ما بگویید",
-        },
-      },
-      volunteer: {
-        additional_info: {
-          title: "سایر اطلاعات",
-          sub: "لطفا اطلاعات ذیل را تکمیل نمایید. همه فیلدها الزامی نیست.",
-          why_join: "چرا می خواهید به مجمع حقوقی ایرانیان بپیوندید؟",
-          note: "یادداشت",
-          note_placeholder: "هر چیز دیگری که می خواهید به ما بگویید",
-        },
-      },
-    },
-    success: {
-      title: "با تشکر از شما برای پیوستن به مجمع حقوقی ایرانیان",
-      p1: "ما در اسرع وقت با شما تماس خواهیم گرفت.",
-    },
-  },
-  advocacy: {
-    title: "وکالت",
-    items: [
-      {
-        date: "22 December 2022",
-        title:
-          "Submission to Senate Inquiry in Australia: Inquiry into the human rights implications of recent violence in Iran",
-        link: "https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Foreign_Affairs_Defence_and_Trade/Iranviolence/Submissions",
-        link_label: "Submission 370: Submissions – Parliament of Australia",
-      },
-      {
-        date: "20 February 2023",
-        title:
-          "Legal Position on Listing of IRGC as a Terrorist Group by European Union",
-        link: "https://www.instagram.com/p/Co9lLdNvFa5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-        link_label: "View on Instagram",
-      },
-    ],
-  },
-  events: {
-    title: "رویدادها",
-    items: [
-      {
-        date: "17 February 2023",
-        title: "Law and Democracy in Future Iran: Woman, Life and Freedom",
-        subtitle: "Inaugural Conference",
-        link: "https://youtu.be/FPwUyhBLq4Q?si=-_4PCOXHaenPbDwU",
-      },
-      {
-        date: "17 July 2023",
-        title:
-          "Australia's Response to the Woman-Life-Freedom Revolution in Iran",
-        link: "https://youtu.be/w4_hCgyp_MM?si=pL2X71hxsLH3hklG",
-      },
-      {
-        date: "11 December 2023",
-        title:
-          "Australia and New Zealand’s response to Iran’s Woman, Life, Freedom movement",
-        link: "https://www.youtube.com/watch?v=ED8UYBs11cE",
-      },
-      {
-        date: "4 October 2024",
-        title: "Tehran to Canberra, via Ottawa",
-        link: "https://youtu.be/FUhEhgnusBw?si=pQkJ3YTNlaJKKShs",
-      },
-      {
-        date: "24 July 2025",
-        title: "Voices from the Justice seeking families",
-        link: "https://youtu.be/Mov7ABTZiTU?si=StnizP4eh8NazTZa",
-      },
-    ],
-  },
-  programs: {
-    title: "برنامه‌ها",
-    content: "به زودی...",
-  },
-  press: {
-    title: "مطبوعات",
-    content: "به زودی...",
-  },
+	general: {
+		name: "شورای ملی حقوقدانان",
+		read_more: "ادامه مطلب",
+		headers: {
+			description:
+				"ایران ما امروز شاهد تحولاتی عمیق و سریع میباشد. جوانان ما فریاد زن، زندگی، آزادی را در گوشاگوشه ی کشور به قیمت جان طنین انداز کردهاند",
+			content:
+				"صفحه اصلی سایت شورای ملی حقوقدانان که شامل ماموریت، رویکرد و ارزش‌های ماست. شما می‌توانید اطلاعات تماس و لینک‌های شبکه‌های اجتماعی را در اینجا پیدا کنید.",
+		},
+		social_media_usernames: {
+			twitter: "@iranianassembly",
+			instagram: "iranianassembly?igshid=YmMyMTA2M2Y=",
+			facebook: "@IranianJurists",
+			youtube: "@iranianassembly",
+		},
+		combobox: {
+			select: "انتخاب کنید",
+			nothing_found: "چیزی پیدا نشد",
+		},
+	},
+	home: {
+		title: "خانه",
+		soundbites: [
+			"شورایی ملی  متشکل از حقوقدانان متخصص",
+			"در تلاش برای میسر ساختن یک گذار پایدار",
+			"متعهد به ایرانی آزاد، دموکراتیک و سکولار",
+		],
+		slogan: {
+			title: "ما ایرانی را تصور میکنیم",
+			p1: "دموکراتیک و سکولار که در آن حاکمیت قانون و تفکیک قوا حقوق اساسی مردم را تضمین می کند.",
+		},
+	},
+	contact: {
+		title: "تماس با ما",
+		media_inquiries: {
+			titile: "سوالات رسانه ای",
+			p1: "برای سوالات رسانه ای: ",
+		},
+		general_inquiries: {
+			title: "سوالات عمومی",
+			p1: "برای سوالات عمومی:",
+		},
+		social_media: {
+			title: "شبکه های اجتماعی",
+			p1: "ما را در شبکه های اجتماعی دنبال کنید:",
+		},
+		newsletter: {
+			title: "خبرنامه",
+			p1: "شما می توانید از طریق اشتراک در خبرنامه آخرین اخبار و اطلاعیه های ما را دریافت کنید.",
+			button: "عضویت در خبرنامه",
+			subscribe_success: "شما با موفقیت در خبرنامه عضو شدید.",
+			subscribe_error: {
+				general: "مشکلی در عضویت شما به وجود آمده است.",
+				email: "ایمیل شما معتبر نیست.",
+				network: "مشکلی در اتصال به شبکه به وجود آمده است.",
+			},
+		},
+		map: {
+			title: "نقشه",
+			button: "دریافت مسیر",
+		},
+	},
+	about: {
+		title: "درباره ما",
+		p1: "ایران ما، امروز شاهد تحولاتی عمیق و سریع به پیشگامی زنان  است . جوانان ما دلیرانه فریاد زن، زندگی، آزادی را به قیمت جان خویش در جای جای کشورو اقصی نقاط جهان طنین انداز کرده اند. این تحولات وحدت ملت ما، فارغ از هرنوع تفاوت مذهبی، قومیتی، جنسیتی ، و سیاسی را به ارمغان آورده است. عدم توجه به برنامه ریزی و لزوم استفاده از تخصص های مورد نیاز در دوران گذار تحقق خواسته های آزادی خواهانه و مردم سالارانه ما را با خطر مواجه میکند. از انرو بر آن شدیم تا راهکار هایی سازنده برآمده از تجربیات گذشته، مبتنی بر تخصص را برای حمایت از خواسته های دموکراسی خواهانه مردم ایران ارائه دهیم.",
+		p2: "شورای ملی حقوقدانان یک سازمان غیرانتفاعی متمرکز بر سیاست گذاری حقوقی در جهت تحقق دموکراسی و عدالت در ایران است.",
+		mission_statement: {
+			title: "رسالت ما",
+			p1: "رسالت ما ارائه تخصص حقوقی و سیاست گذاری در جهت دستیابی و تثبیت حاکمیتی ملی، مردم سالار، و عرفی (سکولار) در ایران به انظمام تامین حقوق اساسی ایرانیان میباشد.",
+			p2: "دراین راستا شورای ملی حقوقدانان اهداف خود را به شرح ذیل اعلام مینماید:",
+			bullet1:
+				" آموزش عمومی مسائل حقوقی مربوط به دوران گذار، عدالت، حکومت داری مطلوب، و پاسخگو سازی دولت ها.",
+			bullet2:
+				"ارائه چارچوب حقوقی و نقشه راه قانونی در جهت گذار مطمئن و پایدار به یک جامعه دموکراتیک و سکولار در ایران.",
+			bullet3:
+				"همکاری با کارشناسان و نهادهای مردمی برای تهیه طرحی جامع و راهبردی به منظور تامین عدالت در دوران گذار، سوق دادن جامعه به سمت آشتی ملی در روند گذار، جلوگیری از نقض حقوق افراد، و افزایش مشروعیت نهادهای دولتی در آینده.",
+			bullet4:
+				"تعلیم و تحقق اعلامیه جهانی حقوق بشر در راستای تضمین حقوق اساسی افراد.",
+			bullet5: "ترویج آرمانهای دموکراسی خواهانه ایرانیان.",
+			bullet6:
+				"تسهیل همکاری و هماهنگی کارشناسان حقوقی، سیاست گذاری، و دوران گذار.",
+			bullet7: "تامین عرصه مناسب برای مذاکرات و توافقات موقت.",
+		},
+		vision_statement: {
+			title: "چشم انداز ما",
+			p1: "ما یک ایران دموکراتیک و سکولار را تصور می کنیم که در آن حاکمیت قانون و تفکیک قوا تضمین کننده حقوق اساسی مردم باشد. ایرانی که بار دیگر پلی بین شرق و غرب است و ثبات و رفاه را برای مردم، همسایگان و جهان به ارمغان می آورد.",
+		},
+	},
+	membership: {
+		title: "عضویت",
+		membership_types: {
+			title: "دسته بندی عضویت",
+			types: {
+				lawyers: "حقوقدانان",
+				volunteers: "داوطلبان",
+			},
+			subtitle:
+				"ما یک سازمان غیرانتفاعی هستیم و همیشه به دنبال اعضای جدید برای پیوستن به تیم خود می باشیم. اگر مایل به پیوستن به ما هستید، لطفا فرم زیر را پر کنید و ما در اسرع وقت با شما تماس خواهیم گرفت.",
+			p1: "ما در حال حاضر درخواست هایی را برای انواع عضویت زیر می پذیریم. لطفاً برای ادامه، نوع عضویت خود را در زیر انتخاب کنید.",
+		},
+		form: {
+			general: {
+				submit: "ارسال",
+			},
+			personal_info: {
+				title: "اطلاعات شخصی",
+				sub: "لطفا اطلاعات ذیل را تکمیل نمایید. همه فیلدها الزامی است.",
+				first_name: "نام",
+				last_name: "نام خانوادگی",
+				email: "ایمیل",
+				phone: "شماره تلفن",
+				country: "کشور",
+				street_address: "آدرس",
+				city: "شهر",
+				state: "استان",
+				zip_code: "کد پستی",
+			},
+			lawyer: {
+				professional_info: {
+					title: "اطلاعات فعالیت حقوقی",
+					sub: "لطفا اطلاعات ذیل را تکمیل نمایید. همه فیلدها الزامی است.",
+					law_school: "دانشگاه حقوق",
+					graduation_year: "سال فارغ التحصیلی",
+					years_of_practice: "سال تجربه کاری",
+					bar_admission: "آیا دارای شماره وکالت هستید؟",
+					bar_admission_country: "کشور محل وکالت",
+					bar_number: "شماره وکالت",
+					linkedin: "لینکدین",
+				},
+				additional_info: {
+					title: "سایر اطلاعات",
+					sub: "لطفا اطلاعات ذیل را تکمیل نمایید. همه فیلدها الزامی نیست.",
+					why_join: "چرا می خواهید به مجمع حقوقی ایرانیان بپیوندید؟",
+					note: "یادداشت",
+					note_placeholder: "هر چیز دیگری که می خواهید به ما بگویید",
+				},
+			},
+			volunteer: {
+				additional_info: {
+					title: "سایر اطلاعات",
+					sub: "لطفا اطلاعات ذیل را تکمیل نمایید. همه فیلدها الزامی نیست.",
+					why_join: "چرا می خواهید به مجمع حقوقی ایرانیان بپیوندید؟",
+					note: "یادداشت",
+					note_placeholder: "هر چیز دیگری که می خواهید به ما بگویید",
+				},
+			},
+		},
+		success: {
+			title: "با تشکر از شما برای پیوستن به مجمع حقوقی ایرانیان",
+			p1: "ما در اسرع وقت با شما تماس خواهیم گرفت.",
+		},
+	},
+	advocacy: {
+		title: "وکالت",
+		items: [
+			{
+				date: "22 December 2022",
+				title:
+					"Submission to Senate Inquiry in Australia: Inquiry into the human rights implications of recent violence in Iran",
+				link: "https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Foreign_Affairs_Defence_and_Trade/Iranviolence/Submissions",
+				link_label: "Submission 370: Submissions – Parliament of Australia",
+			},
+			{
+				date: "20 February 2023",
+				title:
+					"Legal Position on Listing of IRGC as a Terrorist Group by European Union",
+				link: "https://www.instagram.com/p/Co9lLdNvFa5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+				link_label: "View on Instagram",
+			},
+		],
+	},
+	events: {
+		title: "رویدادها",
+		items: [
+			{
+				date: "17 February 2023",
+				title: "Law and Democracy in Future Iran: Woman, Life and Freedom",
+				subtitle: "Inaugural Conference",
+				link: "https://youtu.be/FPwUyhBLq4Q?si=-_4PCOXHaenPbDwU",
+			},
+			{
+				date: "17 July 2023",
+				title:
+					"Australia's Response to the Woman-Life-Freedom Revolution in Iran",
+				link: "https://youtu.be/w4_hCgyp_MM?si=pL2X71hxsLH3hklG",
+			},
+			{
+				date: "11 December 2023",
+				title:
+					"Australia and New Zealand’s response to Iran’s Woman, Life, Freedom movement",
+				link: "https://www.youtube.com/watch?v=ED8UYBs11cE",
+			},
+			{
+				date: "4 October 2024",
+				title: "Tehran to Canberra, via Ottawa",
+				link: "https://youtu.be/FUhEhgnusBw?si=pQkJ3YTNlaJKKShs",
+			},
+			{
+				date: "24 July 2025",
+				title: "Voices from the Justice seeking families",
+				link: "https://youtu.be/Mov7ABTZiTU?si=StnizP4eh8NazTZa",
+			},
+		],
+	},
+	programs: {
+		title: "برنامه‌ها",
+		content: "به زودی...",
+	},
+	press: {
+		title: "مطبوعات",
+		content: "به زودی...",
+	},
 };
