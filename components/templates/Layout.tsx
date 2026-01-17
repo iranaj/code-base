@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const pathname = usePathname();
 
   return (
-    <div className="w-full h-full relative flex-col bg-projectGray-100 pt-44 md:pt-32">
+    <div className="w-full h-full relative flex-col bg-project-gray-100 pt-44 md:pt-32">
       <TopNavbar />
       <motion.main
         key={pathname}

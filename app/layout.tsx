@@ -22,7 +22,7 @@ const playFairDisplay = Playfair_Display({
   weight: ["500", "400", "600", "700", "800", "900"],
   style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-playFairDisplay",
+  variable: "--font-playfair-display",
 });
 
 const vazirmatn = localFont({
@@ -58,9 +58,10 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="en" className={`${roboto.variable} ${inter.variable} ${vazirmatn.variable} ${playFairDisplay.variable}`} style={{ colorScheme: 'light' }} suppressHydrationWarning>
         <body
-          className={`${roboto.variable} ${inter.variable} ${vazirmatn.variable} ${playFairDisplay.variable} font-sans antialiased`}
+          className="font-sans antialiased"
+          style={{ background: '#FEFEFE', color: '#374151' }}
           suppressHydrationWarning
         >
           {children}

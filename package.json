@@ -14,6 +14,7 @@
     "@clerk/nextjs": "^6.36.7",
     "@headlessui/react": "^1.7.11",
     "@heroicons/react": "^2.0.16",
+    "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "18.11.9",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
@@ -26,6 +27,7 @@
     "framer-motion": "^12.26.2",
     "mapbox-gl": "^2.12.1",
     "mongodb": "^5.0.1",
+    "mongoose": "^9.1.4",
     "next": "^16.1.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
@@ -38,9 +40,8 @@
   "devDependencies": {
     "@biomejs/biome": "^2.3.11",
     "@tailwindcss/forms": "^0.5.3",
-    "@tailwindcss/line-clamp": "^0.4.2",
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7"
+    "dotenv": "^17.2.3",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18"
   }
 }

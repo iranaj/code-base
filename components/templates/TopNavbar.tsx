@@ -7,12 +7,14 @@ import { en, persian } from "utils/translations";
 import LogoHorizeotalFull from "components/UI/identity/LogoHorizontalFull";
 import TopNavbarMobile from "./TopNavbarMobile";
 import { motion, AnimatePresence } from "framer-motion";
+import { UserButton, SignInButton, SignedIn, SignedOut, useUser } from "@clerk/nextjs";
 
 export default function TopNavbar() {
   const params = useParams();
   const locale = params?.locale as string || "en-US";
   const pathname = usePathname();
   const router = useRouter();
+  const { user } = useUser();
   const [activeHash, setActiveHash] = useState("");
 
   // Track hash changes
@@ -48,7 +50,7 @@ export default function TopNavbar() {
   }, []);
 
   // Visual state logic
-  const showBackground = !isHome || scrolled;
+  const forceDark = !isHome || scrolled;
   const showLogoDesktop = !isHome || scrolled;
 
   const switchLanguage = (newLocale: string) => {
@@ -74,26 +76,28 @@ export default function TopNavbar() {
 
   return (
     <motion.header
-      className="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out"
-      initial={{ backgroundColor: "rgba(255, 255, 255, 0)", backdropFilter: "blur(0px)" }}
+      className="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out"
+      initial={false}
       animate={{
-        backgroundColor: showBackground ? "rgba(255, 255, 255, 0.9)" : "rgba(255, 255, 255, 0)",
-        backdropFilter: showBackground ? "blur(12px)" : "blur(0px)",
-        boxShadow: showBackground ? "0 4px 6px -1px rgba(0, 0, 0, 0.05)" : "none",
+        backgroundColor: forceDark ? "rgba(255, 255, 255, 0.95)" : "rgba(255, 255, 255, 0)",
+        backdropFilter: forceDark ? "blur(16px)" : "blur(0px)",
+        boxShadow: forceDark ? "0 4px 30px rgba(0, 0, 0, 0.03)" : "none",
+        borderBottom: forceDark ? "1px solid rgba(0, 0, 0, 0.05)" : "1px solid transparent",
+        height: forceDark ? "80px" : "100px",
       }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
     >
-      <nav className="flex justify-between items-center w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav className="flex justify-between items-center w-full h-full max-w-screen-2xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Logo Section */}
         <motion.div
-           className={`${!showLogoDesktop && "md:invisible"}`}
+           className={`${!showLogoDesktop && "md:invisible"} flex items-center`}
            animate={{ opacity: showLogoDesktop ? 1 : 0 }}
            transition={{ duration: 0.3 }}
         >
           <Link href={`/${locale}`}>
             <LogoHorizeotalFull
-              className={`w-36 transition-colors duration-300 ${
-                showBackground ? "fill-primary-500" : "fill-white md:fill-secondary-500"
+              className={`w-20 lg:w-24 transition-colors duration-300 ${
+                forceDark ? "fill-[#0B1D44]" : "fill-white md:fill-secondary-500"
               }`}
             />
           </Link>
@@ -101,7 +105,9 @@ export default function TopNavbar() {
 
         {/* Desktop Navigation Links */}
         <div
-          className="hidden md:flex items-center gap-8 lg:gap-10 uppercase text-xs tracking-wider font-medium"
+          className={`hidden md:flex items-center gap-8 lg:gap-10 uppercase text-xs tracking-[0.6px] font-normal transition-colors duration-300 ${
+            forceDark ? "" : "text-white/80"
+          }`}
           dir={locale !== "persian" ? "ltr" : "rtl"}
         >
           {navLinks.map((link) => {
@@ -122,26 +128,30 @@ export default function TopNavbar() {
              
              // Dynamic color logic
              let textColorClass = "";
-             if (showBackground) {
-                // White/Light Background (Scrolled or Subpage)
-                textColorClass = isActive ? "text-secondary-500 font-bold" : "text-projectGray-400 font-normal hover:text-secondary-500";
+             if (forceDark) {
+                // Dark text for white/scrolled background (User provided class)
+                textColorClass = isActive 
+                  ? "text-secondary-500" 
+                  : "text-project-gray-400 font-normal hover:text-secondary-500";
              } else {
                 // Transparent Background (Top of Home)
-                textColorClass = isActive ? "text-secondary-500 font-bold" : "text-white/70 font-normal hover:text-white";
+                textColorClass = isActive 
+                  ? "text-secondary-500" 
+                  : "text-white/80 hover:text-secondary-500";
              }
 
              return (
             <Link
               key={link.href}
               href={link.href}
-              className={`relative py-2 transition-colors duration-300 ${textColorClass} ${locale === "persian" ? "font-bodyFa" : "font-body"}`}
+              className={`relative py-2 transition-colors duration-300 ${textColorClass} ${locale === "persian" ? "font-bodyFa text-sm" : "font-body"}`}
             >
               {link.label}
               
               {isActive && (
                 <motion.span
                   layoutId="navbar-underline"
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-secondary-500"
+                  className="absolute -bottom-1 left-0 w-full h-[3px] bg-secondary-500 rounded-full"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
@@ -150,33 +160,82 @@ export default function TopNavbar() {
           })}
         </div>
 
-        {/* Language Switcher & Mobile Menu */}
-        <div className="flex items-center gap-4">
-          <div className={`hidden md:flex items-center text-xs transition-colors duration-300 ${showBackground ? "text-projectGray-400" : "text-white/70 font-normal"}`}>
+        {/* Language Switcher, Auth & Mobile Menu */}
+        <div className="flex items-center gap-6 lg:gap-8">
+          <div className={`hidden md:flex items-center text-xs tracking-widest transition-colors duration-300 ${forceDark ? "text-primary-500 font-normal" : "text-white/80 font-normal"}`}>
             <span
-              className={`cursor-pointer transition-colors hover:text-secondary-500 ${
+              className={`cursor-pointer transition-colors ${
                 locale === "en-US" 
                   ? "text-secondary-500 font-bold" 
-                  : (showBackground ? "font-normal hover:text-secondary-500" : "font-normal hover:text-white")
+                  : "hover:text-secondary-500"
               }`}
               onClick={() => switchLanguage("en-US")}
             >
               EN
             </span>
-            <span className="mx-2">|</span>
+            <span className="mx-3 opacity-30">|</span>
             <span
-              className={`cursor-pointer font-bodyFa transition-colors hover:text-secondary-500 ${
+              className={`cursor-pointer font-bodyFa transition-colors ${
                 locale === "persian" 
                   ? "text-secondary-500 font-bold" 
-                  : (showBackground ? "font-normal hover:text-secondary-500" : "font-normal hover:text-white")
+                  : "hover:text-secondary-500"
               }`}
               onClick={() => switchLanguage("persian")}
             >
               فا
             </span>
           </div>
+
+          {/* Desktop Auth Section */}
+          <div className="hidden md:flex items-center gap-5">
+            <SignedIn>
+                {/* Admin Link if role is admin */}
+                {user?.publicMetadata?.role === 'admin' && (
+                  <Link 
+                    href={`/${locale}/admin`}
+                    className={`
+                      px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border
+                      ${forceDark 
+                        ? "border-primary-100 text-primary-600 hover:border-secondary-500 hover:text-secondary-600" 
+                        : "border-white/20 text-white hover:bg-white/10 hover:border-white/40"
+                      }
+                    `}
+                  >
+                     Admin
+                  </Link>
+                )}
+                <UserButton 
+                   appearance={{
+                      elements: {
+                        userButtonAvatarBox: "w-10 h-10 ring-2 ring-offset-2 ring-secondary-500/50 hover:ring-secondary-500 transition-all duration-300"
+                      }
+                   }}
+                />
+            </SignedIn>
+            <SignedOut>
+              <SignInButton mode="modal">
+                 <button 
+                   className={`
+                     relative group overflow-hidden px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg
+                     ${forceDark 
+                        ? "bg-primary-900 text-white" 
+                        : "bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20"
+                     }
+                   `}
+                 >
+                   <span className="relative z-10 flex items-center gap-2">
+                     {locale === 'persian' ? 'ورود' : 'Sign In'}
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-300">
+                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                     </svg>
+                   </span>
+                 </button>
+              </SignInButton>
+            </SignedOut>
+          </div>
+
           <div className="md:hidden">
-            <TopNavbarMobile scrolled={showBackground} />
+            <TopNavbarMobile scrolled={forceDark} />
           </div>
         </div>
       </nav>

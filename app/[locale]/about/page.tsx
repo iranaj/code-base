@@ -1,17 +1,144 @@
 "use client";
 
-import { useState, use } from "react";
+import { useEffect, useState, use } from "react";
 import Layout from "components/templates/Layout";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { en, persian } from "utils/translations";
 import { motion } from "framer-motion";
+
+interface LocalizedString {
+  en: string;
+  fa: string;
+}
+
+interface BulletItem {
+  en: string;
+  fa: string;
+}
+
+interface AboutContent {
+  title: LocalizedString;
+  p1: LocalizedString;
+  p2: LocalizedString;
+  mission: {
+    title: LocalizedString;
+    p1: LocalizedString;
+    p2: LocalizedString;
+    bullets: BulletItem[];
+  };
+  vision: {
+    title: LocalizedString;
+    p1: LocalizedString;
+  };
+}
+
+const buildDefaultContent = (): AboutContent => {
+  const enBullets = [
+    en.about.mission_statement.bullet1,
+    en.about.mission_statement.bullet2,
+    en.about.mission_statement.bullet3,
+    en.about.mission_statement.bullet4,
+    en.about.mission_statement.bullet5,
+    en.about.mission_statement.bullet6,
+    en.about.mission_statement.bullet7,
+  ].filter(Boolean);
+
+  const faBullets = [
+    persian.about.mission_statement.bullet1,
+    persian.about.mission_statement.bullet2,
+    persian.about.mission_statement.bullet3,
+    persian.about.mission_statement.bullet4,
+    persian.about.mission_statement.bullet5,
+    persian.about.mission_statement.bullet6,
+    persian.about.mission_statement.bullet7,
+  ].filter(Boolean);
+
+  const max = Math.max(enBullets.length, faBullets.length, 1);
+  const bullets = Array.from({ length: max }).map((_, index) => ({
+    en: enBullets[index] || "",
+    fa: faBullets[index] || "",
+  }));
+
+  return {
+    title: { en: en.about.title, fa: persian.about.title },
+    p1: { en: en.about.p1, fa: persian.about.p1 },
+    p2: { en: en.about.p2, fa: persian.about.p2 },
+    mission: {
+      title: { en: en.about.mission_statement.title, fa: persian.about.mission_statement.title },
+      p1: { en: en.about.mission_statement.p1, fa: persian.about.mission_statement.p1 },
+      p2: { en: en.about.mission_statement.p2, fa: persian.about.mission_statement.p2 },
+      bullets,
+    },
+    vision: {
+      title: { en: en.about.vision_statement.title, fa: persian.about.vision_statement.title },
+      p1: { en: en.about.vision_statement.p1, fa: persian.about.vision_statement.p1 },
+    },
+  };
+};
+
+const defaultContent = buildDefaultContent();
+
+const mergeContent = (base: AboutContent, incoming: AboutContent): AboutContent => {
+  const bullets = Array.isArray(incoming?.mission?.bullets)
+    ? incoming.mission.bullets
+    : base.mission.bullets;
+
+  return {
+    title: { ...base.title, ...incoming?.title },
+    p1: { ...base.p1, ...incoming?.p1 },
+    p2: { ...base.p2, ...incoming?.p2 },
+    mission: {
+      title: { ...base.mission.title, ...incoming?.mission?.title },
+      p1: { ...base.mission.p1, ...incoming?.mission?.p1 },
+      p2: { ...base.mission.p2, ...incoming?.mission?.p2 },
+      bullets: bullets.length > 0 ? bullets : base.mission.bullets,
+    },
+    vision: {
+      title: { ...base.vision.title, ...incoming?.vision?.title },
+      p1: { ...base.vision.p1, ...incoming?.vision?.p1 },
+    },
+  };
+};
 
 export default function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = use(params);
   const router = useRouter();
-  const text = locale !== "persian" ? en : persian;
+  const isPersian = locale === "persian";
+  const [content, setContent] = useState<AboutContent>(defaultContent);
 
   const [onMission, setOnMission] = useState(true);
+
+  useEffect(() => {
+    let isMounted = true;
+    setContent(defaultContent);
+
+    const fetchContent = async () => {
+      try {
+        const response = await fetch("/api/about-content");
+        if (!response.ok) return;
+        const data = await response.json();
+        if (data && Object.keys(data).length > 0 && isMounted) {
+          setContent(mergeContent(defaultContent, data));
+        }
+      } catch (error) {
+        // Keep defaults on error
+      }
+    };
+
+    fetchContent();
+    return () => {
+      isMounted = false;
+    };
+  }, [locale]);
+
+  const pick = (field?: LocalizedString) => {
+    if (!field) return "";
+    return (isPersian ? field.fa : field.en) || "";
+  };
+
+  const missionBullets = (content.mission?.bullets || [])
+    .map((bullet) => pick(bullet))
+    .filter(Boolean);
 
   const handleClick = (section?: string) => {
     if (section === "mission") {
@@ -43,33 +170,33 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
              <h3 className={`text-primary-500 text-3xl font-bold mb-8 pl-6 border-l-4 border-secondary-500 ${
                locale === "persian" ? "font-bodyFa" : "font-header"
              }`}>
-                {locale === "persian" ? "درباره ما" : "About Us"}
+                {pick(content.title)}
              </h3>
              
-             <div className={`relative border-l-2 border-projectGray-200 ml-6 space-y-0 ${
+             <div className={`relative border-l-2 border-project-gray-200 ml-6 space-y-0 ${
                 locale === "persian" ? "border-l-0 border-r-2 mr-6 ml-0" : ""
              }`}>
                 {/* Mission Link */}
                 <div className="relative group cursor-pointer" onClick={() => handleClick("mission")}>
                     <div className={`absolute top-2 -left-[9px] w-4 h-4 rounded-full border-2 border-white transition-all duration-300 z-10 ${
-                       onMission ? "bg-secondary-500 scale-125" : "bg-projectGray-300 group-hover:bg-secondary-500"
+                       onMission ? "bg-secondary-500 scale-125" : "bg-project-gray-300 group-hover:bg-secondary-500"
                     } ${locale === "persian" ? "-right-[9px] left-auto" : ""}`} />
-                    <span className={`block py-2 pl-8 pr-4 text-sm font-medium transition-colors duration-300 ${
-                        onMission ? "text-primary-500 font-bold" : "text-projectGray-400 group-hover:text-primary-500"
+                    <span className={`block py-2 pl-8 pr-4 text-sm font-semibold transition-colors duration-300 ${
+                        onMission ? "!text-primary-500 font-bold" : "!text-project-gray-500 group-hover:!text-primary-500"
                       } ${locale === "persian" ? "font-bodyFa text-right pr-8 pl-4" : "text-left"}`}>
-                       {text.about.mission_statement.title}
+                       {pick(content.mission?.title)}
                     </span>
                 </div>
 
                 {/* Vision Link */}
                 <div className="relative group cursor-pointer" onClick={() => handleClick("vision")}>
                     <div className={`absolute top-2 -left-[9px] w-4 h-4 rounded-full border-2 border-white transition-all duration-300 z-10 ${
-                       !onMission ? "bg-secondary-500 scale-125" : "bg-projectGray-300 group-hover:bg-secondary-500"
+                       !onMission ? "bg-secondary-500 scale-125" : "bg-project-gray-300 group-hover:bg-secondary-500"
                     } ${locale === "persian" ? "-right-[9px] left-auto" : ""}`} />
-                    <span className={`block py-2 pl-8 pr-4 text-sm font-medium transition-colors duration-300 ${
-                        !onMission ? "text-primary-500 font-bold" : "text-projectGray-400 group-hover:text-primary-500"
+                    <span className={`block py-2 pl-8 pr-4 text-sm font-semibold transition-colors duration-300 ${
+                        !onMission ? "!text-primary-500 font-bold" : "!text-project-gray-500 group-hover:!text-primary-500"
                       } ${locale === "persian" ? "font-bodyFa text-right pr-8 pl-4" : "text-left"}`}>
-                       {text.about.vision_statement.title}
+                       {pick(content.vision?.title)}
                     </span>
                 </div>
              </div>
@@ -92,7 +219,7 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                   locale === "persian" ? "font-bodyFa font-black" : "font-header font-bold tracking-tight"
                 }`}
               >
-                {text.about.title}
+                {pick(content.title)}
                 <motion.span 
                   initial={{ width: 0 }}
                   animate={{ width: "60%" }}
@@ -101,11 +228,11 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                 />
               </h1>
               
-              <div className={`mt-12 space-y-6 text-lg md:text-xl leading-8 text-projectGray-500 text-justify font-light ${
+              <div className={`mt-12 space-y-6 text-lg md:text-xl leading-8 text-project-gray-500 text-justify font-light ${
                  locale === "persian" ? "font-bodyFa" : "font-body antialiased"
               }`}>
-                 <p>{text.about.p1}</p>
-                 <p>{text.about.p2}</p>
+                 <p>{pick(content.p1)}</p>
+                 <p>{pick(content.p2)}</p>
               </div>
            </motion.div>
 
@@ -126,23 +253,15 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                     <h2 className={`text-4xl md:text-5xl mb-8 text-white ${
                        locale === "persian" ? "font-bodyFa font-black" : "font-header font-bold tracking-tight"
                     }`}>
-                       {text.about.mission_statement.title}
+                       {pick(content.mission?.title)}
                     </h2>
                     
                     <div className={`space-y-6 text-lg leading-8 text-white/90 text-justify font-light opacity-95 ${locale === "persian" ? "font-bodyFa" : "font-body antialiased"}`}>
-                       <p>{text.about.mission_statement.p1}</p>
-                       <p>{text.about.mission_statement.p2}</p>
+                       <p>{pick(content.mission?.p1)}</p>
+                       <p>{pick(content.mission?.p2)}</p>
                        
                        <ul className="grid gap-4 mt-8">
-                          {[
-                             text.about.mission_statement.bullet1,
-                             text.about.mission_statement.bullet2,
-                             text.about.mission_statement.bullet3,
-                             text.about.mission_statement.bullet4,
-                             text.about.mission_statement.bullet5,
-                             text.about.mission_statement.bullet6,
-                             text.about.mission_statement.bullet7,
-                          ].filter(Boolean).map((bullet, idx) => (
+                          {missionBullets.map((bullet, idx) => (
                              <li key={idx} className={`flex items-start gap-4 ${locale === "persian" ? "font-bodyFa" : ""}`}>
                                 <span className="mt-2 w-2 h-2 rounded-full bg-secondary-500 flex-shrink-0" />
                                 <span>{bullet}</span>
@@ -169,13 +288,13 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                  <h2 className={`text-4xl md:text-5xl mb-8 text-primary-500 ${
                     locale === "persian" ? "font-bodyFa font-black" : "font-header font-bold tracking-tight"
                  }`}>
-                    {text.about.vision_statement.title}
+                    {pick(content.vision?.title)}
                  </h2>
                  
-                 <p className={`text-lg md:text-xl leading-8 text-projectGray-500 text-justify font-light ${
+                 <p className={`text-lg md:text-xl leading-8 text-project-gray-500 text-justify font-light ${
                     locale === "persian" ? "font-bodyFa" : "font-body antialiased"
                  }`}>
-                    {text.about.vision_statement.p1}
+                    {pick(content.vision?.p1)}
                  </p>
               </div>
            </motion.div>

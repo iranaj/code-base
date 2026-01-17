@@ -25,7 +25,7 @@ export default function PressPage({ params }: { params: Promise<{ locale: string
           >
             {text.press.title}
           </h1>
-          <p className="text-xl text-projectGray-300">
+          <p className="text-xl text-project-gray-300">
             {text.press.content}
           </p>
         </section>

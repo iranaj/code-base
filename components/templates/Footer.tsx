@@ -13,9 +13,9 @@ const Footer: React.FC = () => {
   const text = locale !== "persian" ? en : persian;
   return (
     <footer className="w-full md:h-48 bg-primary-500 px-10 md:px-0">
-      <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl xxl:max-w-7xl pt-7 md:pt-14 mx-auto gap-10 md:gap-32 text-projectGray-300 font-body text-xs">
+      <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl xxl:max-w-7xl pt-7 md:pt-14 mx-auto gap-10 md:gap-32 text-project-gray-300 font-body text-xs">
         <div className="footer__logo">
-          <LogoHorizeotalFull className="w-36 fill-projectGray-300 -mt-2" />
+          <LogoHorizeotalFull className="w-36 fill-project-gray-300 -mt-2" />
         </div>
         <ul className="uppercase w-full md:w-auto flex justify-between md:justify-start md:flex-col">
           <li className="mt-2">
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
             </Link>
           </li>
         </ul>
-        <div className="text-base text-center md:text-left w-full md:w-auto md:text-sm text-projectGray-300 md:pt-3 ">
+        <div className="text-base text-center md:text-left w-full md:w-auto md:text-sm text-project-gray-300 md:pt-3 ">
           <span
             className={`${
               locale === "persian" ? "font-bodyFa font-normal" : ""
@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
               <Twitter
                 size={18}
                 strokeWidth={1}
-                className="stroke-projectGray-300 hover:stroke-secondary-500 hover:stroke-2"
+                className="stroke-project-gray-300 hover:stroke-secondary-500 hover:stroke-2"
               />
             </Link>
             <Link
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
               <Instagram
                 size={18}
                 strokeWidth={1}
-                className="stroke-projectGray-300 hover:stroke-secondary-500 hover:stroke-2"
+                className="stroke-project-gray-300 hover:stroke-secondary-500 hover:stroke-2"
               />
             </Link>
             <Link
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
               <Youtube
                 size={18}
                 strokeWidth={1}
-                className="stroke-projectGray-300 hover:stroke-secondary-500 hover:stroke-2 "
+                className="stroke-project-gray-300 hover:stroke-secondary-500 hover:stroke-2 "
               />
             </Link>
           </div>

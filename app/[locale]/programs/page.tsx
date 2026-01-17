@@ -25,7 +25,7 @@ export default function ProgramsPage({ params }: { params: Promise<{ locale: str
           >
             {text.programs.title}
           </h1>
-          <p className="text-xl text-projectGray-300">
+          <p className="text-xl text-project-gray-300">
             {text.programs.content}
           </p>
         </section>

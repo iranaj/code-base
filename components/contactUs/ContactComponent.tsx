@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import MapView from "./MapView";
 import {
   Twitter,
@@ -17,10 +18,67 @@ import EmailSubscriptionForm from "./EmailSubscriptionForm";
 import { useParams } from "next/navigation";
 import { en, persian } from "utils/translations";
 
+interface ContactDetails {
+  mediaEmail: string;
+  generalEmail: string;
+  generalPhone: string;
+  addressLine1: string;
+  addressLine2: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  country: string;
+  mapLink: string;
+  mapLatitude: number;
+  mapLongitude: number;
+  mapZoom: number;
+}
+
+const defaultDetails: ContactDetails = {
+  mediaEmail: "media@iranaj.org",
+  generalEmail: "info@iranaj.org",
+  generalPhone: "+1 (202) 495-0880",
+  addressLine1: "1802 Vernon St NW PMB 514",
+  addressLine2: "",
+  city: "Washington",
+  state: "DC",
+  postalCode: "20009",
+  country: "USA",
+  mapLink: "https://goo.gl/maps/8DRkBxfrwC2EybY58",
+  mapLatitude: 38.9167833174732,
+  mapLongitude: -77.04204284957177,
+  mapZoom: 16,
+};
+
 function ContactComponent() {
   const params = useParams();
   const locale = params?.locale as string || "en-US";
   const text = locale !== "persian" ? en : persian;
+  const [details, setDetails] = useState<ContactDetails>(defaultDetails);
+
+  useEffect(() => {
+    const fetchDetails = async () => {
+      try {
+        const response = await fetch("/api/contact-details");
+        if (!response.ok) return;
+        const data = await response.json();
+        if (data && Object.keys(data).length > 0) {
+          setDetails({ ...defaultDetails, ...data });
+        }
+      } catch (error) {
+        // Keep defaults on error
+      }
+    };
+
+    fetchDetails();
+  }, []);
+
+  const phoneHref = details.generalPhone
+    ? `tel:${details.generalPhone.replace(/[^\d+]/g, "")}`
+    : undefined;
+  const mapLatitude = Number.isFinite(details.mapLatitude) ? details.mapLatitude : defaultDetails.mapLatitude;
+  const mapLongitude = Number.isFinite(details.mapLongitude) ? details.mapLongitude : defaultDetails.mapLongitude;
+  const mapZoom = Number.isFinite(details.mapZoom) ? details.mapZoom : defaultDetails.mapZoom;
 
   return (
     <section
@@ -56,8 +114,8 @@ function ContactComponent() {
                       <h3 className={`text-lg font-bold text-primary-500 mb-2 ${locale === "persian" ? "font-bodyFa" : "font-header"}`}>
                          {locale === "persian" ? "رسانه" : "Media Inquiries"}
                       </h3>
-                      <a href="mailto:media@iranaj.org" className="text-projectGray-400 hover:text-secondary-500 transition-colors font-body text-sm">
-                        media@iranaj.org
+                      <a href={`mailto:${details.mediaEmail}`} className="text-project-gray-400 hover:text-secondary-500 transition-colors font-body text-sm">
+                        {details.mediaEmail}
                       </a>
                     </div>
 
@@ -70,11 +128,11 @@ function ContactComponent() {
                          {locale === "persian" ? "تماس با ما" : "General Inquiries"}
                       </h3>
                       <div className="flex flex-col gap-1">
-                        <a href="tel:+1(202)495-0880" dir="ltr" className="text-projectGray-400 hover:text-secondary-500 transition-colors font-body text-sm text-left">
-                          +1 (202) 495-0880
+                        <a href={phoneHref} dir="ltr" className="text-project-gray-400 hover:text-secondary-500 transition-colors font-body text-sm text-left">
+                          {details.generalPhone}
                         </a>
-                        <a href="mailto:info@iranaj.org" className="text-projectGray-400 hover:text-secondary-500 transition-colors font-body text-sm">
-                          info@iranaj.org
+                        <a href={`mailto:${details.generalEmail}`} className="text-project-gray-400 hover:text-secondary-500 transition-colors font-body text-sm">
+                          {details.generalEmail}
                         </a>
                       </div>
                     </div>
@@ -89,10 +147,12 @@ function ContactComponent() {
                       <h3 className={`text-lg font-bold text-primary-500 mb-2 ${locale === "persian" ? "font-bodyFa" : "font-header"}`}>
                          {locale === "persian" ? "آدرس پستی" : "Mailing Address"}
                       </h3>
-                      <p className="text-projectGray-400 text-sm leading-relaxed font-body">
+                      <p className="text-project-gray-400 text-sm leading-relaxed font-body">
                          <span className="font-semibold text-primary-500">{text.general.name}</span>
-                         <br /> 1802 Vernon St NW PMB 514
-                         <br /> Washington, DC 20009
+                         <br /> {details.addressLine1}
+                         {details.addressLine2 ? <><br /> {details.addressLine2}</> : null}
+                         <br /> {details.city}, {details.state} {details.postalCode}
+                         {details.country ? <><br /> {details.country}</> : null}
                       </p>
                     </div>
                  </div>
@@ -113,7 +173,7 @@ function ContactComponent() {
                       { Icon: Instagram, link: `https://www.instagram.com/${text.general.social_media_usernames.instagram}` },
                       { Icon: Youtube, link: `https://youtube.com/${text.general.social_media_usernames.youtube}` },
                     ].map(({ Icon, link }, index) => (
-                      <Link key={index} href={link} target="_blank" className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-projectGray-400 hover:bg-secondary-500 hover:text-white hover:border-secondary-500 transition-all duration-300 group">
+                      <Link key={index} href={link} target="_blank" className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-project-gray-400 hover:bg-secondary-500 hover:text-white hover:border-secondary-500 transition-all duration-300 group">
                          <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
                       </Link>
                     ))}
@@ -127,22 +187,22 @@ function ContactComponent() {
                <div className="absolute inset-0 z-0">
                  <MapView
                    dragable={false}
-                   latitude={38.9167833174732}
-                   longitude={-77.04204284957177}
-                   zoom={16}
+                   latitude={mapLatitude}
+                   longitude={mapLongitude}
+                   zoom={mapZoom}
                  />
                </div>
                
                {/* Floating Map Action */}
                <div className="absolute bottom-8 left-8 right-8 pointer-events-none flex justify-end">
                   <a 
-                    href="https://goo.gl/maps/8DRkBxfrwC2EybY58"
+                    href={details.mapLink || defaultDetails.mapLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="pointer-events-auto bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-lg flex items-center gap-4 hover:scale-105 transition-transform duration-300 group cursor-pointer border border-white/50"
                   >
                      <div className="text-left rtl:text-right">
-                        <p className={`text-xs text-projectGray-400 font-semibold uppercase tracking-wider mb-1 ${locale === "persian" ? "font-bodyFa" : "font-body"}`}>
+                        <p className={`text-xs text-project-gray-400 font-semibold uppercase tracking-wider mb-1 ${locale === "persian" ? "font-bodyFa" : "font-body"}`}>
                            {text.contact.map.button}
                         </p>
                         <p className={`text-primary-500 font-semibold ${locale === "persian" ? "font-bodyFa" : "font-body"}`}>

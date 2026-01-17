@@ -1,13 +1,35 @@
-import { clerkMiddleware } from '@clerk/nextjs/server'
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 import { NextResponse, NextRequest } from 'next/server'
 
 const locales = ['en-US', 'persian']
 const defaultLocale = 'en-US'
 
-export default clerkMiddleware((auth, request: NextRequest) => {
+// Match both the root sign-in path and localized sign-in paths
+const isPublicRoute = createRouteMatcher([
+  '/sign-in(.*)', 
+  '/sign-up(.*)',
+  '/en-US/sign-in(.*)', 
+  '/en-US/sign-up(.*)',
+  '/persian/sign-in(.*)',
+  '/persian/sign-up(.*)'
+])
+
+const isAdminRoute = createRouteMatcher([
+  '/admin(.*)', 
+  '/en-US/admin(.*)', 
+  '/persian/admin(.*)'
+])
+
+export default clerkMiddleware(async (auth, request: NextRequest) => {
   const { nextUrl } = request
   const pathname = nextUrl.pathname
 
+  // 1. Protect Admin Routes
+  if (isAdminRoute(request)) {
+    await auth.protect()
+  }
+
+  // 2. Locale Redirection Logic
   // Check if there is any supported locale in the pathname
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
